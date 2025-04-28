@@ -1,0 +1,15 @@
+{
+	"extends": ["eslint:recommended", "plugin:prettier/recommended"],
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{ "singleQuote": true, "trailingComma": "all" }
+		],
+		"no-console": "warn",
+		"no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+		"eqeqeq": ["error", "always"],
+		"curly": ["error", "all"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"]
+	}
+}
