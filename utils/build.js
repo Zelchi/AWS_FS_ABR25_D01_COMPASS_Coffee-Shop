@@ -11,8 +11,8 @@ const css = fs.readFileSync(cssPath, 'utf-8');
 const js = fs.readFileSync(jsPath, 'utf-8');
 
 const combined = html
-.replace('</head>', `<style>${css}</style></head>`)
-.replace('</body>', `<script>${js}</script></body>`);
+	.replace('</head>', `<style>${css}</style></head>`)
+	.replace('</body>', `<script>${js}</script></body>`);
 
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 fs.writeFileSync(outputPath, combined, 'utf-8');
