@@ -26,7 +26,7 @@ The following scripts are available in the project:
 
 ## How to Run
 
-1. Clone o repositório:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/Zelchi/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop.git
@@ -35,4 +35,4 @@ npm install
 npm run start
 ```
 
-2. Ou acesse via GitHub Pages: [Click here](https://zelchi.github.io/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop)
+2. Or access it via GitHub Pages: [Click here](https://zelchi.github.io/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop)
