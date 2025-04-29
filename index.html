@@ -24,7 +24,141 @@
 			rel="stylesheet"
 		/>
 		<link rel="icon" href="./assets/Coffee.svg" />
-		<style>:root {
+		
+		
+		
+		<title>Coffee Shop</title>
+	</head>
+
+	<body>
+		<section class="header">
+			<div class="header__overlay">
+				<nav class="header__nav">
+					<h1 class="header__title">Bean Scene</h1>
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<button class="btn__skin">
+						<p>Order Now</p>
+					</button>
+				</nav>
+				<div class="header__text__box">
+					<p class="header__text__1">We’ve got your morning covered with</p>
+					<p class="header__text__2">Coffee</p>
+					<p class="header__text__3">
+						It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We
+						provide the best for our customers.
+					</p>
+					<button class="btn__skin header__text__button">
+						<p>Order Now</p>
+					</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="home">
+			<div class="home__text__div">
+				<div class="home__text__box">
+					<p class="home__text__1">Discover the best coffee</p>
+					<p class="home__text__2">
+						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and
+						helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is
+						no doubt that you will enjoy this coffee more than others you have ever tasted.
+					</p>
+					<button class="btn__skin home__text__button">
+						<p>Learn More</p>
+					</button>
+				</div>
+				<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
+					class="home__img"
+					alt="coffee image"
+					draggable="false"
+				/>
+				<img src="./assets/coffee_blast.svg" class="home__img__decoration" alt="coffee image" draggable="false" />
+			</div>
+			<div class="home__products__container">
+				<h1 class="home__products__container__title">Enjoy a new blend of coffee style</h1>
+				<p class="home__products__container__text">
+					Explore all flavours on our menu with us. There is always a new worth experiencing
+				</p>
+				<div class="home__products__box__container"></div>
+			</div>
+		</section>
+
+		
+		
+	</body>
+</html>
+
+<script>
+
+const readJSON = async (relativePath) => {
+	try {
+		const response = await fetch(relativePath)
+		if (!response.ok) {
+			throw new Error(`Error fetching JSON: ${response.statusText}`)
+		}
+		const jsonData = await response.json()
+		return jsonData
+	} catch (error) {
+		console.error(error)
+		throw error
+	}
+};
+
+
+
+const createProductCard = (product) => {
+    const card = document.createElement('div');
+    card.classList.add('product-card');
+
+    card.innerHTML = `
+        <img src="${product.imagem_url}" alt="${product.name}" class="product-card__image" />
+        <h3 class="product-card__title">${product.name}</h3>
+        <p class="product-card__description">${product.short_description}</p>
+        <p class="product-card__price">$${product.price.toFixed(2)}</p>
+    `;
+
+    return card;
+};
+
+const renderProducts = (products) => {
+    const container = document.querySelector('.home__products__box__container');
+    if (!container) {
+        console.error('Container with class "home__products__box__container" not found.');
+        return;
+    }
+
+    container.innerHTML = '';
+
+    products.forEach((product) => {
+        const card = createProductCard(product);
+        container.appendChild(card);
+    });
+};
+
+const getRandomProducts = (data, count) => {
+    const shuffled = data.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
+};
+
+readJSON("./data/all-items.json")
+    .then((response) => {
+        if (response.status === 'success' && Array.isArray(response.data)) {
+            const randomProducts = getRandomProducts(response.data, 4);
+            renderProducts(randomProducts);
+        } else {
+            console.error('Invalid JSON structure:', response);
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+</script>
+<style>:root {
 	--btn-order-bg-color: #f9c06a;
 	--btn-order-bg-color-hover: #ffe4bb;
 	--btn-order-font: 'Playfair Display', serif;
@@ -99,7 +233,7 @@ body {
 	}
 }
 </style>
-		<style>.header {
+<style>.header {
 	z-index: 1;
 	user-select: none;
 
@@ -244,7 +378,7 @@ body {
 	height: 48px;
 }
 </style>
-		<style>.home {
+<style>.home {
 	z-index: 1;
 	user-select: none;
 
@@ -377,8 +511,6 @@ body {
 }
 
 .home__products__box__container {
-	background-color: green;
-
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -387,119 +519,42 @@ body {
 	width: 100%;
 	height: 400px;
 
+	gap: 10px;
+
 	@media (max-width: 768px) {
 		display: none;
 	}
 }
-</style>
-		<title>Coffee Shop</title>
-	</head>
 
-	<body>
-		<section class="header">
-			<div class="header__overlay">
-				<nav class="header__nav">
-					<h1 class="header__title">Bean Scene</h1>
-					<ul>
-						<li><a href="#home">Home</a></li>
-						<li><a href="#menu">Menu</a></li>
-						<li><a href="#about">About Us</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-					<button class="btn__skin">
-						<p>Order Now</p>
-					</button>
-				</nav>
-				<div class="header__text__box">
-					<p class="header__text__1">We’ve got your morning covered with</p>
-					<p class="header__text__2">Coffee</p>
-					<p class="header__text__3">
-						It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We
-						provide the best for our customers.
-					</p>
-					<button class="btn__skin header__text__button">
-						<p>Order Now</p>
-					</button>
-				</div>
-			</div>
-		</section>
+.product-card {
+	width: 280px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid #F9C06A6B;
+}
 
-		<section class="home">
-			<div class="home__text__div">
-				<div class="home__text__box">
-					<p class="home__text__1">Discover the best coffee</p>
-					<p class="home__text__2">
-						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and
-						helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is
-						no doubt that you will enjoy this coffee more than others you have ever tasted.
-					</p>
-					<button class="btn__skin home__text__button">
-						<p>Learn More</p>
-					</button>
-				</div>
-				<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
-					class="home__img"
-					alt="coffee image"
-					draggable="false"
-				/>
-				<img src="./assets/coffee_blast.svg" class="home__img__decoration" alt="coffee image" draggable="false" />
-			</div>
-			<div class="home__products__container">
-				<h1 class="home__products__container__title">Enjoy a new blend of coffee style</h1>
-				<p class="home__products__container__text">
-					Explore all flavours on our menu with us. There is always a new worth experiencing
-				</p>
-				<div class="home__products__box__container"></div>
-			</div>
-		</section>
+.product-card__image {
+	width: 100%;
+	height: 222px;
+}
 
-		<script type="module">export const readJSON = async (relativePath) => {
-	try {
-		const response = await fetch(relativePath);
-		if (!response.ok) {
-			throw new Error(`Error fetching JSON: ${response.statusText}`);
-		}
-		const jsonData = await response.json();
-		return jsonData;
-	} catch (error) {
-		console.error(error);
-		throw error;
-	}
-};
+.product-card__title {
+	width: 122;
+	height: 29;
+	font-family: Playfair Display;
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #603809;
+}
 
-import { readJSON } from './global.js';
+.product-card__description {
 
-readJSON('/src/data/all-items.json')
-	.then((data) => {
-		console.log('JSON Data:', data);
-	})
-	.catch((error) => {
-		console.error('Error:', error);
-	});
-</script>
-		<script type="module">export const readJSON = async (relativePath) => {
-	try {
-		const response = await fetch(relativePath);
-		if (!response.ok) {
-			throw new Error(`Error fetching JSON: ${response.statusText}`);
-		}
-		const jsonData = await response.json();
-		return jsonData;
-	} catch (error) {
-		console.error(error);
-		throw error;
-	}
-};
+}
 
-import { readJSON } from './global.js';
+.product-card__price {
 
-readJSON('/src/data/all-items.json')
-	.then((data) => {
-		console.log('JSON Data:', data);
-	})
-	.catch((error) => {
-		console.error('Error:', error);
-	});
-</script>
-	</body>
-</html>
+}</style>
