@@ -1,20 +1,26 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="icon" href="./assets/Coffee.png" />
-		<style>* {
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+		rel="stylesheet" />
+	<link rel="icon" href="./assets/Coffee.svg" />
+	<style>:root {
+	--btn-order-bg-color: #F9C06A;
+	--btn-order-bg-color-hover: #ffe4bb;
+	--btn-order-font: 'Playfair Display', serif;
+	--btn-order-text-color: #1E1E1E;
+	--btn-order-shadow: 0px 6px 12px 0px #F9C06A38;
+}
+
+* {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
@@ -27,54 +33,79 @@ body {
 	align-items: center;
 
 	max-width: 100vw;
-	max-height: 100vh;
 	min-width: 100vw;
-	min-height: 100vh;
 	width: 100vw;
 	height: auto;
 
+	overflow-x: hidden;
+	overflow-y: auto;
 	background-color: #1c1c1c;
+
+	&::-webkit-scrollbar {
+		width: 3px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #1c1c1c
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #3c3c3c;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: #3c3c3c;
+	}
 }
-</style>
-		<style>.header {
-    width: 100vw;
+
+.btn__skin {
+	z-index: 3;
+	background: var(--btn-order-bg-color);
+	box-shadow: var(--btn-order-shadow);
+	color: var(--btn-order-text-color);
+	font-family: var(--btn-order-font);
+
+	border-radius: 24px;
+	border: none;
+	cursor: pointer;
+
+	width: 100px;
+	height: 48px;
+
+	transition: background 0.3s ease, box-shadow 0.3s ease;
+
+	&:hover {
+		background: var(--btn-order-bg-color-hover);
+	}
+}</style>
+	<style>.header {
+    z-index: 1;
+    user-select: none;
+    
+    width: 100%;
     height: 100vh;
-    background-image: url(./assets/CoffeeBackground.jpg);
+    background: url(./assets/coffee_image.svg);
     background-size: cover;
 
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-
-    --btn-order-bg-color: #F9C06A;
-    --btn-oder-bg-color-hover: #ffe4bb;
-	--btn-order-font: 'Playfair Display', serif;
-	--btn-order-text-color: #1E1E1E;
-	--btn-order-shadow: 0px 6px 12px 0px #F9C06A38;
 }
 
-.header__btn__skin {
-    background: var(--btn-order-bg-color);
-    box-shadow: var(--btn-order-shadow);
-    color: var(--btn-order-text-color);
-    font-family: var(--btn-order-font);
-
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
-
-    width: 100px;
-    height: 48px;
-
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-        background: var(--btn-oder-bg-color-hover);
-    }
+.header__overlay {
+    z-index: 2;
+    background-image: url(./assets/overlay.svg);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-attachment: local;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .header__title {
+    z-index: 3;
     width: 135px;
     height: 46px;
     font-family: Clicker Script;
@@ -164,11 +195,54 @@ body {
     width: 134px;
     height: 48px;
 }</style>
-		<title>Coffee Shop</title>
-	</head>
+	<style>.home {
+    z-index: 1;
+    user-select: none;
+    
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FFFEFC;
+    background-size: cover;
 
-	<body>
-		<section class="header">
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.home__text__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home__text__1 {
+    width: 585px;
+    height: 72px;
+    font-family: Playfair Display;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #603809;
+}
+
+.home__text__2 {
+    width: 585px;
+    height: 170px;
+    font-family: Playfair Display;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;
+    letter-spacing: 0%;
+    color: #707070;
+}</style>
+	<title>Coffee Shop</title>
+</head>
+
+<body>
+	<section class="header">
+		<div class="header__overlay">
 			<nav class="header__nav">
 				<h1 class="header__title">Bean Scene</h1>
 				<ul>
@@ -177,7 +251,7 @@ body {
 					<li><a href="#about">About Us</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
-				<button class="header__btn__skin">Order Now</button>
+				<button class="btn__skin">Order Now</button>
 			</nav>
 			<div class="header__text__box">
 				<p class="header__text__1">We’ve got your morning covered with</p>
@@ -187,10 +261,21 @@ body {
 					flavours coffee you will ever have. We provide the best for our
 					customers.
 				</p>
-				<button class="header__btn__skin header__text__button">Order Now</button>
+				<button class="btn__skin header__text__button">Order Now</button>
 			</div>
-		</section>
-		<script type="module">const dataPath = './data/all-items.json';
+		</div>
+	</section>
+
+	<section class="home">
+		<div class="home__text__box">
+			<p class="home__text__1">Discover the best coffee</p>
+			<p class="home__text__2">Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you have ever tasted.</p>
+			<img src="/src/assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg" alt="Coffee" class="home__img" />
+
+		</div>
+	</section>
+
+	<script type="module">const dataPath = './data/all-items.json';
 
 const getData = async () => {
     const data = fetch(dataPath)
@@ -210,5 +295,6 @@ const getData = async () => {
 };
 
 console.log(getData());</script>
-	</body>
+</body>
+
 </html>
