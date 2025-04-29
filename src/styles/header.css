@@ -19,7 +19,7 @@
     color: var(--btn-order-text-color);
     cursor: pointer;
 
-    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 
     ::hover {
         background: #F9C06A;

@@ -1,10 +1,11 @@
 {
 	"name": "aws_fs_abr25_d01_compass_coffe.shop",
 	"version": "1.0.0",
-	"type": "module",
 	"scripts": {
-		"pages": "gh-pages -d dist",
-		"linttier": "eslint . && prettier --write ."
+		"start": "node build.js && live-server dist",
+		"deploy": "node build.js && gh-pages -d dist --add",
+		"linttier": "eslint . && prettier --write .",
+		"dev": "live-server . --port=5500"
 	},
 	"devDependencies": {
 		"eslint": "^9.25.1",

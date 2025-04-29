@@ -1,35 +1,38 @@
 # AWS FS ABR25 D01 COMPASS - Coffee Shop
 
-## Descrição
+## Description
 
-Este projeto é uma aplicação de Coffee Shop construída usando **JavaScript**, **HTML** e **CSS**.
+This project is a Coffee Shop application built using **JavaScript**, **HTML**, and **CSS**.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - **JavaScript**
 - **HTML**
 - **CSS**
 
-## Ferramentas e Bibliotecas
+## Tools and Libraries
 
-- **Prettier**: Para formatação de código.
-- **ESLint**: Para linting de código e garantia de qualidade.
+- **Prettier**: For code formatting.
+- **ESLint**: For code linting and quality assurance.
 
 ## Scripts
 
-Os seguintes scripts estão disponíveis no projeto:
+The following scripts are available in the project:
 
-- `npm run linttier`: Executa o ESLint e formata o código usando o Prettier.
+- `npm run start`: Builds the project and starts a local server using **live-server**.
+- `npm run deploy`: Builds the project and deploys it to GitHub Pages.
+- `npm run linttier`: Runs **ESLint** for code linting and formats the code using **Prettier**.
+- `npm run dev`: Starts **live-server** in the root directory of the project on port 5500.
 
-## Como Executar
+## How to Run
 
-- 1. Clone o repositório:
+- 1. Clone the repository:
 
 ```bash
 git clone https://github.com/Zelchi/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop
 ```
 
-- 2. Ou acesse pelo Github Pages: [site](https://zelchi.github.io/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop)
+- 2. Or access it via Github Pages: [site](https://zelchi.github.io/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop)
 
 ```link
 https://zelchi.github.io/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop
