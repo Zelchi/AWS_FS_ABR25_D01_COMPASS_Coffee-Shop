@@ -8,22 +8,31 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
+
+    --btn-order-bg-color: #F9C06A;
+    --btn-oder-bg-color-hover: #ffe4bb;
+	--btn-order-font: 'Playfair Display', serif;
+	--btn-order-text-color: #1E1E1E;
+	--btn-order-shadow: 0px 6px 12px 0px #F9C06A38;
 }
 
 .header__btn__skin {
-    border: none;
-    background-color: green;
-    border-radius: 24px;
     background: var(--btn-order-bg-color);
-    box-shadow: 0px 6px 12px 0px var(--btn-order-shadow-color);
+    box-shadow: var(--btn-order-shadow);
     color: var(--btn-order-text-color);
+    font-family: var(--btn-order-font);
+
+    border-radius: 24px;
+    border: none;
     cursor: pointer;
+
+    width: 100px;
+    height: 48px;
 
     transition: background 0.3s ease, box-shadow 0.3s ease;
 
-    ::hover {
-        background: #F9C06A;
-        box-shadow: 0px 6px 12px 0px #F9C06A38;
+    &:hover {
+        background: var(--btn-oder-bg-color-hover);
     }
 }
 
@@ -111,4 +120,9 @@
     line-height: 34px;
     letter-spacing: 0%;
     color: #ffffff;
+}
+
+.header__text__button {
+    width: 134px;
+    height: 48px;
 }
