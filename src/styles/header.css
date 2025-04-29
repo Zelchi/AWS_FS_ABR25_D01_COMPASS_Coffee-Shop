@@ -13,7 +13,7 @@
 	justify-content: start;
 	align-items: center;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1300px) {
 		background-position: center;
 	}
 }
@@ -72,7 +72,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1300px) {
 		ul {
 			display: none;
 		}
@@ -90,7 +90,7 @@
 	justify-content: center;
 	align-items: center;
 
-	@media (min-width: 768px) {
+	@media (min-width: 1300px) {
 		justify-content: start;
 		align-items: start;
 		left: 10%;
@@ -107,7 +107,7 @@
 	color: #ffffff;
 	text-align: start;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1300px) {
 		font-size: 18px;
 	}
 }
@@ -120,7 +120,7 @@
 	letter-spacing: 0%;
 	color: #ffffff;
 
-	@media (max-width: 768px) {
+	@media (max-width: 1300px) {
 		font-size: 120px;
 	}
 }
@@ -132,8 +132,9 @@
 	line-height: 34px;
 	letter-spacing: 0%;
 	color: #ffffff;
-
-	@media (max-width: 768px) {
+	
+	@media (max-width: 1300px) {
+		text-align: center;
 		font-size: 15px;
 	}
 }

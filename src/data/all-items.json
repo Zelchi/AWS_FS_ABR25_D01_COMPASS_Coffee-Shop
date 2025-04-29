@@ -44,7 +44,7 @@
 			"name": "Blueberry Muffin",
 			"type": "Bakery",
 			"price": 2.8,
-			"imagem_url": "",
+			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
 			"short_description": "Soft muffin filled with fresh blueberries and a sugar crust",
 			"is_new": false
 		},
@@ -119,7 +119,7 @@
 			"name": "Vegan Chocolate Brownie",
 			"type": "Bakery",
 			"price": 3.0,
-			"imagem_url": "",
+			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
 			"short_description": "Fudgy plant-based brownie with dark chocolate chips",
 			"is_new": false
 		},
@@ -184,6 +184,7 @@
 			"name": "Fruit Parfait",
 			"type": "Snack",
 			"price": 3.9,
+			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
 			"short_description": "Layers of granola, yogurt, and fresh fruits",
 			"is_new": false
 		},
