@@ -1,5 +1,9 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const srcDir = path.join(__dirname, 'src');
 const distDir = path.join(__dirname, 'dist');
@@ -37,57 +41,40 @@ function copyFolderSync(from, to) {
 }
 
 function buildIndex() {
-    let html = fs.readFileSync(indexSrc, 'utf-8');
+	let html = fs.readFileSync(indexSrc, 'utf-8');
 
-    html = html.replace(
-        /<link rel="stylesheet" href="\/src\/styles\/(.*?)" \/>/g,
-        (match, cssFile) => {
-            const cssPath = path.join(srcDir, 'styles', cssFile);
-            let cssContent = fs.readFileSync(cssPath, 'utf-8');
+	html = html.replace(/<link rel="stylesheet" href="\/src\/styles\/(.*?)" \/>/g, (match, cssFile) => {
+		const cssPath = path.join(srcDir, 'styles', cssFile);
+		let cssContent = fs.readFileSync(cssPath, 'utf-8');
 
-            cssContent = cssContent.replace(
-                /url\(['"]?\.\.\/assets\/(.*?)['"]?\)/g,
-                'url(./assets/$1)'
-            );
+		cssContent = cssContent.replace(/url\(['"]?\.\.\/assets\/(.*?)['"]?\)/g, 'url(./assets/$1)');
 
-            return `<style>${cssContent}</style>`;
-        }
-    );
+		return `<style>${cssContent}</style>`;
+	});
 
-    html = html.replace(
-        /<script.*?src="\/?src\/scripts\/(.*?)".*?><\/script>/g,
-        () => {
-            const scriptsPath = path.join(srcDir, 'scripts');
-            const scriptFiles = fs
-                .readdirSync(scriptsPath)
-                .filter((file) => file.endsWith('.js'));
-            const scriptsContent = scriptFiles
-                .map((file) => {
-                    const filePath = path.join(scriptsPath, file);
-                    let scriptContent = fs.readFileSync(filePath, 'utf-8');
+	html = html.replace(/<script.*?src="\/?src\/scripts\/(.*?)".*?><\/script>/g, () => {
+		const scriptsPath = path.join(srcDir, 'scripts');
+		const scriptFiles = fs.readdirSync(scriptsPath).filter((file) => file.endsWith('.js'));
+		const scriptsContent = scriptFiles
+			.map((file) => {
+				const filePath = path.join(scriptsPath, file);
+				let scriptContent = fs.readFileSync(filePath, 'utf-8');
 
-                    scriptContent = scriptContent.replace(
-                        /(['"])src\/data\/(.*?)\1/g,
-                        '$1./data/$2$1'
-                    );
+				scriptContent = scriptContent.replace(/(['"])src\/data\/(.*?)\1/g, '$1./data/$2$1');
 
-                    return scriptContent;
-                })
-                .join('\n');
-            return `<script type="module">${scriptsContent}</script>`;
-        }
-    );
+				return scriptContent;
+			})
+			.join('\n');
+		return `<script type="module">${scriptsContent}</script>`;
+	});
 
-    html = html.replace(
-        /<link rel="icon" href="\/src\/assets\/(.*?)" \/>/g,
-        '<link rel="icon" href="./assets/$1" />'
-    );
+	html = html.replace(/<link rel="icon" href="\/src\/assets\/(.*?)" \/>/g, '<link rel="icon" href="./assets/$1" />');
 
-    html = html.replace(/src="\/src\/data\/(.*?)"/g, 'src="./data/$1"');
+	html = html.replace(/src="\/src\/data\/(.*?)"/g, 'src="./data/$1"');
 
-    html = html.replace(/<img\s+src="\/src\/assets\/(.*?)"/g, '<img src="./assets/$1"');
+	html = html.replace(/<img\s+src="\/src\/assets\/(.*?)"/g, '<img src="./assets/$1"');
 
-    fs.writeFileSync(indexDist, html, 'utf-8');
+	fs.writeFileSync(indexDist, html, 'utf-8');
 }
 
 function buildProject() {
