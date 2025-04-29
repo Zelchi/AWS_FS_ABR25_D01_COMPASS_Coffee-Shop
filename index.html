@@ -3,6 +3,16 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			as="style"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			as="style"
+		/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -232,7 +242,8 @@ body {
 .header__text__button {
 	width: 134px;
 	height: 48px;
-}</style>
+}
+</style>
 		<style>.home {
 	z-index: 1;
 	user-select: none;
@@ -332,11 +343,55 @@ body {
 	}
 }
 
-.home__produtos__container {
+.home__products__container {
+	margin-top: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
 	width: 100%;
 	height: 542px;
-	/* background-color: aqua; */
-}</style>
+	font-family: 'Playfair Display';
+}
+
+.home__products__container__title {
+	width: 100%;
+	height: 72px;
+	font-weight: 700;
+	font-size: 54px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #603809;
+	text-align: center;
+}
+
+.home__products__container__text {
+	width: 100%;
+	height: 34px;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 34px;
+	letter-spacing: 0%;
+	color: #707070;
+	text-align: center;
+}
+
+.home__products__box__container {
+	background-color: green;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 400px;
+
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+</style>
 		<title>Coffee Shop</title>
 	</head>
 
@@ -359,9 +414,8 @@ body {
 					<p class="header__text__1">We’ve got your morning covered with</p>
 					<p class="header__text__2">Coffee</p>
 					<p class="header__text__3">
-						It is best to start your day with a cup of coffee. Discover the best
-						flavours coffee you will ever have. We provide the best for our
-						customers.
+						It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We
+						provide the best for our customers.
 					</p>
 					<button class="btn__skin header__text__button">
 						<p>Order Now</p>
@@ -375,11 +429,9 @@ body {
 				<div class="home__text__box">
 					<p class="home__text__1">Discover the best coffee</p>
 					<p class="home__text__2">
-						Bean Scene is a coffee shop that provides you with quality coffee
-						that helps boost your productivity and helps build your mood. Having
-						a cup of coffee is good, but having a cup of real coffee is greater.
-						There is no doubt that you will enjoy this coffee more than others
-						you have ever tasted.
+						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and
+						helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is
+						no doubt that you will enjoy this coffee more than others you have ever tasted.
 					</p>
 					<button class="btn__skin home__text__button">
 						<p>Learn More</p>
@@ -390,38 +442,64 @@ body {
 					alt="coffee image"
 					draggable="false"
 				/>
-				<img src="./assets/coffee_blast.png"
-					class="home__img__decoration"
-					alt="coffee image"
-					draggable="false"
-				/>
+				<img src="./assets/coffee_blast.svg" class="home__img__decoration" alt="coffee image" draggable="false" />
 			</div>
-			<div class="home__produtos__container">
+			<div class="home__products__container">
+				<h1 class="home__products__container__title">Enjoy a new blend of coffee style</h1>
+				<p class="home__products__container__text">
+					Explore all flavours on our menu with us. There is always a new worth experiencing
+				</p>
+				<div class="home__products__box__container"></div>
 			</div>
 		</section>
 
-		<script type="module">const dataPath = './data/all-items.json';
-
-const getData = async () => {
-	const data = fetch(dataPath)
-		.then((response) => {
-			if (!response.ok) {
-				throw new Error(
-					`Erro ao carregar o arquivo JSON: ${response.statusText}`
-				);
-			}
-			return response.json();
-		})
-		.then((jsonData) => {
-			console.log('Dados do JSON:', jsonData);
-		})
-		.catch((error) => {
-			console.error('Erro ao processar o JSON:', error);
-		});
-	return data;
+		<script type="module">export const readJSON = async (relativePath) => {
+	try {
+		const response = await fetch(relativePath);
+		if (!response.ok) {
+			throw new Error(`Error fetching JSON: ${response.statusText}`);
+		}
+		const jsonData = await response.json();
+		return jsonData;
+	} catch (error) {
+		console.error(error);
+		throw error;
+	}
 };
 
-console.log(getData());
+import { readJSON } from './global.js';
+
+readJSON('/src/data/all-items.json')
+	.then((data) => {
+		console.log('JSON Data:', data);
+	})
+	.catch((error) => {
+		console.error('Error:', error);
+	});
+</script>
+		<script type="module">export const readJSON = async (relativePath) => {
+	try {
+		const response = await fetch(relativePath);
+		if (!response.ok) {
+			throw new Error(`Error fetching JSON: ${response.statusText}`);
+		}
+		const jsonData = await response.json();
+		return jsonData;
+	} catch (error) {
+		console.error(error);
+		throw error;
+	}
+};
+
+import { readJSON } from './global.js';
+
+readJSON('/src/data/all-items.json')
+	.then((data) => {
+		console.log('JSON Data:', data);
+	})
+	.catch((error) => {
+		console.error('Error:', error);
+	});
 </script>
 	</body>
 </html>
