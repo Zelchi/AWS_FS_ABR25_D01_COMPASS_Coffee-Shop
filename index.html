@@ -39,7 +39,6 @@ body {
 
 	overflow-x: hidden;
 	overflow-y: auto;
-	background-color: #1c1c1c;
 
 	&::-webkit-scrollbar {
 		width: 3px;
@@ -96,6 +95,7 @@ body {
 
 	width: 100%;
 	height: 100vh;
+
 	background: url(./assets/coffee_image.svg);
 	background-size: cover;
 
@@ -103,6 +103,10 @@ body {
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
+
+	@media (max-width: 768px) {
+		background-position: center;
+	}
 }
 
 .header__overlay {
@@ -158,62 +162,85 @@ body {
 			}
 		}
 	}
+
+	@media (max-width: 768px) {
+		ul {
+			display: none;
+		}
+	}
 }
 
 .header__text__box {
+	max-width: 527px;
 	position: absolute;
-	left: 10%;
-	top: 30%;
+	top: 25%;
+	gap: 30px;
+	margin: 20px;
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	justify-content: center;
 	align-items: center;
+
+	@media (min-width: 768px) {
+		justify-content: start;
+		align-items: start;
+		left: 10%;
+		top: 30%;
+	}
 }
 
 .header__text__1 {
-	width: 369px;
-	height: 29px;
 	font-family: Playfair Display;
 	font-weight: 500;
 	font-size: 22px;
 	line-height: 100%;
 	letter-spacing: 0%;
 	color: #ffffff;
+	text-align: start;
+
+	@media (max-width: 768px) {
+		font-size: 18px;
+	}
 }
 
 .header__text__2 {
-	width: 449px;
-	height: 291px;
 	font-family: Clicker Script;
 	font-weight: 400;
 	font-size: 220px;
 	line-height: 100%;
 	letter-spacing: 0%;
 	color: #ffffff;
+
+	@media (max-width: 768px) {
+		font-size: 120px;
+	}
 }
 
 .header__text__3 {
-	width: 527px;
-	height: 102px;
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
 	color: #ffffff;
+
+	@media (max-width: 768px) {
+		font-size: 15px;
+	}
 }
 
 .header__text__button {
 	width: 134px;
 	height: 48px;
-}
-</style>
+}</style>
 		<style>.home {
 	z-index: 1;
 	user-select: none;
 
 	width: 100%;
 	min-height: 100vh;
+	height: auto;
+
 	background-color: #fffefc;
 	background-size: cover;
 
@@ -239,12 +266,16 @@ body {
 	max-width: 585px;
 
 	@media (max-width: 768px) {
-		padding: 10%;
+		padding-top: 10%;
+		margin: 0 5%;
 		max-width: 379px;
+		align-items: center;
 	}
 }
 
 .home__text__1 {
+	width: 100%;
+	text-align: center;
 	font-family: Playfair Display;
 	font-weight: 700;
 	font-size: 54px;
@@ -253,7 +284,7 @@ body {
 	color: #603809;
 
 	@media (max-width: 768px) {
-		font-size: 35px;
+		font-size: 28px;
 	}
 }
 
@@ -267,6 +298,8 @@ body {
 
 	@media (max-width: 768px) {
 		font-size: 15px;
+		font-size: 15px;
+		line-height: 25.5px;
 	}
 }
 
@@ -288,14 +321,22 @@ body {
 .home__img__decoration {
 	position: absolute;
 	left: 0;
-	margin-top: 500px;
+
+	width: 498px;
+	height: auto;
+	margin-top: 400px;
 
 	@media (max-width: 768px) {
-		width: 80%;
+		width: 250px;
 		height: auto;
 	}
 }
-</style>
+
+.home__produtos__container {
+	width: 100%;
+	height: 542px;
+	/* background-color: aqua; */
+}</style>
 		<title>Coffee Shop</title>
 	</head>
 
@@ -354,6 +395,8 @@ body {
 					alt="coffee image"
 					draggable="false"
 				/>
+			</div>
+			<div class="home__produtos__container">
 			</div>
 		</section>
 
