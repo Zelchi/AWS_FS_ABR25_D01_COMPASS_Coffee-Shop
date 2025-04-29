@@ -1,26 +1,26 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="icon" href="/src/assets/Coffee.png" />
-		<link rel="stylesheet" href="/src/styles/global.css" />
-		<link rel="stylesheet" href="/src/styles/header.css" />
-		<title>Coffee Shop</title>
-	</head>
 
-	<body>
-		<section class="header">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+		rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+		rel="stylesheet" />
+	<link rel="icon" href="/src/assets/Coffee.svg" />
+	<link rel="stylesheet" href="/src/styles/global.css" />
+	<link rel="stylesheet" href="/src/styles/header.css" />
+	<link rel="stylesheet" href="/src/styles/home.css" />
+	<title>Coffee Shop</title>
+</head>
+
+<body>
+	<section class="header">
+		<div class="header__overlay">
 			<nav class="header__nav">
 				<h1 class="header__title">Bean Scene</h1>
 				<ul>
@@ -29,7 +29,9 @@
 					<li><a href="#about">About Us</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
-				<button class="header__btn__skin">Order Now</button>
+				<button class="btn__skin">
+					<p>Order Now</p>
+				</button>
 			</nav>
 			<div class="header__text__box">
 				<p class="header__text__1">We’ve got your morning covered with</p>
@@ -39,9 +41,36 @@
 					flavours coffee you will ever have. We provide the best for our
 					customers.
 				</p>
-				<button class="header__btn__skin header__text__button">Order Now</button>
+				<button class="btn__skin header__text__button">
+					<p>Order Now</p>
+				</button>
 			</div>
-		</section>
-		<script src="src/scripts/index.js"></script>
-	</body>
+		</div>
+	</section>
+
+	<section class="home">
+		<div class="home__text__div">
+			<div class="home__text__box">
+				<p class="home__text__1">Discover the best coffee</p>
+				<p class="home__text__2">
+					Bean Scene is a coffee shop that provides you with quality coffee that
+					helps boost your productivity and helps build your mood. Having a cup
+					of coffee is good, but having a cup of real coffee is greater. There
+					is no doubt that you will enjoy this coffee more than others you have
+					ever tasted.
+				</p>
+				<button class="btn__skin home__text__button">
+					<p>Learn More</p>
+				</button>
+			</div>
+			<img src="/src/assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg" class="home__img"
+				alt="coffee image" draggable="false"/>
+			<img src="/src/assets/coffee_blast.svg" class="home__img__decoration"
+				alt="coffee image" draggable="false"/>
+		</div>
+	</section>
+
+	<script src="src/scripts/index.js"></script>
+</body>
+
 </html>

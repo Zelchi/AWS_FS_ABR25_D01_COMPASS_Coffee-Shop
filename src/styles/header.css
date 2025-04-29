@@ -1,128 +1,117 @@
 .header {
-    width: 100vw;
-    height: 100vh;
-    background-image: url('../assets/CoffeeBackground.jpg');
-    background-size: cover;
+	z-index: 1;
+	user-select: none;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+	width: 100%;
+	height: 100vh;
+	background: url('../assets/coffee_image.svg');
+	background-size: cover;
 
-    --btn-order-bg-color: #F9C06A;
-    --btn-oder-bg-color-hover: #ffe4bb;
-	--btn-order-font: 'Playfair Display', serif;
-	--btn-order-text-color: #1E1E1E;
-	--btn-order-shadow: 0px 6px 12px 0px #F9C06A38;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
 }
 
-.header__btn__skin {
-    background: var(--btn-order-bg-color);
-    box-shadow: var(--btn-order-shadow);
-    color: var(--btn-order-text-color);
-    font-family: var(--btn-order-font);
-
-    border-radius: 24px;
-    border: none;
-    cursor: pointer;
-
-    width: 100px;
-    height: 48px;
-
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-        background: var(--btn-oder-bg-color-hover);
-    }
+.header__overlay {
+	z-index: 2;
+	background-image: url('../assets/overlay.svg');
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-attachment: local;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .header__title {
-    width: 135px;
-    height: 46px;
-    font-family: Clicker Script;
-    font-weight: 400;
-    font-size: 35px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: #ffffff;
+	z-index: 3;
+	width: 135px;
+	height: 46px;
+	font-family: Clicker Script;
+	font-weight: 400;
+	font-size: 35px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #ffffff;
 }
 
 .header__nav {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        list-style-type: none;
-        width: 50%;
-        gap: 10%;
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		list-style-type: none;
+		width: 50%;
+		gap: 10%;
 
-        li {
-            a {
-                width: 38px;
-                height: 19px;
-                font-family: Playfair Display;
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 100%;
-                letter-spacing: 0%;
-                text-decoration: none;
-                color: #ffffff;
-            }
-        }
-    }
+		li {
+			a {
+				width: 38px;
+				height: 19px;
+				font-family: Playfair Display;
+				font-weight: 500;
+				font-size: 14px;
+				line-height: 100%;
+				letter-spacing: 0%;
+				text-decoration: none;
+				color: #ffffff;
+			}
+		}
+	}
 }
 
 .header__text__box {
-    position: absolute;
-    left: 10%;
-    top: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
+	position: absolute;
+	left: 10%;
+	top: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
 }
 
 .header__text__1 {
-    width: 369px;
-    height: 29px;
-    font-family: Playfair Display;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: #ffffff;
+	width: 369px;
+	height: 29px;
+	font-family: Playfair Display;
+	font-weight: 500;
+	font-size: 22px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #ffffff;
 }
 
 .header__text__2 {
-    width: 449px;
-    height: 291px;
-    font-family: Clicker Script;
-    font-weight: 400;
-    font-size: 220px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: #ffffff;
+	width: 449px;
+	height: 291px;
+	font-family: Clicker Script;
+	font-weight: 400;
+	font-size: 220px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #ffffff;
 }
 
 .header__text__3 {
-    width: 527px;
-    height: 102px;
-    font-family: Playfair Display;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 34px;
-    letter-spacing: 0%;
-    color: #ffffff;
+	width: 527px;
+	height: 102px;
+	font-family: Playfair Display;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 34px;
+	letter-spacing: 0%;
+	color: #ffffff;
 }
 
 .header__text__button {
-    width: 134px;
-    height: 48px;
+	width: 134px;
+	height: 48px;
 }

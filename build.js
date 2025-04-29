@@ -11,29 +11,29 @@ const indexSrc = path.join(__dirname, 'index.html');
 const indexDist = path.join(distDir, 'index.html');
 
 function cleanDist() {
-    if (fs.existsSync(distDir)) {
-        fs.readdirSync(distDir).forEach((file) => {
-            const filePath = path.join(distDir, file);
-            if (fs.lstatSync(filePath).isDirectory()) {
-                fs.rmSync(filePath, { recursive: true, force: true });
-            } else {
-                fs.unlinkSync(filePath);
-            }
-        });
-    }
+	if (fs.existsSync(distDir)) {
+		fs.readdirSync(distDir).forEach((file) => {
+			const filePath = path.join(distDir, file);
+			if (fs.lstatSync(filePath).isDirectory()) {
+				fs.rmSync(filePath, { recursive: true, force: true });
+			} else {
+				fs.unlinkSync(filePath);
+			}
+		});
+	}
 }
 
 function copyFolderSync(from, to) {
-    fs.mkdirSync(to, { recursive: true });
-    fs.readdirSync(from).forEach((element) => {
-        const fromPath = path.join(from, element);
-        const toPath = path.join(to, element);
-        if (fs.lstatSync(fromPath).isFile()) {
-            fs.copyFileSync(fromPath, toPath);
-        } else {
-            copyFolderSync(fromPath, toPath);
-        }
-    });
+	fs.mkdirSync(to, { recursive: true });
+	fs.readdirSync(from).forEach((element) => {
+		const fromPath = path.join(from, element);
+		const toPath = path.join(to, element);
+		if (fs.lstatSync(fromPath).isFile()) {
+			fs.copyFileSync(fromPath, toPath);
+		} else {
+			copyFolderSync(fromPath, toPath);
+		}
+	});
 }
 
 function buildIndex() {
@@ -58,18 +58,22 @@ function buildIndex() {
         /<script.*?src="\/?src\/scripts\/(.*?)".*?><\/script>/g,
         () => {
             const scriptsPath = path.join(srcDir, 'scripts');
-            const scriptFiles = fs.readdirSync(scriptsPath).filter(file => file.endsWith('.js'));
-            const scriptsContent = scriptFiles.map(file => {
-                const filePath = path.join(scriptsPath, file);
-                let scriptContent = fs.readFileSync(filePath, 'utf-8');
+            const scriptFiles = fs
+                .readdirSync(scriptsPath)
+                .filter((file) => file.endsWith('.js'));
+            const scriptsContent = scriptFiles
+                .map((file) => {
+                    const filePath = path.join(scriptsPath, file);
+                    let scriptContent = fs.readFileSync(filePath, 'utf-8');
 
-                scriptContent = scriptContent.replace(
-                    /(['"])src\/data\/(.*?)\1/g,
-                    '$1./data/$2$1'
-                );
+                    scriptContent = scriptContent.replace(
+                        /(['"])src\/data\/(.*?)\1/g,
+                        '$1./data/$2$1'
+                    );
 
-                return scriptContent;
-            }).join('\n');
+                    return scriptContent;
+                })
+                .join('\n');
             return `<script type="module">${scriptsContent}</script>`;
         }
     );
@@ -79,26 +83,24 @@ function buildIndex() {
         '<link rel="icon" href="./assets/$1" />'
     );
 
-    html = html.replace(
-        /src="\/src\/data\/(.*?)"/g,
-        'src="./data/$1"'
-    );
+    html = html.replace(/src="\/src\/data\/(.*?)"/g, 'src="./data/$1"');
+
+    html = html.replace(/<img\s+src="\/src\/assets\/(.*?)"/g, '<img src="./assets/$1"');
 
     fs.writeFileSync(indexDist, html, 'utf-8');
 }
 
 function buildProject() {
+	cleanDist();
 
-    cleanDist();
+	fs.mkdirSync(distDir, { recursive: true });
 
-    fs.mkdirSync(distDir, { recursive: true });
+	copyFolderSync(assetsSrc, assetsDist);
+	copyFolderSync(dataSrc, dataDist);
 
-    copyFolderSync(assetsSrc, assetsDist);
-    copyFolderSync(dataSrc, dataDist);
+	buildIndex();
 
-    buildIndex();
-
-    console.log('Build completed successfully!');
+	console.log('Build completed successfully!');
 }
 
 buildProject();

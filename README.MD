@@ -28,6 +28,8 @@ The following scripts are available in the project:
 
 1. Clone the repository:
 
+To use it, choose a folder where it will be cloned or a repository, open the terminal, and use the commands below:
+
 ```bash
 git clone https://github.com/Zelchi/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop.git
 cd AWS_FS_ABR25_D01_COMPASS_Coffee-Shop
