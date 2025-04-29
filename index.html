@@ -1,18 +1,20 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		rel="stylesheet" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		rel="stylesheet" />
-	<link rel="icon" href="./assets/Coffee.svg" />
-	<style>:root {
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href="./assets/Coffee.svg" />
+		<style>:root {
 	--btn-order-bg-color: #f9c06a;
 	--btn-order-bg-color-hover: #ffe4bb;
 	--btn-order-font: 'Playfair Display', serif;
@@ -79,9 +81,18 @@ body {
 	&:hover {
 		background: var(--btn-order-bg-color-hover);
 	}
+
+	p {
+		font-family: Playfair Display;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		color: #1e1e1e;
+	}
 }
 </style>
-	<style>.header {
+		<style>.header {
 	z-index: 1;
 	user-select: none;
 
@@ -199,7 +210,7 @@ body {
 	height: 48px;
 }
 </style>
-	<style>.home {
+		<style>.home {
 	z-index: 1;
 	user-select: none;
 
@@ -218,86 +229,137 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-    align-items: center;
+	align-items: center;
+	gap: 30px;
 }
 
 .home__text__box {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
+
+	gap: 30px;
+	max-width: 585px;
+
+	@media (max-width: 768px) {
+		padding: 10%;
+		max-width: 379px;
+	}
 }
 
 .home__text__1 {
-	width: 585px;
-	height: 72px;
 	font-family: Playfair Display;
 	font-weight: 700;
 	font-size: 54px;
 	line-height: 100%;
 	letter-spacing: 0%;
 	color: #603809;
+
+	@media (max-width: 768px) {
+		font-size: 35px;
+	}
 }
 
 .home__text__2 {
-	width: 585px;
-	height: 170px;
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
 	color: #707070;
+
+	@media (max-width: 768px) {
+		font-size: 15px;
+	}
 }
 
 .home__img {
 	width: 680px;
 	height: 476px;
-}</style>
-	<title>Coffee Shop</title>
-</head>
 
-<body>
-	<section class="header">
-		<div class="header__overlay">
-			<nav class="header__nav">
-				<h1 class="header__title">Bean Scene</h1>
-				<ul>
-					<li><a href="#home">Home</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#about">About Us</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-				<button class="btn__skin">Order Now</button>
-			</nav>
-			<div class="header__text__box">
-				<p class="header__text__1">We’ve got your morning covered with</p>
-				<p class="header__text__2">Coffee</p>
-				<p class="header__text__3">
-					It is best to start your day with a cup of coffee. Discover the best
-					flavours coffee you will ever have. We provide the best for our
-					customers.
-				</p>
-				<button class="btn__skin header__text__button">Order Now</button>
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.home__text__button {
+	margin-top: 20px;
+	width: 134px;
+	height: 48px;
+}
+
+.home__img__decoration {
+	position: absolute;
+	left: 0;
+	margin-top: 500px;
+
+	@media (max-width: 768px) {
+		width: 80%;
+		height: auto;
+	}
+}
+</style>
+		<title>Coffee Shop</title>
+	</head>
+
+	<body>
+		<section class="header">
+			<div class="header__overlay">
+				<nav class="header__nav">
+					<h1 class="header__title">Bean Scene</h1>
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<button class="btn__skin">
+						<p>Order Now</p>
+					</button>
+				</nav>
+				<div class="header__text__box">
+					<p class="header__text__1">We’ve got your morning covered with</p>
+					<p class="header__text__2">Coffee</p>
+					<p class="header__text__3">
+						It is best to start your day with a cup of coffee. Discover the best
+						flavours coffee you will ever have. We provide the best for our
+						customers.
+					</p>
+					<button class="btn__skin header__text__button">
+						<p>Order Now</p>
+					</button>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<section class="home">
-		<div class="home__text__div">
-			<div class="home__text__box">
-				<p class="home__text__1">Discover the best coffee</p>
-				<p class="home__text__2">
-					Bean Scene is a coffee shop that provides you with quality coffee that
-					helps boost your productivity and helps build your mood. Having a cup
-					of coffee is good, but having a cup of real coffee is greater. There
-					is no doubt that you will enjoy this coffee more than others you have
-					ever tasted.
-				</p>
+		<section class="home">
+			<div class="home__text__div">
+				<div class="home__text__box">
+					<p class="home__text__1">Discover the best coffee</p>
+					<p class="home__text__2">
+						Bean Scene is a coffee shop that provides you with quality coffee
+						that helps boost your productivity and helps build your mood. Having
+						a cup of coffee is good, but having a cup of real coffee is greater.
+						There is no doubt that you will enjoy this coffee more than others
+						you have ever tasted.
+					</p>
+					<button class="btn__skin home__text__button">
+						<p>Learn More</p>
+					</button>
+				</div>
+				<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
+					class="home__img"
+					alt="coffee image"
+					draggable="false"
+				/>
+				<img src="./assets/coffee_blast.png"
+					class="home__img__decoration"
+					alt="coffee image"
+					draggable="false"
+				/>
 			</div>
-			<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg" class="home__img" alt="coffee image" />
-		</div>
-	</section>
+		</section>
 
-	<script type="module">const dataPath = './data/all-items.json';
+		<script type="module">const dataPath = './data/all-items.json';
 
 const getData = async () => {
 	const data = fetch(dataPath)
@@ -320,6 +382,5 @@ const getData = async () => {
 
 console.log(getData());
 </script>
-</body>
-
+	</body>
 </html>
