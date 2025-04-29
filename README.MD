@@ -24,10 +24,13 @@ Os seguintes scripts estão disponíveis no projeto:
 ## Como Executar
 
 - 1. Clone o repositório:
+
 ```bash
 git clone https://github.com/Zelchi/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop
 ```
+
 - 2. Ou acesse pelo Github Pages: [site](https://zelchi.github.io/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop)
+
 ```link
 https://zelchi.github.io/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop
 ```
