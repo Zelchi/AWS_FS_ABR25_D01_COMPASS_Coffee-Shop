@@ -1,10 +1,10 @@
 import { readJSON } from './global.js';
 
 const createProductCard = (product) => {
-    const card = document.createElement('div');
-    card.classList.add('product-card');
+	const card = document.createElement('div');
+	card.classList.add('product-card');
 
-    card.innerHTML = `
+	card.innerHTML = `
         <img src="${product.imagem_url}" alt="${product.name}" class="product-card__image" />
         <h3 class="product-card__title">${product.name}</h3>
         <p class="product-card__description">${product.short_description}</p>
@@ -12,38 +12,38 @@ const createProductCard = (product) => {
         <button class="btn__skin product-card__button"><p>Order Now</p></button>
     `;
 
-    return card;
+	return card;
 };
 
 const renderProducts = (products) => {
-    const container = document.querySelector('.home__products__box__container');
-    if (!container) {
-        console.error('Container with class "home__products__box__container" not found.');
-        return;
-    }
+	const container = document.querySelector('.home__products__box__container');
+	if (!container) {
+		console.error('Container with class "home__products__box__container" not found.');
+		return;
+	}
 
-    container.innerHTML = '';
+	container.innerHTML = '';
 
-    products.forEach((product) => {
-        const card = createProductCard(product);
-        container.appendChild(card);
-    });
+	products.forEach((product) => {
+		const card = createProductCard(product);
+		container.appendChild(card);
+	});
 };
 
 const getRandomProducts = (data, count) => {
-    const shuffled = data.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
+	const shuffled = data.sort(() => 0.5 - Math.random());
+	return shuffled.slice(0, count);
 };
 
 readJSON('src/data/all-items.json')
-    .then((response) => {
-        if (response.status === 'success' && Array.isArray(response.data)) {
-            const randomProducts = getRandomProducts(response.data, 4);
-            renderProducts(randomProducts);
-        } else {
-            console.error('Invalid JSON structure:', response);
-        }
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
+	.then((response) => {
+		if (response.status === 'success' && Array.isArray(response.data)) {
+			const randomProducts = getRandomProducts(response.data, 4);
+			renderProducts(randomProducts);
+		} else {
+			console.error('Invalid JSON structure:', response);
+		}
+	})
+	.catch((error) => {
+		console.error('Error:', error);
+	});

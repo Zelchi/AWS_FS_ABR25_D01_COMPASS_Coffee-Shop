@@ -72,3 +72,19 @@ body {
 		color: #1e1e1e;
 	}
 }
+
+.hidden {
+	display: none;
+}
+
+.remove__in__short__window {
+	@media (max-width: 1300px) {
+		display: none !important;
+	}
+}
+
+.remove__in__long__window {
+	@media (min-width: 1301px) {
+		display: none !important;
+	}
+}

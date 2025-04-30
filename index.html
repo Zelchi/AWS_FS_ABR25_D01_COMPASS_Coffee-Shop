@@ -27,6 +27,7 @@
 		<link rel="stylesheet" href="/src/styles/global.css" />
 		<link rel="stylesheet" href="/src/styles/header.css" />
 		<link rel="stylesheet" href="/src/styles/home.css" />
+		<link rel="stylesheet" href="/src/styles/hamburger.css" />
 		<title>Coffee Shop</title>
 	</head>
 
@@ -35,16 +36,29 @@
 			<div class="header__overlay">
 				<nav class="header__nav">
 					<h1 class="header__title">Bean Scene</h1>
+					<ul class="header__nav__links remove__in__short__window">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<div class="hamburger-menu remove__in__long__window">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<button class="btn__skin remove__in__short__window">
+						<p>Order Now</p>
+					</button>
+				</nav>
+				<div class="mobile-menu hidden">
 					<ul>
 						<li><a href="#home">Home</a></li>
 						<li><a href="#menu">Menu</a></li>
 						<li><a href="#about">About Us</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
-					<button class="btn__skin">
-						<p>Order Now</p>
-					</button>
-				</nav>
+				</div>
 				<div class="header__text__box">
 					<p class="header__text__1">We’ve got your morning covered with</p>
 					<p class="header__text__2">Coffee</p>
@@ -74,7 +88,7 @@
 				</div>
 				<img
 					src="/src/assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
-					class="home__img"
+					class="home__img remove__in__short__window"
 					alt="coffee image"
 					draggable="false"
 				/>
@@ -85,11 +99,12 @@
 				<p class="home__products__container__text">
 					Explore all flavours on our menu with us. There is always a new worth experiencing
 				</p>
-				<div class="home__products__box__container"></div>
+				<div class="home__products__box__container remove__in__short__window"></div>
 			</div>
 		</section>
 
 		<script type="module" src="src/scripts/global.js"></script>
 		<script type="module" src="src/scripts/products.js"></script>
+		<script type="module" src="src/scripts/header.js"></script>
 	</body>
 </html>
