@@ -27,16 +27,15 @@
 		
 		
 		
-		
-		<title>Coffee Shop</title>
+		<title>Bean Scene</title>
 	</head>
 
 	<body>
-		<section class="header">
-			<div class="header-overlay">
-				<nav class="header-nav">
-					<h1 class="header-title">Bean Scene</h1>
-					<ul class="header-nav-links remove-in-short-window">
+		<section class="home">
+			<div class="home-overlay">
+				<nav class="home-nav">
+					<h1 class="home-title">Bean Scene</h1>
+					<ul class="home-nav-links remove-in-short-window">
 						<li><a href="#home">Home</a></li>
 						<li><a href="#menu">Menu</a></li>
 						<li><a href="#about">About Us</a></li>
@@ -53,52 +52,52 @@
 				</nav>
 				<div class="mobile-menu hidden">
 					<ul>
-						<li><a href="#home">Home</a></li>
+						<li><a href="#shop">Home</a></li>
 						<li><a href="#menu">Menu</a></li>
 						<li><a href="#about">About Us</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</div>
-				<div class="header-text-box">
-					<p class="header-text-1">We’ve got your morning covered with</p>
-					<p class="header-text-2">Coffee</p>
-					<p class="header-text-3">
+				<div class="home-text-box">
+					<p class="home-text-1">We’ve got your morning covered with</p>
+					<p class="home-text-2">Coffee</p>
+					<p class="home-text-3">
 						It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We
 						provide the best for our customers.
 					</p>
-					<button class="btn-skin header-text-button">
+					<button class="btn-skin home-text-button">
 						<p>Order Now</p>
 					</button>
 				</div>
 			</div>
 		</section>
 
-		<section class="home">
-			<div class="home-text-div">
-				<div class="home-text-box">
-					<p class="home-text-1">Discover the best coffee</p>
-					<p class="home-text-2">
+		<section class="shop">
+			<div class="shop-text-div">
+				<div class="shop-text-box">
+					<p class="shop-text-1">Discover the best coffee</p>
+					<p class="shop-text-2">
 						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and
 						helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is
 						no doubt that you will enjoy this coffee more than others you have ever tasted.
 					</p>
-					<button class="btn-skin home-text-button">
+					<button class="btn-skin shop-text-button">
 						<p>Learn More</p>
 					</button>
 				</div>
 				<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
-					class="home-img remove-in-short-window"
+					class="shop-img remove-in-short-window"
 					alt="coffee image"
 					draggable="false"
 				/>
-				<img src="./assets/coffee_blast.svg" class="home-img-decoration" alt="coffee image" draggable="false" />
+				<img src="./assets/coffee_blast.svg" class="shop-img-decoration" alt="coffee image" draggable="false" />
 			</div>
-			<div class="home-products-container">
-				<h1 class="home-products-container-title">Enjoy a new blend of coffee style</h1>
-				<p class="home-products-container-text">
+			<div class="shop-products-container">
+				<h1 class="shop-products-container-title">Enjoy a new blend of coffee style</h1>
+				<p class="shop-products-container-text">
 					Explore all flavours on our menu with us. There is always a new worth experiencing
 				</p>
-				<div class="home-products-box-container remove-in-short-window"></div>
+				<div class="shop-products-box-container remove-in-short-window"></div>
 			</div>
 		</section>
 
@@ -136,6 +135,7 @@ hamburgerMenu.addEventListener('click', () => {
 });
 
 
+
 const createProductCard = (product) => {
 	const card = document.createElement('div');
 	card.classList.add('product-card');
@@ -152,9 +152,9 @@ const createProductCard = (product) => {
 };
 
 const renderProducts = (products) => {
-	const container = document.querySelector('.home-products-box-container');
+	const container = document.querySelector('.shop-products-box-container');
 	if (!container) {
-		console.error('Container with class "home-products-box-container" not found.');
+		console.error('Container with class "shop-products-box-container" not found.');
 		return;
 	}
 
@@ -276,7 +276,7 @@ body {
 	}
 }
 </style>
-<style>.header {
+<style>.home {
 	z-index: 1;
 	user-select: none;
 
@@ -296,7 +296,7 @@ body {
 	}
 }
 
-.header-overlay {
+.home-overlay {
 	z-index: 2;
 	background-image: url(./assets/overlay.svg);
 	width: 100%;
@@ -307,7 +307,7 @@ body {
 	background-repeat: no-repeat;
 }
 
-.header-nav {
+.home-nav {
 	padding: 20px 0px;
 	display: flex;
 	flex-direction: row;
@@ -345,7 +345,7 @@ body {
 	}
 }
 
-.header-title {
+.home-title {
 	z-index: 3;
 	width: auto;
 	height: auto;
@@ -357,7 +357,7 @@ body {
 	color: #ffffff;
 }
 
-.header-text-box {
+.home-text-box {
 	max-width: 527px;
 	position: absolute;
 	top: 25%;
@@ -376,7 +376,7 @@ body {
 	}
 }
 
-.header-text-1 {
+.home-text-1 {
 	font-family: Playfair Display;
 	font-weight: 500;
 	font-size: 22px;
@@ -390,7 +390,7 @@ body {
 	}
 }
 
-.header-text-2 {
+.home-text-2 {
 	font-family: Clicker Script;
 	font-weight: 400;
 	font-size: 220px;
@@ -403,7 +403,7 @@ body {
 	}
 }
 
-.header-text-3 {
+.home-text-3 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
@@ -417,18 +417,87 @@ body {
 	}
 }
 
-.header-text-button {
+.home-text-button {
 	width: 134px;
 	height: 48px;
 }
+
+.hamburger-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+	z-index: 4;
+}
+
+.hamburger-menu span {
+	width: 25px;
+	height: 3px;
+	background-color: #ffffff;
+}
+
+.mobile-menu {
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 0;
+	overflow: hidden;
+	transition: height 0.5s ease-in-out;
+}
+
+.mobile-menu ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transform: translateY(-20px);
+	transition:
+		opacity 0.5s ease-in-out,
+		transform 0.5s ease-in-out;
+}
+
+.mobile-menu ul li {
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	border-bottom: 1px solid #ffffff;
+}
+
+.mobile-menu ul li a {
+	text-decoration: none;
+	color: #ffffff;
+	font-family: Playfair Display;
+	font-size: 24px;
+	font-weight: bold;
+	display: block;
+	width: 100%;
+}
+
+.mobile-menu.open {
+	height: 300px;
+}
+
+.mobile-menu.open ul {
+	opacity: 1;
+	transform: translateY(0);
+}
 </style>
-<style>.home {
+<style>.shop {
 	z-index: 1;
 	user-select: none;
 
 	width: 100%;
 	min-height: 100vh;
 	height: auto;
+	margin-top: 100px;
 
 	background-color: #fffefc;
 	background-size: cover;
@@ -438,9 +507,13 @@ body {
 	justify-content: start;
 	align-items: center;
 	font-family: 'Playfair Display';
+
+	@media (max-width: 1300px) {
+		margin-top: 30px;
+	}
 }
 
-.home-text-div {
+.shop-text-div {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -448,7 +521,7 @@ body {
 	gap: 30px;
 }
 
-.home-text-box {
+.shop-text-box {
 	display: flex;
 	flex-direction: column;
 
@@ -463,7 +536,7 @@ body {
 	}
 }
 
-.home-text-1 {
+.shop-text-1 {
 	width: 100%;
 	text-align: center;
 	font-family: Playfair Display;
@@ -478,39 +551,38 @@ body {
 	}
 }
 
-.home-text-2 {
+.shop-text-2 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
 	color: #707070;
-	padding: 20px;
-	text-align: justify;
+	text-align: start;
 
 	@media (max-width: 1300px) {
+		padding: 20px;
 		font-size: 15px;
 		font-size: 15px;
 		line-height: 25.5px;
 	}
 }
 
-.home-img {
+.shop-img {
 	width: 680px;
 	height: 476px;
 }
 
-.home-text-button {
-	margin-top: 20px;
+.shop-text-button {
 	width: 134px;
 	height: 48px;
 }
 
-.home-img-decoration {
+.shop-img-decoration {
 	position: absolute;
 	left: 0;
 
-	width: 498px;
+	width: 500px;
 	height: auto;
 	margin-top: 400px;
 
@@ -520,7 +592,7 @@ body {
 	}
 }
 
-.home-products-container {
+.shop-products-container {
 	margin-top: 100px;
 	display: flex;
 	flex-direction: column;
@@ -532,7 +604,7 @@ body {
 	height: auto;
 }
 
-.home-products-container-title {
+.shop-products-container-title {
 	width: 100%;
 	height: auto;
 	font-weight: 700;
@@ -547,7 +619,7 @@ body {
 	}
 }
 
-.home-products-container-text {
+.shop-products-container-text {
 	width: 100%;
 	height: auto;
 	font-weight: 400;
@@ -563,7 +635,7 @@ body {
 	}
 }
 
-.home-products-box-container {
+.shop-products-box-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -636,75 +708,6 @@ body {
 	width: 134px;
 	height: 48px;
 	text-align: center;
-}
-</style>
-<style>.hamburger-menu {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-	cursor: pointer;
-	z-index: 4;
-}
-
-.hamburger-menu span {
-	width: 25px;
-	height: 3px;
-	background-color: #ffffff;
-}
-
-.mobile-menu {
-	z-index: 3;
-	position: absolute;
-	top: 0;
-	width: 100vw;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 0;
-	overflow: hidden;
-	transition: height 0.5s ease-in-out;
-}
-
-.mobile-menu ul {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transform: translateY(-20px);
-	transition:
-		opacity 0.5s ease-in-out,
-		transform 0.5s ease-in-out;
-}
-
-.mobile-menu ul li {
-	width: 100%;
-	text-align: center;
-	padding: 20px 0;
-	background-color: rgba(0, 0, 0, 0.8);
-	backdrop-filter: blur(5px);
-	border-bottom: 1px solid #ffffff;
-}
-
-.mobile-menu ul li a {
-	text-decoration: none;
-	color: #ffffff;
-	font-family: Playfair Display;
-	font-size: 24px;
-	font-weight: bold;
-	display: block;
-	width: 100%;
-}
-
-.mobile-menu.open {
-	height: 300px;
-}
-
-.mobile-menu.open ul {
-	opacity: 1;
-	transform: translateY(0);
 }
 </style>
 </body>
