@@ -16,9 +16,9 @@ const createProductCard = (product) => {
 };
 
 const renderProducts = (products) => {
-	const container = document.querySelector('.home-products-box-container');
+	const container = document.querySelector('.shop-products-box-container');
 	if (!container) {
-		console.error('Container with class "home-products-box-container" not found.');
+		console.error('Container with class "shop-products-box-container" not found.');
 		return;
 	}
 
