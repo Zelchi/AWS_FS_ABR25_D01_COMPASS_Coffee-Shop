@@ -18,7 +18,7 @@
 	}
 }
 
-.header__overlay {
+.header-overlay {
 	z-index: 2;
 	background-image: url('../assets/overlay.svg');
 	width: 100%;
@@ -29,7 +29,7 @@
 	background-repeat: no-repeat;
 }
 
-.header__nav {
+.header-nav {
 	padding: 20px 0px;
 	display: flex;
 	flex-direction: row;
@@ -67,7 +67,7 @@
 	}
 }
 
-.header__title {
+.header-title {
 	z-index: 3;
 	width: auto;
 	height: auto;
@@ -79,7 +79,7 @@
 	color: #ffffff;
 }
 
-.header__text__box {
+.header-text-box {
 	max-width: 527px;
 	position: absolute;
 	top: 25%;
@@ -98,7 +98,7 @@
 	}
 }
 
-.header__text__1 {
+.header-text-1 {
 	font-family: Playfair Display;
 	font-weight: 500;
 	font-size: 22px;
@@ -112,7 +112,7 @@
 	}
 }
 
-.header__text__2 {
+.header-text-2 {
 	font-family: Clicker Script;
 	font-weight: 400;
 	font-size: 220px;
@@ -125,7 +125,7 @@
 	}
 }
 
-.header__text__3 {
+.header-text-3 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
@@ -139,7 +139,7 @@
 	}
 }
 
-.header__text__button {
+.header-text-button {
 	width: 134px;
 	height: 48px;
 }

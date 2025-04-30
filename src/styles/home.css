@@ -16,7 +16,7 @@
 	font-family: 'Playfair Display';
 }
 
-.home__text__div {
+.home-text-div {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -24,7 +24,7 @@
 	gap: 30px;
 }
 
-.home__text__box {
+.home-text-box {
 	display: flex;
 	flex-direction: column;
 
@@ -39,7 +39,7 @@
 	}
 }
 
-.home__text__1 {
+.home-text-1 {
 	width: 100%;
 	text-align: center;
 	font-family: Playfair Display;
@@ -54,7 +54,7 @@
 	}
 }
 
-.home__text__2 {
+.home-text-2 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
@@ -71,18 +71,18 @@
 	}
 }
 
-.home__img {
+.home-img {
 	width: 680px;
 	height: 476px;
 }
 
-.home__text__button {
+.home-text-button {
 	margin-top: 20px;
 	width: 134px;
 	height: 48px;
 }
 
-.home__img__decoration {
+.home-img-decoration {
 	position: absolute;
 	left: 0;
 
@@ -96,7 +96,7 @@
 	}
 }
 
-.home__products__container {
+.home-products-container {
 	margin-top: 100px;
 	display: flex;
 	flex-direction: column;
@@ -108,7 +108,7 @@
 	height: auto;
 }
 
-.home__products__container__title {
+.home-products-container-title {
 	width: 100%;
 	height: auto;
 	font-weight: 700;
@@ -123,7 +123,7 @@
 	}
 }
 
-.home__products__container__text {
+.home-products-container-text {
 	width: 100%;
 	height: auto;
 	font-weight: 400;
@@ -139,7 +139,7 @@
 	}
 }
 
-.home__products__box__container {
+.home-products-box-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -164,14 +164,14 @@
 	position: relative;
 }
 
-.product-card__image {
+.product-card-image {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
 	border-bottom: 1px solid #f9c06a6b;
 }
 
-.product-card__title {
+.product-card-title {
 	width: 100%;
 	height: 50px;
 	text-align: center;
@@ -184,7 +184,7 @@
 	padding: 2px 5px;
 }
 
-.product-card__description {
+.product-card-description {
 	width: 100%;
 	height: 70px;
 	text-align: center;
@@ -192,7 +192,7 @@
 	padding: 2px 5px;
 }
 
-.product-card__price {
+.product-card-price {
 	width: 100%;
 	height: auto;
 	text-align: center;
@@ -204,7 +204,7 @@
 	color: #603809;
 }
 
-.product-card__button {
+.product-card-button {
 	position: absolute;
 	bottom: -24px;
 	left: 50%;

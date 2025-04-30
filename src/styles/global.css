@@ -41,7 +41,7 @@ body {
 	}
 }
 
-.btn__skin {
+.btn-skin {
 	z-index: 3;
 	background: var(--btn-order-bg-color);
 	box-shadow: var(--btn-order-shadow);
@@ -77,13 +77,13 @@ body {
 	display: none;
 }
 
-.remove__in__short__window {
+.remove-in-short-window {
 	@media (max-width: 1300px) {
 		display: none !important;
 	}
 }
 
-.remove__in__long__window {
+.remove-in-long-window {
 	@media (min-width: 1301px) {
 		display: none !important;
 	}
