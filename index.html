@@ -33,21 +33,21 @@
 
 	<body>
 		<section class="header">
-			<div class="header__overlay">
-				<nav class="header__nav">
-					<h1 class="header__title">Bean Scene</h1>
-					<ul class="header__nav__links remove__in__short__window">
+			<div class="header-overlay">
+				<nav class="header-nav">
+					<h1 class="header-title">Bean Scene</h1>
+					<ul class="header-nav-links remove-in-short-window">
 						<li><a href="#home">Home</a></li>
 						<li><a href="#menu">Menu</a></li>
 						<li><a href="#about">About Us</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
-					<div class="hamburger-menu remove__in__long__window">
+					<div class="hamburger-menu remove-in-long-window">
 						<span></span>
 						<span></span>
 						<span></span>
 					</div>
-					<button class="btn__skin remove__in__short__window">
+					<button class="btn-skin remove-in-short-window">
 						<p>Order Now</p>
 					</button>
 				</nav>
@@ -59,14 +59,14 @@
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</div>
-				<div class="header__text__box">
-					<p class="header__text__1">We’ve got your morning covered with</p>
-					<p class="header__text__2">Coffee</p>
-					<p class="header__text__3">
+				<div class="header-text-box">
+					<p class="header-text-1">We’ve got your morning covered with</p>
+					<p class="header-text-2">Coffee</p>
+					<p class="header-text-3">
 						It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We
 						provide the best for our customers.
 					</p>
-					<button class="btn__skin header__text__button">
+					<button class="btn-skin header-text-button">
 						<p>Order Now</p>
 					</button>
 				</div>
@@ -74,31 +74,31 @@
 		</section>
 
 		<section class="home">
-			<div class="home__text__div">
-				<div class="home__text__box">
-					<p class="home__text__1">Discover the best coffee</p>
-					<p class="home__text__2">
+			<div class="home-text-div">
+				<div class="home-text-box">
+					<p class="home-text-1">Discover the best coffee</p>
+					<p class="home-text-2">
 						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and
 						helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is
 						no doubt that you will enjoy this coffee more than others you have ever tasted.
 					</p>
-					<button class="btn__skin home__text__button">
+					<button class="btn-skin home-text-button">
 						<p>Learn More</p>
 					</button>
 				</div>
 				<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
-					class="home__img remove__in__short__window"
+					class="home-img remove-in-short-window"
 					alt="coffee image"
 					draggable="false"
 				/>
-				<img src="./assets/coffee_blast.svg" class="home__img__decoration" alt="coffee image" draggable="false" />
+				<img src="./assets/coffee_blast.svg" class="home-img-decoration" alt="coffee image" draggable="false" />
 			</div>
-			<div class="home__products__container">
-				<h1 class="home__products__container__title">Enjoy a new blend of coffee style</h1>
-				<p class="home__products__container__text">
+			<div class="home-products-container">
+				<h1 class="home-products-container-title">Enjoy a new blend of coffee style</h1>
+				<p class="home-products-container-text">
 					Explore all flavours on our menu with us. There is always a new worth experiencing
 				</p>
-				<div class="home__products__box__container remove__in__short__window"></div>
+				<div class="home-products-box-container remove-in-short-window"></div>
 			</div>
 		</section>
 
@@ -136,26 +136,25 @@ hamburgerMenu.addEventListener('click', () => {
 });
 
 
-
 const createProductCard = (product) => {
 	const card = document.createElement('div');
 	card.classList.add('product-card');
 
 	card.innerHTML = `
-        <img src="${product.imagem_url}" alt="${product.name}" class="product-card__image" />
-        <h3 class="product-card__title">${product.name}</h3>
-        <p class="product-card__description">${product.short_description}</p>
-        <p class="product-card__price">$${product.price.toFixed(2)}</p>
-        <button class="btn__skin product-card__button"><p>Order Now</p></button>
+        <img src="${product.imagem_url}" alt="${product.name}" class="product-card-image" draggable='false'/>
+        <h3 class="product-card-title">${product.name}</h3>
+        <p class="product-card-description">${product.short_description}</p>
+        <p class="product-card-price">$${product.price.toFixed(2)}</p>
+        <button class="btn-skin product-card-button"><p>Order Now</p></button>
     `;
 
 	return card;
 };
 
 const renderProducts = (products) => {
-	const container = document.querySelector('.home__products__box__container');
+	const container = document.querySelector('.home-products-box-container');
 	if (!container) {
-		console.error('Container with class "home__products__box__container" not found.');
+		console.error('Container with class "home-products-box-container" not found.');
 		return;
 	}
 
@@ -229,7 +228,7 @@ body {
 	}
 }
 
-.btn__skin {
+.btn-skin {
 	z-index: 3;
 	background: var(--btn-order-bg-color);
 	box-shadow: var(--btn-order-shadow);
@@ -265,13 +264,13 @@ body {
 	display: none;
 }
 
-.remove__in__short__window {
+.remove-in-short-window {
 	@media (max-width: 1300px) {
 		display: none !important;
 	}
 }
 
-.remove__in__long__window {
+.remove-in-long-window {
 	@media (min-width: 1301px) {
 		display: none !important;
 	}
@@ -297,7 +296,7 @@ body {
 	}
 }
 
-.header__overlay {
+.header-overlay {
 	z-index: 2;
 	background-image: url(./assets/overlay.svg);
 	width: 100%;
@@ -308,7 +307,7 @@ body {
 	background-repeat: no-repeat;
 }
 
-.header__nav {
+.header-nav {
 	padding: 20px 0px;
 	display: flex;
 	flex-direction: row;
@@ -346,7 +345,7 @@ body {
 	}
 }
 
-.header__title {
+.header-title {
 	z-index: 3;
 	width: auto;
 	height: auto;
@@ -358,7 +357,7 @@ body {
 	color: #ffffff;
 }
 
-.header__text__box {
+.header-text-box {
 	max-width: 527px;
 	position: absolute;
 	top: 25%;
@@ -377,7 +376,7 @@ body {
 	}
 }
 
-.header__text__1 {
+.header-text-1 {
 	font-family: Playfair Display;
 	font-weight: 500;
 	font-size: 22px;
@@ -391,7 +390,7 @@ body {
 	}
 }
 
-.header__text__2 {
+.header-text-2 {
 	font-family: Clicker Script;
 	font-weight: 400;
 	font-size: 220px;
@@ -404,7 +403,7 @@ body {
 	}
 }
 
-.header__text__3 {
+.header-text-3 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
@@ -418,7 +417,7 @@ body {
 	}
 }
 
-.header__text__button {
+.header-text-button {
 	width: 134px;
 	height: 48px;
 }
@@ -441,7 +440,7 @@ body {
 	font-family: 'Playfair Display';
 }
 
-.home__text__div {
+.home-text-div {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -449,7 +448,7 @@ body {
 	gap: 30px;
 }
 
-.home__text__box {
+.home-text-box {
 	display: flex;
 	flex-direction: column;
 
@@ -464,7 +463,7 @@ body {
 	}
 }
 
-.home__text__1 {
+.home-text-1 {
 	width: 100%;
 	text-align: center;
 	font-family: Playfair Display;
@@ -479,7 +478,7 @@ body {
 	}
 }
 
-.home__text__2 {
+.home-text-2 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
@@ -496,18 +495,18 @@ body {
 	}
 }
 
-.home__img {
+.home-img {
 	width: 680px;
 	height: 476px;
 }
 
-.home__text__button {
+.home-text-button {
 	margin-top: 20px;
 	width: 134px;
 	height: 48px;
 }
 
-.home__img__decoration {
+.home-img-decoration {
 	position: absolute;
 	left: 0;
 
@@ -521,7 +520,7 @@ body {
 	}
 }
 
-.home__products__container {
+.home-products-container {
 	margin-top: 100px;
 	display: flex;
 	flex-direction: column;
@@ -533,7 +532,7 @@ body {
 	height: auto;
 }
 
-.home__products__container__title {
+.home-products-container-title {
 	width: 100%;
 	height: auto;
 	font-weight: 700;
@@ -548,7 +547,7 @@ body {
 	}
 }
 
-.home__products__container__text {
+.home-products-container-text {
 	width: 100%;
 	height: auto;
 	font-weight: 400;
@@ -564,7 +563,7 @@ body {
 	}
 }
 
-.home__products__box__container {
+.home-products-box-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -589,14 +588,14 @@ body {
 	position: relative;
 }
 
-.product-card__image {
+.product-card-image {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
 	border-bottom: 1px solid #f9c06a6b;
 }
 
-.product-card__title {
+.product-card-title {
 	width: 100%;
 	height: 50px;
 	text-align: center;
@@ -609,7 +608,7 @@ body {
 	padding: 2px 5px;
 }
 
-.product-card__description {
+.product-card-description {
 	width: 100%;
 	height: 70px;
 	text-align: center;
@@ -617,7 +616,7 @@ body {
 	padding: 2px 5px;
 }
 
-.product-card__price {
+.product-card-price {
 	width: 100%;
 	height: auto;
 	text-align: center;
@@ -629,7 +628,7 @@ body {
 	color: #603809;
 }
 
-.product-card__button {
+.product-card-button {
 	position: absolute;
 	bottom: -24px;
 	left: 50%;
