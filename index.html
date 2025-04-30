@@ -1,133 +1,134 @@
 <!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			as="style"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			as="style"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href="./assets/Coffee.svg" />
+		
+		
+		
+		
+		<title>Bean Scene</title>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="preload"
-		href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		as="style" />
-	<link rel="preload"
-		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		as="style" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		rel="stylesheet" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		rel="stylesheet" />
-	<link rel="icon" href="./assets/Coffee.svg" />
-	
-	
-	
-	
-	<title>Bean Scene</title>
-</head>
-
-<body>
-	<section class="home">
-		<div class="home-overlay">
-			<nav class="home-nav">
-				<h1 class="home-title">Bean Scene</h1>
-				<ul class="home-nav-links remove-in-short-window">
-					<li><a href="#home">Home</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#about">About Us</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-				<div class="hamburger-menu remove-in-long-window">
-					<span></span>
-					<span></span>
-					<span></span>
+	<body>
+		<section class="home">
+			<div class="home__overlay">
+				<nav class="home__nav">
+					<h1 class="home__title">Bean Scene</h1>
+					<ul class="home__nav__links remove__in__short__window">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<div class="hamburger__menu remove__in__long__window">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<button class="btn__skin remove__in__short__window">
+						<p>Order Now</p>
+					</button>
+				</nav>
+				<div class="mobile__menu hidden">
+					<ul>
+						<li><a href="#shop">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
 				</div>
-				<button class="btn-skin remove-in-short-window">
-					<p>Order Now</p>
-				</button>
-			</nav>
-			<div class="mobile-menu hidden">
-				<ul>
-					<li><a href="#shop">Home</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#about">About Us</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
+				<div class="home__text__box">
+					<p class="home__text__1">We’ve got your morning covered with</p>
+					<p class="home__text__2">Coffee</p>
+					<p class="home__text__3">
+						It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We
+						provide the best for our customers.
+					</p>
+					<button class="btn__skin home__text__button">
+						<p>Order Now</p>
+					</button>
+				</div>
 			</div>
-			<div class="home-text-box">
-				<p class="home-text-1">We’ve got your morning covered with</p>
-				<p class="home-text-2">Coffee</p>
-				<p class="home-text-3">
-					It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever
-					have. We
-					provide the best for our customers.
+		</section>
+
+		<section class="shop">
+			<div class="shop__text__div">
+				<div class="shop__text__box">
+					<p class="shop__text__1">Discover the best coffee</p>
+					<p class="shop__text__2">
+						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and
+						helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is
+						no doubt that you will enjoy this coffee more than others you have ever tasted.
+					</p>
+					<button class="btn__skin shop__text__button">
+						<p>Learn More</p>
+					</button>
+				</div>
+				<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
+					class="shop__img remove__in__short__window"
+					alt="coffee image"
+					draggable="false"
+				/>
+				<img src="./assets/coffee_blast.svg" class="shop__img__decoration" alt="coffee image" draggable="false" />
+			</div>
+			<div class="shop__products__container">
+				<h1 class="shop__products__container__title">Enjoy a new blend of coffee style</h1>
+				<p class="shop__products__container__text">
+					Explore all flavours on our menu with us. There is always a new worth experiencing
 				</p>
-				<button class="btn-skin home-text-button">
-					<p>Order Now</p>
+				<div class="shop__products__box__container remove__in__short__window"></div>
+			</div>
+		</section>
+
+		<section class="table">
+			<div class="table__select__buttons__box">
+				<button class="table__select__button btn__skin" id="table__select__button__all">
+					<p>All items</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__warm">
+					<p>Warm drinks</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__cold">
+					<p>Cold drinks</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__snacks">
+					<p>Snacks</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__dessert">
+					<p>Dessert</p>
 				</button>
 			</div>
-		</div>
-	</section>
-
-	<section class="shop">
-		<div class="shop-text-div">
-			<div class="shop-text-box">
-				<p class="shop-text-1">Discover the best coffee</p>
-				<p class="shop-text-2">
-					Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity
-					and
-					helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater.
-					There is
-					no doubt that you will enjoy this coffee more than others you have ever tasted.
-				</p>
-				<button class="btn-skin shop-text-button">
-					<p>Learn More</p>
-				</button>
+			<div class="table__container">
+				<div class="table__box"></div>
 			</div>
-			<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
-				class="shop-img remove-in-short-window" alt="coffee image" draggable="false" />
-			<img src="./assets/coffee_blast.svg" class="shop-img-decoration" alt="coffee image" draggable="false" />
-		</div>
-		<div class="shop-products-container">
-			<h1 class="shop-products-container-title">Enjoy a new blend of coffee style</h1>
-			<p class="shop-products-container-text">
-				Explore all flavours on our menu with us. There is always a new worth experiencing
-			</p>
-			<div class="shop-products-box-container remove-in-short-window"></div>
-		</div>
-	</section>
-
-	<section class="table">
-		<div class="table-select-buttons-box">
-			<button class="table-select-button btn-skin" id="table-select-button-all">
-				<p>All items</p>
-			</button>
-			<button class="table-no-selected-button btn-skin" id="table-select-button-warm">
-				<p>Warm drinks</p>
-			</button>
-			<button class="table-no-selected-button btn-skin" id="table-select-button-cold">
-				<p>Cold drinks</p>
-			</button>
-			<button class="table-no-selected-button btn-skin" id="table-select-button-snacks">
-				<p>Snacks</p>
-			</button>
-			<button class="table-no-selected-button btn-skin" id="table-select-button-dessert">
-				<p>Dessert</p>
-			</button>
-		</div>
-		<div class="table-container">
-			<div class="table-initial-bar">
-				<p>Item</p>
-				<p>Type</p>
-				<p>Price</p>
-			</div>
-			<div class="table-box"></div>
-		</div>
-	</section>
+		</section>
+		
+		
+		
+		
 	
-	
-	
-	
-
 <script>
 
 const readJSON = async (relativePath) => {
@@ -144,40 +145,39 @@ const readJSON = async (relativePath) => {
 	}
 };
 
-const hamburgerMenu = document.querySelector('.hamburger-menu');
-const mobileMenu = document.querySelector('.mobile-menu');
+const hamburgerMenu = document.querySelector('.hamburger__menu');
+const mobileMenu = document.querySelector('.mobile__menu');
 
 hamburgerMenu.addEventListener('click', () => {
-	if (mobileMenu.classList.contains('open')) {
-		mobileMenu.classList.remove('open');
+	if (mobileMenu.classList.contains('mobile__menu__open')) {
+		mobileMenu.classList.remove('mobile__menu__open');
 		setTimeout(() => mobileMenu.classList.add('hidden'), 500);
 	} else {
 		mobileMenu.classList.remove('hidden');
-		setTimeout(() => mobileMenu.classList.add('open'), 10);
+		setTimeout(() => mobileMenu.classList.add('mobile__menu__open'), 10);
 	}
 });
 
 
-
 const createProductCard = (product) => {
 	const card = document.createElement('div');
-	card.classList.add('product-card');
+	card.classList.add('product__card');
 
 	card.innerHTML = `
-        <img src="${product.imagem_url}" alt="${product.name}" class="product-card-image" draggable='false'/>
-        <h3 class="product-card-title">${product.name}</h3>
-        <p class="product-card-description">${product.short_description}</p>
-        <p class="product-card-price">$${product.price.toFixed(2)}</p>
-        <button class="btn-skin product-card-button"><p>Order Now</p></button>
+        <img src="${product.imagem_url}" alt="${product.name}" class="product__card__image" draggable='false'/>
+        <h3 class="product__card__title">${product.name}</h3>
+        <p class="product__card__description">${product.short_description}</p>
+        <p class="product__card__price">$${product.price.toFixed(2)}</p>
+        <button class="btn__skin product__card__button"><p>Order Now</p></button>
     `;
 
 	return card;
 };
 
 const renderProducts = (products) => {
-	const container = document.querySelector('.shop-products-box-container');
+	const container = document.querySelector('.shop__products__box__container');
 	if (!container) {
-		console.error('Container with class "shop-products-box-container" not found.');
+		console.error('Container with class "shop__products__box__container" not found.');
 		return;
 	}
 
@@ -210,21 +210,34 @@ readJSON("./data/all-items.json")
 
 
 const renderTable = (items) => {
-	const tableBox = document.querySelector('.table-box');
-	if (!tableBox) {
-		console.error('Container with class "table-box" not found.');
+	const tableContainer = document.querySelector('.table__container');
+	const tableBox = document.querySelector('.table__box');
+	if (!tableContainer || !tableBox) {
+		console.error('Container with class "table__container" or "table__box" not found.');
 		return;
 	}
 
 	tableBox.innerHTML = '';
 
+	let initialBar = document.querySelector('.table__initial__bar');
+	if (!initialBar) {
+		initialBar = document.createElement('div');
+		initialBar.classList.add('table__initial__bar');
+		initialBar.innerHTML = `
+            <p>Item</p>
+            <p class="remove__in__short__window">Type</p>
+            <p>Price</p>
+        `;
+		tableContainer.insertBefore(initialBar, tableBox);
+	}
+
 	items.forEach((item) => {
 		const row = document.createElement('div');
-		row.classList.add('table-row');
+		row.classList.add('table__row');
 
 		row.innerHTML = `
             <p>${item.name}</p>
-            <p>${item.type}</p>
+            <p class="remove__in__short__window">${item.type}</p>
             <p>$${item.price.toFixed(2)}</p>
         `;
 
@@ -233,22 +246,22 @@ const renderTable = (items) => {
 };
 
 const filterItemsByType = (items, type) => {
-    if (type === 'all') return items;
-    if (type === 'warm') return items.filter((item) => item.type === 'Hot Beverage');
-    if (type === 'cold') return items.filter((item) => item.type === 'Cold Beverage');
-    if (type === 'snacks') return items.filter((item) => item.type === 'Savory Snack');
-    if (type === 'dessert') return items.filter((item) => item.type === 'Bakery');
-    return [];
+	if (type === 'all') return items;
+	if (type === 'warm') return items.filter((item) => item.type === 'Hot Beverage');
+	if (type === 'cold') return items.filter((item) => item.type === 'Cold Beverage');
+	if (type === 'snacks') return items.filter((item) => item.type === 'Savory Snack');
+	if (type === 'dessert') return items.filter((item) => item.type === 'Bakery');
+	return [];
 };
 
 const setupTableButtons = (items) => {
-	const buttons = document.querySelectorAll('.table-select-button, .table-no-selected-button');
+	const buttons = document.querySelectorAll('.table__select__button, .table__no__selected__button');
 	buttons.forEach((button) => {
 		button.addEventListener('click', () => {
-			const selectedType = button.id.replace('table-select-button-', '');
+			const selectedType = button.id.replace('table__select__button__', '');
 
-			buttons.forEach((btn) => btn.classList.replace('table-select-button', 'table-no-selected-button'));
-			button.classList.replace('table-no-selected-button', 'table-select-button');
+			buttons.forEach((btn) => btn.classList.replace('table__select__button', 'table__no__selected__button'));
+			button.classList.replace('table__no__selected__button', 'table__select__button');
 
 			const filteredItems = filterItemsByType(items, selectedType);
 			renderTable(filteredItems);
@@ -271,14 +284,14 @@ readJSON("./data/all-items.json")
 
 </script>
 <style>:root {
-	--btn-order-bg-color: #f9c06a;
-	--btn-order-bg-color-hover: #ffe4bb;
-	--btn-order-text-color: #1e1e1e;
-	--btn-order-shadow: 0px 6px 12px 0px #f9c06a38;
-	--btn-order-font: 'Playfair Display', serif;
-	--text-color-pattern: #ffffff;
-	--text-color-primary: #603809;
-	--text-color-secondary: #707070;
+	--btn__order__bg__color: #f9c06a;
+	--btn__order__bg__color__hover: #ffe4bb;
+	--btn__order__text__color: #1e1e1e;
+	--btn__order__shadow: 0px 6px 12px 0px #f9c06a38;
+	--btn__order__font: 'Playfair Display', serif;
+	--text__color__pattern: #ffffff;
+	--text__color__primary: #603809;
+	--text__color__secondary: #707070;
 }
 
 * {
@@ -316,12 +329,12 @@ body {
 	}
 }
 
-.btn-skin {
+.btn__skin {
 	z-index: 3;
-	background: var(--btn-order-bg-color);
-	box-shadow: var(--btn-order-shadow);
-	color: var(--btn-order-text-color);
-	font-family: var(--btn-order-font);
+	background: var(--btn__order__bg__color);
+	box-shadow: var(--btn__order__shadow);
+	color: var(--btn__order__text__color);
+	font-family: var(--btn__order__font);
 
 	border-radius: 24px;
 	border: none;
@@ -335,7 +348,7 @@ body {
 		box-shadow 0.3s ease;
 
 	&:hover {
-		background: var(--btn-order-bg-color-hover);
+		background: var(--btn__order__bg__color__hover);
 	}
 
 	p {
@@ -350,13 +363,13 @@ body {
 	display: none;
 }
 
-.remove-in-short-window {
+.remove__in__short__window {
 	@media (max-width: 1300px) {
 		display: none !important;
 	}
 }
 
-.remove-in-long-window {
+.remove__in__long__window {
 	@media (min-width: 1301px) {
 		display: none !important;
 	}
@@ -382,7 +395,7 @@ body {
 	}
 }
 
-.home-overlay {
+.home__overlay {
 	z-index: 2;
 	background-image: url(./assets/overlay.svg);
 	width: 100%;
@@ -393,7 +406,7 @@ body {
 	background-repeat: no-repeat;
 }
 
-.home-nav {
+.home__nav {
 	padding: 20px 0px;
 	display: flex;
 	flex-direction: row;
@@ -425,7 +438,7 @@ body {
 				line-height: 100%;
 				letter-spacing: 0%;
 				text-decoration: none;
-				color: var(--text-color-pattern);
+				color: var(--text__color__pattern);
 				position: relative;
 				transition: color 0.3s;
 				user-select: none;
@@ -437,7 +450,7 @@ body {
 					left: 0;
 					width: 100%;
 					height: 2px;
-					background: var(--text-color-pattern);
+					background: var(--text__color__pattern);
 					transform: scaleX(0);
 					transform-origin: center;
 					transition: transform 0.3s ease-in-out;
@@ -451,7 +464,7 @@ body {
 	}
 }
 
-.home-title {
+.home__title {
 	z-index: 3;
 	width: auto;
 	height: auto;
@@ -460,10 +473,10 @@ body {
 	font-size: 35px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-pattern);
+	color: var(--text__color__pattern);
 }
 
-.home-text-box {
+.home__text__box {
 	max-width: 527px;
 	position: absolute;
 	top: 25%;
@@ -480,15 +493,17 @@ body {
 		left: 10%;
 		top: 30%;
 	}
+
+	background: green;
 }
 
-.home-text-1 {
+.home__text__1 {
 	font-family: Playfair Display;
 	font-weight: 500;
 	font-size: 22px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-pattern);
+	color: var(--text__color__pattern);
 	text-align: start;
 
 	@media (max-width: 1300px) {
@@ -496,26 +511,26 @@ body {
 	}
 }
 
-.home-text-2 {
+.home__text__2 {
 	font-family: Clicker Script;
 	font-weight: 400;
 	font-size: 220px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-pattern);
+	color: var(--text__color__pattern);
 
 	@media (max-width: 1300px) {
 		font-size: 120px;
 	}
 }
 
-.home-text-3 {
+.home__text__3 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
-	color: var(--text-color-pattern);
+	color: var(--text__color__pattern);
 
 	@media (max-width: 1300px) {
 		text-align: center;
@@ -523,12 +538,12 @@ body {
 	}
 }
 
-.home-text-button {
+.home__text__button {
 	width: 134px;
 	height: 48px;
 }
 
-.hamburger-menu {
+.hamburger__menu {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
@@ -536,13 +551,13 @@ body {
 	z-index: 4;
 }
 
-.hamburger-menu span {
+.hamburger__menu span {
 	width: 25px;
 	height: 3px;
-	background-color: var(--text-color-pattern);
+	background-color: var(--text__color__pattern);
 }
 
-.mobile-menu {
+.mobile__menu {
 	z-index: 3;
 	position: absolute;
 	top: 0;
@@ -554,44 +569,44 @@ body {
 	height: 0;
 	overflow: hidden;
 	transition: height 0.5s ease-in-out;
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transform: translateY(-20px);
+		transition:
+			opacity 0.5s ease-in-out,
+			transform 0.5s ease-in-out;
+
+		li {
+			width: 100%;
+			text-align: center;
+			padding: 20px 0;
+			background-color: rgba(0, 0, 0, 0.8);
+			border-bottom: 1px solid var(--text__color__pattern);
+
+			a {
+				text-decoration: none;
+				color: var(--text__color__pattern);
+				font-family: Playfair Display;
+				font-size: 24px;
+				font-weight: bold;
+				display: block;
+				width: 100%;
+			}
+		}
+	}
 }
 
-.mobile-menu ul {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transform: translateY(-20px);
-	transition:
-		opacity 0.5s ease-in-out,
-		transform 0.5s ease-in-out;
-}
-
-.mobile-menu ul li {
-	width: 100%;
-	text-align: center;
-	padding: 20px 0;
-	background-color: rgba(0, 0, 0, 0.8);
-	border-bottom: 1px solid var(--text-color-pattern);
-}
-
-.mobile-menu ul li a {
-	text-decoration: none;
-	color: var(--text-color-pattern);
-	font-family: Playfair Display;
-	font-size: 24px;
-	font-weight: bold;
-	display: block;
-	width: 100%;
-}
-
-.mobile-menu.open {
+.mobile__menu__open {
 	height: 300px;
 }
 
-.mobile-menu.open ul {
+.mobile__menu__open ul {
 	opacity: 1;
 	transform: translateY(0);
 }
@@ -618,7 +633,7 @@ body {
 	}
 }
 
-.shop-text-div {
+.shop__text__div {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -626,7 +641,7 @@ body {
 	gap: 30px;
 }
 
-.shop-text-box {
+.shop__text__box {
 	display: flex;
 	flex-direction: column;
 
@@ -641,7 +656,7 @@ body {
 	}
 }
 
-.shop-text-1 {
+.shop__text__1 {
 	width: 100%;
 	text-align: center;
 	font-family: Playfair Display;
@@ -649,41 +664,40 @@ body {
 	font-size: 54px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 
 	@media (max-width: 1300px) {
 		font-size: 28px;
 	}
 }
 
-.shop-text-2 {
+.shop__text__2 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
-	color: var(--text-color-secondary);
+	color: var(--text__color__secondary);
 	text-align: start;
 
 	@media (max-width: 1300px) {
 		padding: 20px;
 		font-size: 15px;
-		font-size: 15px;
 		line-height: 25.5px;
 	}
 }
 
-.shop-img {
+.shop__img {
 	width: 680px;
 	height: 476px;
 }
 
-.shop-text-button {
+.shop__text__button {
 	width: 134px;
 	height: 48px;
 }
 
-.shop-img-decoration {
+.shop__img__decoration {
 	position: absolute;
 	left: 0;
 
@@ -697,7 +711,7 @@ body {
 	}
 }
 
-.shop-products-container {
+.shop__products__container {
 	width: 100%;
 	margin-top: 100px;
 	display: flex;
@@ -709,14 +723,14 @@ body {
 	height: auto;
 }
 
-.shop-products-container-title {
+.shop__products__container__title {
 	width: 100%;
 	height: auto;
 	font-weight: 700;
 	font-size: 54px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 	text-align: center;
 
 	@media (max-width: 1300px) {
@@ -724,14 +738,14 @@ body {
 	}
 }
 
-.shop-products-container-text {
+.shop__products__container__text {
 	width: 100%;
 	height: auto;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
-	color: var(--text-color-secondary);
+	color: var(--text__color__secondary);
 	text-align: center;
 
 	@media (max-width: 1300px) {
@@ -740,7 +754,7 @@ body {
 	}
 }
 
-.shop-products-box-container {
+.shop__products__box__container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -754,7 +768,7 @@ body {
 	gap: 30px;
 }
 
-.product-card {
+.product__card {
 	width: 300px;
 	height: 500px;
 	display: flex;
@@ -767,7 +781,7 @@ body {
 	position: relative;
 }
 
-.product-card-image {
+.product__card__image {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
@@ -775,28 +789,27 @@ body {
 	overflow: hidden;
 }
 
-.product-card-title {
+.product__card__title {
 	width: 100%;
 	height: 50px;
 	text-align: center;
-	height: 29;
 	font-weight: 700;
 	font-size: 22px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 	padding: 2px 5px;
 }
 
-.product-card-description {
+.product__card__description {
 	width: 100%;
 	height: 70px;
 	text-align: center;
-	color: var(--text-color-secondary);
+	color: var(--text__color__secondary);
 	padding: 2px 5px;
 }
 
-.product-card-price {
+.product__card__price {
 	width: 100%;
 	height: auto;
 	text-align: center;
@@ -805,10 +818,10 @@ body {
 	font-size: 20px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 }
 
-.product-card-button {
+.product__card__button {
 	position: absolute;
 	bottom: -24px;
 	left: 50%;
@@ -834,7 +847,7 @@ body {
 	}
 }
 
-.table-select-buttons-box {
+.table__select__buttons__box {
 	width: 100%;
 	max-width: 1300px;
 	height: auto;
@@ -855,24 +868,24 @@ body {
 		flex-wrap: wrap;
 		justify-content: center;
 
-		&> :nth-child(1) {
+		& > :nth-child(1) {
 			width: calc(100% - 10px);
 		}
 
-		&> :nth-child(n + 2) {
+		& > :nth-child(n + 2) {
 			width: calc(50% - 10px);
 		}
 	}
 }
 
-.table-select-button {
+.table__select__button {
 	width: 121px;
 	height: 40px;
-	border: 2px solid var(--btn-order-bg-color);
-	font-family: var(--btn-order-font);
+	border: 2px solid var(--btn__order__bg__color);
+	font-family: var(--btn__order__font);
 
 	p {
-		color: var(--text-color-primary);
+		color: var(--text__color__primary);
 		width: 61;
 		height: 20;
 		font-weight: 700;
@@ -882,15 +895,15 @@ body {
 	}
 }
 
-.table-no-selected-button {
+.table__no__selected__button {
 	width: 121px;
 	height: 40px;
-	background-color: var(--text-color-pattern);
-	border: 2px solid var(--btn-order-bg-color);
+	background-color: var(--text__color__pattern);
+	border: 2px solid var(--btn__order__bg__color);
 	box-shadow: none;
 
 	p {
-		color: var(--text-color-primary);
+		color: var(--text__color__primary);
 		width: 61;
 		height: 20;
 		font-weight: 700;
@@ -899,7 +912,7 @@ body {
 	}
 }
 
-.table-container {
+.table__container {
 	width: 100%;
 	max-width: 1300px;
 	height: auto;
@@ -907,16 +920,17 @@ body {
 	border-top-right-radius: 10px;
 	border-width: 1px;
 	border-style: solid;
-	border-color: var(--text-color-pattern);
-	border: 2px solid #F9C06A6B;
+	border-color: var(--text__color__pattern);
+	border: 2px solid #f9c06a6b;
 	overflow: hidden;
 }
 
-.table-box {
+.table__box {
 	width: 100%;
 	height: 500px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	
 
 	&::-webkit-scrollbar {
 		width: 0px;
@@ -933,9 +947,13 @@ body {
 	&::-webkit-scrollbar-thumb:hover {
 		background-color: #3c3c3c;
 	}
+
+	@media (max-width: 1300px) {
+		margin: 3px;
+	}
 }
 
-.table-initial-bar {
+.table__initial__bar {
 	position: relative;
 	display: flex;
 	flex-direction: row;
@@ -943,7 +961,7 @@ body {
 	align-items: center;
 	width: 100%;
 	padding: 10px;
-	background: #FFEED8;
+	background: #ffeed8;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 
@@ -956,12 +974,18 @@ body {
 		font-weight: 700;
 		font-size: 22px;
 		line-height: 100%;
-		font-family: var(--btn-order-font);
-		color: var(--text-color-primary);
+		font-family: var(--btn__order__font);
+		color: var(--text__color__primary);
+
+		@media (max-width: 1300px) {
+			&:last-child {
+				text-align: center;
+			}
+		}
 	}
 }
 
-.table-row {
+.table__row {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -969,14 +993,9 @@ body {
 	width: 100%;
 	height: auto;
 	padding: 10px;
-	border-bottom: 1px solid #4428086B;
 
-	&:first-child {
-		border-top: none;
-	}
-
-	&:last-child {
-		border-bottom: none;
+	&:nth-child(2n) {
+		background-color: #FFEED8;
 	}
 
 	p {
@@ -990,8 +1009,13 @@ body {
 		font-size: 22px;
 		line-height: 100%;
 		letter-spacing: 0%;
+
+		@media (max-width: 1300px) {
+			&:last-child {
+				text-align: center;
+			}
+		}
 	}
 }</style>
 </body>
-
 </html>
