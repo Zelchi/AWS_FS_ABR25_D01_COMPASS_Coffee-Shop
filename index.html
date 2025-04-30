@@ -27,6 +27,7 @@
 		
 		
 		
+		
 		<title>Coffee Shop</title>
 	</head>
 
@@ -35,16 +36,29 @@
 			<div class="header__overlay">
 				<nav class="header__nav">
 					<h1 class="header__title">Bean Scene</h1>
+					<ul class="header__nav__links remove__in__short__window">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<div class="hamburger-menu remove__in__long__window">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<button class="btn__skin remove__in__short__window">
+						<p>Order Now</p>
+					</button>
+				</nav>
+				<div class="mobile-menu hidden">
 					<ul>
 						<li><a href="#home">Home</a></li>
 						<li><a href="#menu">Menu</a></li>
 						<li><a href="#about">About Us</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
-					<button class="btn__skin">
-						<p>Order Now</p>
-					</button>
-				</nav>
+				</div>
 				<div class="header__text__box">
 					<p class="header__text__1">We’ve got your morning covered with</p>
 					<p class="header__text__2">Coffee</p>
@@ -73,7 +87,7 @@
 					</button>
 				</div>
 				<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
-					class="home__img"
+					class="home__img remove__in__short__window"
 					alt="coffee image"
 					draggable="false"
 				/>
@@ -84,10 +98,11 @@
 				<p class="home__products__container__text">
 					Explore all flavours on our menu with us. There is always a new worth experiencing
 				</p>
-				<div class="home__products__box__container"></div>
+				<div class="home__products__box__container remove__in__short__window"></div>
 			</div>
 		</section>
 
+		
 		
 		
 	
@@ -95,24 +110,38 @@
 
 const readJSON = async (relativePath) => {
 	try {
-		const response = await fetch(relativePath)
+		const response = await fetch(relativePath);
 		if (!response.ok) {
-			throw new Error(`Error fetching JSON: ${response.statusText}`)
+			throw new Error(`Error fetching JSON: ${response.statusText}`);
 		}
-		const jsonData = await response.json()
-		return jsonData
+		const jsonData = await response.json();
+		return jsonData;
 	} catch (error) {
-		console.error(error)
-		throw error
+		console.error(error);
+		throw error;
 	}
 };
 
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+hamburgerMenu.addEventListener('click', () => {
+	if (mobileMenu.classList.contains('open')) {
+		mobileMenu.classList.remove('open');
+		setTimeout(() => mobileMenu.classList.add('hidden'), 500);
+	} else {
+		mobileMenu.classList.remove('hidden');
+		setTimeout(() => mobileMenu.classList.add('open'), 10);
+	}
+});
+
+
 
 const createProductCard = (product) => {
-    const card = document.createElement('div');
-    card.classList.add('product-card');
+	const card = document.createElement('div');
+	card.classList.add('product-card');
 
-    card.innerHTML = `
+	card.innerHTML = `
         <img src="${product.imagem_url}" alt="${product.name}" class="product-card__image" />
         <h3 class="product-card__title">${product.name}</h3>
         <p class="product-card__description">${product.short_description}</p>
@@ -120,41 +149,42 @@ const createProductCard = (product) => {
         <button class="btn__skin product-card__button"><p>Order Now</p></button>
     `;
 
-    return card;
+	return card;
 };
 
 const renderProducts = (products) => {
-    const container = document.querySelector('.home__products__box__container');
-    if (!container) {
-        console.error('Container with class "home__products__box__container" not found.');
-        return;
-    }
+	const container = document.querySelector('.home__products__box__container');
+	if (!container) {
+		console.error('Container with class "home__products__box__container" not found.');
+		return;
+	}
 
-    container.innerHTML = '';
+	container.innerHTML = '';
 
-    products.forEach((product) => {
-        const card = createProductCard(product);
-        container.appendChild(card);
-    });
+	products.forEach((product) => {
+		const card = createProductCard(product);
+		container.appendChild(card);
+	});
 };
 
 const getRandomProducts = (data, count) => {
-    const shuffled = data.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, count);
+	const shuffled = data.sort(() => 0.5 - Math.random());
+	return shuffled.slice(0, count);
 };
 
 readJSON("./data/all-items.json")
-    .then((response) => {
-        if (response.status === 'success' && Array.isArray(response.data)) {
-            const randomProducts = getRandomProducts(response.data, 4);
-            renderProducts(randomProducts);
-        } else {
-            console.error('Invalid JSON structure:', response);
-        }
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
+	.then((response) => {
+		if (response.status === 'success' && Array.isArray(response.data)) {
+			const randomProducts = getRandomProducts(response.data, 4);
+			renderProducts(randomProducts);
+		} else {
+			console.error('Invalid JSON structure:', response);
+		}
+	})
+	.catch((error) => {
+		console.error('Error:', error);
+	});
+
 </script>
 <style>:root {
 	--btn-order-bg-color: #f9c06a;
@@ -230,6 +260,22 @@ body {
 		color: #1e1e1e;
 	}
 }
+
+.hidden {
+	display: none;
+}
+
+.remove__in__short__window {
+	@media (max-width: 1300px) {
+		display: none !important;
+	}
+}
+
+.remove__in__long__window {
+	@media (min-width: 1301px) {
+		display: none !important;
+	}
+}
 </style>
 <style>.header {
 	z-index: 1;
@@ -262,24 +308,18 @@ body {
 	background-repeat: no-repeat;
 }
 
-.header__title {
-	z-index: 3;
-	width: 135px;
-	height: 46px;
-	font-family: Clicker Script;
-	font-weight: 400;
-	font-size: 35px;
-	line-height: 100%;
-	letter-spacing: 0%;
-	color: #ffffff;
-}
-
 .header__nav {
-	margin-top: 20px;
+	padding: 20px 0px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	align-items: center;
 	width: 100%;
+
+	@media (max-width: 1300px) {
+		justify-content: space-between;
+		padding: 10px 20px;
+	}
 
 	ul {
 		display: flex;
@@ -304,12 +344,18 @@ body {
 			}
 		}
 	}
+}
 
-	@media (max-width: 1300px) {
-		ul {
-			display: none;
-		}
-	}
+.header__title {
+	z-index: 3;
+	width: auto;
+	height: auto;
+	font-family: Clicker Script;
+	font-weight: 400;
+	font-size: 35px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #ffffff;
 }
 
 .header__text__box {
@@ -365,7 +411,7 @@ body {
 	line-height: 34px;
 	letter-spacing: 0%;
 	color: #ffffff;
-	
+
 	@media (max-width: 1300px) {
 		text-align: center;
 		font-size: 15px;
@@ -453,10 +499,6 @@ body {
 .home__img {
 	width: 680px;
 	height: 476px;
-
-	@media (max-width: 1300px) {
-		display: none;
-	}
 }
 
 .home__text__button {
@@ -532,10 +574,6 @@ body {
 	height: auto;
 	padding: 30px 0;
 	gap: 10px;
-
-	@media (max-width: 1300px) {
-		display: none;
-	}
 }
 
 .product-card {
@@ -545,8 +583,8 @@ body {
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
-	border: 1px solid #F9C06A6B;
-	background-color: #FFF9F1;
+	border: 1px solid #f9c06a6b;
+	background-color: #fff9f1;
 	gap: 5px;
 	position: relative;
 }
@@ -555,7 +593,7 @@ body {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
-	border-bottom: 1px solid #F9C06A6B;
+	border-bottom: 1px solid #f9c06a6b;
 }
 
 .product-card__title {
@@ -599,6 +637,76 @@ body {
 	width: 134px;
 	height: 48px;
 	text-align: center;
-}</style>
+}
+</style>
+<style>.hamburger-menu {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+	z-index: 4;
+}
+
+.hamburger-menu span {
+	width: 25px;
+	height: 3px;
+	background-color: #ffffff;
+}
+
+.mobile-menu {
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	width: 100vw;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 0;
+	overflow: hidden;
+	transition: height 0.5s ease-in-out;
+}
+
+.mobile-menu ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transform: translateY(-20px);
+	transition:
+		opacity 0.5s ease-in-out,
+		transform 0.5s ease-in-out;
+}
+
+.mobile-menu ul li {
+	width: 100%;
+	text-align: center;
+	padding: 20px 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(5px);
+	border-bottom: 1px solid #ffffff;
+}
+
+.mobile-menu ul li a {
+	text-decoration: none;
+	color: #ffffff;
+	font-family: Playfair Display;
+	font-size: 24px;
+	font-weight: bold;
+	display: block;
+	width: 100%;
+}
+
+.mobile-menu.open {
+	height: 300px;
+}
+
+.mobile-menu.open ul {
+	opacity: 1;
+	transform: translateY(0);
+}
+</style>
 </body>
 </html>
