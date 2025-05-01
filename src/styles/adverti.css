@@ -1,0 +1,66 @@
+.adverti {
+    width: 100%;
+    height: 574px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    background-color: #603809;
+    background: linear-gradient(270.07deg, #603809 38%, #251503 99.95%);
+
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+
+    @media (max-width: 1300px) {
+        flex-direction: column;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        overflow: visible;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        position: relative;
+
+        h1 {
+            width: 575px;
+            height: auto;
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--text__color__pattern);
+        }
+
+        h2 {
+            width: 409px;
+            height: auto;
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--text__color__pattern);
+        }
+
+        img {
+            background-color: black;
+            width: 300px;
+            height: 467px;
+
+            position: absolute;
+            bottom: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        button {
+            width: 134px;
+            height: 48px;
+        }
+    }
+}

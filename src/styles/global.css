@@ -1,12 +1,12 @@
 :root {
-	--btn-order-bg-color: #f9c06a;
-	--btn-order-bg-color-hover: #ffe4bb;
-	--btn-order-text-color: #1e1e1e;
-	--btn-order-shadow: 0px 6px 12px 0px #f9c06a38;
-	--btn-order-font: 'Playfair Display', serif;
-	--text-color-pattern: #FFFFFF;
-	--text-color-primary: #603809;
-	--text-color-secondary: #707070;
+	--btn__order__bg__color: #f9c06a;
+	--btn__order__bg__color__hover: #ffe4bb;
+	--btn__order__text__color: #1e1e1e;
+	--btn__order__shadow: 0px 6px 12px 0px #f9c06a38;
+	--btn__order__font: 'Playfair Display', serif;
+	--text__color__pattern: #ffffff;
+	--text__color__primary: #603809;
+	--text__color__secondary: #707070;
 }
 
 * {
@@ -44,12 +44,12 @@ body {
 	}
 }
 
-.btn-skin {
+.btn__skin {
 	z-index: 3;
-	background: var(--btn-order-bg-color);
-	box-shadow: var(--btn-order-shadow);
-	color: var(--btn-order-text-color);
-	font-family: var(--btn-order-font);
+	background: var(--btn__order__bg__color);
+	box-shadow: var(--btn__order__shadow);
+	color: var(--btn__order__text__color);
+	font-family: var(--btn__order__font);
 
 	border-radius: 24px;
 	border: none;
@@ -63,7 +63,7 @@ body {
 		box-shadow 0.3s ease;
 
 	&:hover {
-		background: var(--btn-order-bg-color-hover);
+		background: var(--btn__order__bg__color__hover);
 	}
 
 	p {
@@ -78,13 +78,13 @@ body {
 	display: none;
 }
 
-.remove-in-short-window {
+.remove__in__short__window {
 	@media (max-width: 1300px) {
 		display: none !important;
 	}
 }
 
-.remove-in-long-window {
+.remove__in__long__window {
 	@media (min-width: 1301px) {
 		display: none !important;
 	}

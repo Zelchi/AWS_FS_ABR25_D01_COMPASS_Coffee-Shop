@@ -2,23 +2,23 @@ import { readJSON } from './global.js';
 
 const createProductCard = (product) => {
 	const card = document.createElement('div');
-	card.classList.add('product-card');
+	card.classList.add('product__card');
 
 	card.innerHTML = `
-        <img src="${product.imagem_url}" alt="${product.name}" class="product-card-image" draggable='false'/>
-        <h3 class="product-card-title">${product.name}</h3>
-        <p class="product-card-description">${product.short_description}</p>
-        <p class="product-card-price">$${product.price.toFixed(2)}</p>
-        <button class="btn-skin product-card-button"><p>Order Now</p></button>
+        <img src="${product.imagem_url}" alt="${product.name}" class="product__card__image" draggable='false'/>
+        <h3 class="product__card__title">${product.name}</h3>
+        <p class="product__card__description">${product.short_description}</p>
+        <p class="product__card__price">$${product.price.toFixed(2)}</p>
+        <button class="btn__skin product__card__button"><p>Order Now</p></button>
     `;
 
 	return card;
 };
 
 const renderProducts = (products) => {
-	const container = document.querySelector('.shop-products-box-container');
+	const container = document.querySelector('.shop__products__box__container');
 	if (!container) {
-		console.error('Container with class "shop-products-box-container" not found.');
+		console.error('Container with class "shop__products__box__container" not found.');
 		return;
 	}
 

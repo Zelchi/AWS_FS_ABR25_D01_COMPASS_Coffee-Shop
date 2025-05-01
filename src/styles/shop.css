@@ -2,8 +2,7 @@
 	z-index: 1;
 	user-select: none;
 
-	width: 100%;
-	min-height: 100vh;
+	width: 90%;
 	height: auto;
 	margin-top: 100px;
 
@@ -12,16 +11,18 @@
 
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	justify-content: center;
 	align-items: center;
 	font-family: 'Playfair Display';
 
 	@media (max-width: 1300px) {
 		margin-top: 30px;
+		width: 100%;
 	}
 }
 
-.shop-text-div {
+.shop__text__div {
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -29,7 +30,7 @@
 	gap: 30px;
 }
 
-.shop-text-box {
+.shop__text__box {
 	display: flex;
 	flex-direction: column;
 
@@ -44,7 +45,7 @@
 	}
 }
 
-.shop-text-1 {
+.shop__text__1 {
 	width: 100%;
 	text-align: center;
 	font-family: Playfair Display;
@@ -52,41 +53,40 @@
 	font-size: 54px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 
 	@media (max-width: 1300px) {
 		font-size: 28px;
 	}
 }
 
-.shop-text-2 {
+.shop__text__2 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
-	color: var(--text-color-secondary);
+	color: var(--text__color__secondary);
 	text-align: start;
 
 	@media (max-width: 1300px) {
 		padding: 20px;
 		font-size: 15px;
-		font-size: 15px;
 		line-height: 25.5px;
 	}
 }
 
-.shop-img {
-	width: 680px;
-	height: 476px;
+.shop__img {
+	max-width: 680px;
+	max-height: 476px;
 }
 
-.shop-text-button {
+.shop__text__button {
 	width: 134px;
 	height: 48px;
 }
 
-.shop-img-decoration {
+.shop__img__decoration {
 	position: absolute;
 	left: 0;
 
@@ -100,7 +100,8 @@
 	}
 }
 
-.shop-products-container {
+.shop__products__container {
+	width: 100%;
 	margin-top: 100px;
 	display: flex;
 	flex-direction: column;
@@ -108,18 +109,17 @@
 	align-items: center;
 	gap: 20px;
 	padding: 20px;
-	width: 100%;
 	height: auto;
 }
 
-.shop-products-container-title {
+.shop__products__container__title {
 	width: 100%;
 	height: auto;
 	font-weight: 700;
 	font-size: 54px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 	text-align: center;
 
 	@media (max-width: 1300px) {
@@ -127,14 +127,14 @@
 	}
 }
 
-.shop-products-container-text {
+.shop__products__container__text {
 	width: 100%;
 	height: auto;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
-	color: var(--text-color-secondary);
+	color: var(--text__color__secondary);
 	text-align: center;
 
 	@media (max-width: 1300px) {
@@ -143,60 +143,62 @@
 	}
 }
 
-.shop-products-box-container {
+.shop__products__box__container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 
 	width: 100%;
+	max-width: 1300px;
+
 	height: auto;
 	padding: 30px 0;
-	gap: 10px;
+	gap: 30px;
 }
 
-.product-card {
+.product__card {
 	width: 300px;
 	height: 500px;
 	display: flex;
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
-	border: 1px solid #f9c06a6b;
+	border: 2px solid #f9c06a6b;
 	background-color: #fff9f1;
 	gap: 5px;
 	position: relative;
 }
 
-.product-card-image {
+.product__card__image {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
-	border-bottom: 1px solid #f9c06a6b;
+	border-bottom: 2px solid #f9c06a6b;
+	overflow: hidden;
 }
 
-.product-card-title {
+.product__card__title {
 	width: 100%;
 	height: 50px;
 	text-align: center;
-	height: 29;
 	font-weight: 700;
 	font-size: 22px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 	padding: 2px 5px;
 }
 
-.product-card-description {
+.product__card__description {
 	width: 100%;
 	height: 70px;
 	text-align: center;
-	color: var(--text-color-secondary);
+	color: var(--text__color__secondary);
 	padding: 2px 5px;
 }
 
-.product-card-price {
+.product__card__price {
 	width: 100%;
 	height: auto;
 	text-align: center;
@@ -205,10 +207,10 @@
 	font-size: 20px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 }
 
-.product-card-button {
+.product__card__button {
 	position: absolute;
 	bottom: -24px;
 	left: 50%;
