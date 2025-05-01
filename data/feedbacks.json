@@ -1,0 +1,61 @@
+{
+	"status": "success",
+	"data": [
+		{
+			"id": 1,
+			"full_name": "Laura Mitchell",
+			"profession": "Graphic Designer",
+			"image_url": "https://randomuser.me/api/portraits/women/68.jpg",
+			"message": "I’m constantly brainstorming new ideas, and this café is the perfect place for inspiration. The cozy ambiance, paired with their exceptional coffee, makes it my go-to spot for both work and relaxation. The team is always welcoming, and the menu never disappoints. I always leave feeling refreshed and ready to take on the day. Highly recommended for anyone in need of a great cup of coffee and a peaceful atmosphere."
+		},
+		{
+			"id": 2,
+			"full_name": "Carlos Eduardo Martins",
+			"profession": "Software Developer",
+			"image_url": "https://randomuser.me/api/portraits/men/75.jpg",
+			"message": "This café has become my sanctuary. Whether it’s the smooth espresso to start my day or the cozy environment that helps me focus during meetings, this place has it all. The staff is friendly, and the atmosphere is perfect for getting things done or taking a relaxing break. I highly recommend it to anyone looking for a great cup of coffee and a space that makes work feel just a little bit easier."
+		},
+		{
+			"id": 3,
+			"full_name": "Aisha Khan",
+			"profession": "Journalist",
+			"image_url": "https://randomuser.me/api/portraits/women/44.jpg",
+			"message": "As a student, I’m always looking for the perfect place to study, and this café has quickly become my favorite. The quiet yet vibrant atmosphere helps me focus, and the coffee is amazing – it keeps me energized through long study sessions. I love how welcoming the staff is, and the Wi-Fi is fast, which makes it easy to get my work done. Whether I’m cramming for exams or just taking a break between classes, this place is my go-to."
+		},
+		{
+			"id": 4,
+			"full_name": "Tomás Ribeiro",
+			"profession": "Photographer",
+			"image_url": "https://randomuser.me/api/portraits/men/23.jpg",
+			"message": "I recently tried the Hazelnut Cold Foam Brew for the first time, and I was blown away by how smooth and perfectly balanced it was. It wasn’t too sweet, which made it ideal for my editing sessions. The café’s ambiance is also a huge plus—it’s quiet, comfortable, and perfect for focusing on creative work. I’ll definitely be coming back for more."
+		},
+		{
+			"id": 5,
+			"full_name": "Nina Carter",
+			"profession": "Marketing Manager",
+			"image_url": "https://randomuser.me/api/portraits/women/11.jpg",
+			"message": "Their Vanilla Bean Frappuccino has become my go-to treat every afternoon. It’s the perfect balance of sweetness and creaminess, and it always gives me the energy boost I need to finish my day. The staff is incredibly friendly, and the cozy chairs make it easy to relax and unwind. This café has truly become my favorite spot for a quick break."
+		},
+		{
+			"id": 6,
+			"full_name": "Ravi Desai",
+			"profession": "UI/UX Designer",
+			"image_url": "https://randomuser.me/api/portraits/men/42.jpg",
+			"message": "The Chai Latte here is absolutely perfect—well-balanced, not too spicy, and just the right amount of sweetness. I love coming here to work on my laptop because the environment is so peaceful and distraction-free. The staff is always welcoming, and the Wi-Fi is fast, which makes it easy to stay productive. This café is a hidden gem for anyone who needs a quiet place to work."
+		},
+		{
+			"id": 7,
+			"full_name": "Julia Nakamura",
+			"profession": "Architect",
+			"image_url": "https://randomuser.me/api/portraits/women/51.jpg",
+			"message": "The spinach & feta wrap paired with an espresso has become my ultimate power combo for lunch breaks. The wrap is always fresh and flavorful, and the espresso gives me the perfect energy boost to get through the rest of my day. The café’s atmosphere is warm and inviting, making it a great place to recharge and refocus. Highly recommend this spot to anyone looking for a quick yet satisfying meal."
+		},
+		{
+			"id": 8,
+			"full_name": "Noah Williams",
+			"profession": "Entrepreneur",
+			"image_url": "https://randomuser.me/api/portraits/men/36.jpg",
+			"message": "This café is my go-to spot for business meetings over coffee. The ambiance strikes the perfect balance between professional and relaxed, making it ideal for productive conversations. The Caramel Macchiato is hands down one of the best I’ve ever had—rich, smooth, and perfectly sweet. If you’re looking for a place to work or meet clients, this is the place to be."
+		}
+	]
+}
