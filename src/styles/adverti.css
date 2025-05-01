@@ -1,81 +1,81 @@
 .adverti {
-    width: 100%;
-    height: 600px;
+	width: 100%;
+	height: 600px;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 
-    gap: 10%;
-    margin-top: 100px;
-    margin-bottom: 100px;
+	gap: 10%;
+	margin-top: 100px;
+	margin-bottom: 100px;
 
-    background-color: #603809;
-    background: linear-gradient(270.07deg, #603809 38%, #251503 99.95%);
+	background-color: #603809;
+	background: linear-gradient(270.07deg, #603809 38%, #251503 99.95%);
 
-    font-family: 'Playfair Display', serif;
+	font-family: 'Playfair Display', serif;
 
-    @media (max-width: 1300px) {
-        padding-top: 80px;
-        justify-content: start;
-        flex-direction: column;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
+	@media (max-width: 1300px) {
+		padding-top: 80px;
+		justify-content: start;
+		flex-direction: column;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
 }
 
 .adverti__text__box {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    gap: 30px;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	gap: 30px;
 
-    @media (max-width: 1300px) {
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
+	@media (max-width: 1300px) {
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
 }
 
 .adverti__text__title {
-    width: 80%;
-    max-width: 730px;
-    height: auto;
-    font-size: 54px;
-    font-weight: 700;
-    color: var(--text__color__pattern);
+	width: 80%;
+	max-width: 730px;
+	height: auto;
+	font-size: 54px;
+	font-weight: 700;
+	color: var(--text__color__pattern);
 
-    @media (max-width: 1300px) {
-        max-width: 100%;
-        font-size: 40px;
-    }
+	@media (max-width: 1300px) {
+		max-width: 100%;
+		font-size: 40px;
+	}
 }
 
 .adverti__text {
-    width: 80%;
-    max-width: 409px;
-    height: auto;
-    font-size: 20px;
-    font-weight: 400;
-    color: var(--text__color__pattern);
+	width: 80%;
+	max-width: 409px;
+	height: auto;
+	font-size: 20px;
+	font-weight: 400;
+	color: var(--text__color__pattern);
 
-    @media (max-width: 1300px) {    
-        font-size: 15px;
-    }
+	@media (max-width: 1300px) {
+		font-size: 15px;
+	}
 }
 
 .adverti__button {
-    width: 134px;
-    height: 48px;
+	width: 134px;
+	height: 48px;
 }
 
 .adverti__img {
-    max-width: 300px;
-    height: 467px;
+	max-width: 300px;
+	height: 467px;
 
-    @media (max-width: 1300px) {
-        position: absolute;
-        transform: translateY(375px);
-    }
+	@media (max-width: 1300px) {
+		position: absolute;
+		transform: translateY(375px);
+	}
 }
