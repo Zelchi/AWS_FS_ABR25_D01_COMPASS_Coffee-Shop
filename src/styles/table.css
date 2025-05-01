@@ -1,0 +1,30 @@
+.table-select-button {
+	width: 121px;
+	height: 40px;
+
+	p {
+		color: var(--text-color-primary);
+		width: 61;
+		height: 20;
+		font-weight: 700;
+		font-size: 15px;
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
+}
+
+.table-no-selected-button {
+	width: 121px;
+	height: 40px;
+	background-color: var(--text-color-pattern);
+
+	p {
+		color: var(--text-color-primary);
+		width: 61;
+		height: 20;
+		font-weight: 700;
+		font-size: 15px;
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
+}
