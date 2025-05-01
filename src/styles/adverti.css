@@ -1,6 +1,6 @@
 .adverti {
     width: 100%;
-    height: 574px;
+    height: 600px;
 
     display: flex;
     flex-direction: row;
@@ -15,52 +15,67 @@
     background: linear-gradient(270.07deg, #603809 38%, #251503 99.95%);
 
     font-family: 'Playfair Display', serif;
-    overflow: hidden;
 
     @media (max-width: 1300px) {
+        padding-top: 80px;
+        justify-content: start;
         flex-direction: column;
         margin-top: 50px;
         margin-bottom: 50px;
-        overflow: visible;
     }
+}
 
-    div {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
+.adverti__text__box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 30px;
 
-        position: relative;
+    @media (max-width: 1300px) {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
 
-        h1 {
-            width: 575px;
-            height: auto;
-            font-size: 40px;
-            font-weight: 700;
-            color: var(--text__color__pattern);
-        }
+.adverti__text__title {
+    width: 80%;
+    max-width: 730px;
+    height: auto;
+    font-size: 54px;
+    font-weight: 700;
+    color: var(--text__color__pattern);
 
-        h2 {
-            width: 409px;
-            height: auto;
-            font-size: 20px;
-            font-weight: 400;
-            color: var(--text__color__pattern);
-        }
+    @media (max-width: 1300px) {
+        max-width: 100%;
+        font-size: 40px;
+    }
+}
 
-        img {
-            background-color: black;
-            width: 300px;
-            height: 467px;
+.adverti__text {
+    width: 80%;
+    max-width: 409px;
+    height: auto;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text__color__pattern);
 
-            position: absolute;
-            bottom: -50%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    @media (max-width: 1300px) {    
+        font-size: 15px;
+    }
+}
 
-        button {
-            width: 134px;
-            height: 48px;
-        }
+.adverti__button {
+    width: 134px;
+    height: 48px;
+}
+
+.adverti__img {
+    max-width: 300px;
+    height: 467px;
+
+    @media (max-width: 1300px) {
+        position: absolute;
+        transform: translateY(375px);
     }
 }
