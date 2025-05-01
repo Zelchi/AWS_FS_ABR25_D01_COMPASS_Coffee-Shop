@@ -28,30 +28,31 @@
 		
 		
 		
+		
 		<title>Bean Scene</title>
 	</head>
 
 	<body>
 		<section class="home">
-			<div class="home-overlay">
-				<nav class="home-nav">
-					<h1 class="home-title">Bean Scene</h1>
-					<ul class="home-nav-links remove-in-short-window">
+			<div class="home__overlay">
+				<nav class="home__nav">
+					<h1 class="home__title">Bean Scene</h1>
+					<ul class="home__nav__links remove__in__short__window">
 						<li><a href="#home">Home</a></li>
 						<li><a href="#menu">Menu</a></li>
 						<li><a href="#about">About Us</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
-					<div class="hamburger-menu remove-in-long-window">
+					<div class="hamburger__menu remove__in__long__window">
 						<span></span>
 						<span></span>
 						<span></span>
 					</div>
-					<button class="btn-skin remove-in-short-window">
+					<button class="btn__skin remove__in__short__window">
 						<p>Order Now</p>
 					</button>
 				</nav>
-				<div class="mobile-menu hidden">
+				<div class="mobile__menu hidden">
 					<ul>
 						<li><a href="#shop">Home</a></li>
 						<li><a href="#menu">Menu</a></li>
@@ -59,14 +60,14 @@
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</div>
-				<div class="home-text-box">
-					<p class="home-text-1">We’ve got your morning covered with</p>
-					<p class="home-text-2">Coffee</p>
-					<p class="home-text-3">
+				<div class="home__text__box">
+					<p class="home__text__1">We’ve got your morning covered with</p>
+					<p class="home__text__2">Coffee</p>
+					<p class="home__text__3">
 						It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We
 						provide the best for our customers.
 					</p>
-					<button class="btn-skin home-text-button">
+					<button class="btn__skin home__text__button">
 						<p>Order Now</p>
 					</button>
 				</div>
@@ -74,60 +75,68 @@
 		</section>
 
 		<section class="shop">
-			<div class="shop-text-div">
-				<div class="shop-text-box">
-					<p class="shop-text-1">Discover the best coffee</p>
-					<p class="shop-text-2">
+			<div class="shop__text__div">
+				<div class="shop__text__box">
+					<p class="shop__text__1">Discover the best coffee</p>
+					<p class="shop__text__2">
 						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and
 						helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is
 						no doubt that you will enjoy this coffee more than others you have ever tasted.
 					</p>
-					<button class="btn-skin shop-text-button">
+					<button class="btn__skin shop__text__button">
 						<p>Learn More</p>
 					</button>
 				</div>
 				<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
-					class="shop-img remove-in-short-window"
+					class="shop__img remove__in__short__window"
 					alt="coffee image"
 					draggable="false"
 				/>
-				<img src="./assets/coffee_blast.svg" class="shop-img-decoration" alt="coffee image" draggable="false" />
+				<img src="./assets/coffee_blast.svg" class="shop__img__decoration" alt="coffee image" draggable="false" />
 			</div>
-			<div class="shop-products-container">
-				<h1 class="shop-products-container-title">Enjoy a new blend of coffee style</h1>
-				<p class="shop-products-container-text">
+			<div class="shop__products__container">
+				<h1 class="shop__products__container__title">Enjoy a new blend of coffee style</h1>
+				<p class="shop__products__container__text">
 					Explore all flavours on our menu with us. There is always a new worth experiencing
 				</p>
-				<div class="shop-products-box-container remove-in-short-window"></div>
+				<div class="shop__products__box__container remove__in__short__window"></div>
 			</div>
 		</section>
+
 		<section class="table">
-			<div class="table-select-buttons-box">
-				<button class="table-select-button btn-skin">
+			<div class="table__select__buttons__box">
+				<button class="table__select__button btn__skin" id="table__select__button__all">
 					<p>All items</p>
 				</button>
-				<button class="table-no-selected-button btn-skin">
+				<button class="table__no__selected__button btn__skin" id="table__select__button__warm">
 					<p>Warm drinks</p>
 				</button>
-				<button class="table-no-selected-button btn-skin">
+				<button class="table__no__selected__button btn__skin" id="table__select__button__cold">
 					<p>Cold drinks</p>
 				</button>
-				<button class="table-no-selected-button btn-skin">
+				<button class="table__no__selected__button btn__skin" id="table__select__button__snacks">
 					<p>Snacks</p>
 				</button>
-				<button class="table-no-selected-button btn-skin">
+				<button class="table__no__selected__button btn__skin" id="table__select__button__dessert">
 					<p>Dessert</p>
 				</button>
 			</div>
-			<div class="table-container">
-				<div class="table-bar">
-					<p>a</p>
-					<p>a</p>
-					<p>a</p>
-				</div>
-				<div class="table-box"></div>
+			<div class="table__container">
+				<div class="table__box"></div>
 			</div>
 		</section>
+
+		<section class="adverti">
+			<div class="adverti__text__box">
+				<h1 class="adverti__text__title">Get a chance to have an Amazing morning</h1>
+				<p class="adverti__text">We are giving you are one time opportunity to experience a better life with coffee.</p>
+				<button class="adverti__button btn__skin">
+					<p>Order Now</p>
+				</button>
+			</div>
+			<img class="adverti__img" src="/src/assets/coffee-cup.svg" alt="coffee image" draggable="false" />
+		</section>
+
 		
 		
 		
@@ -149,16 +158,16 @@ const readJSON = async (relativePath) => {
 	}
 };
 
-const hamburgerMenu = document.querySelector('.hamburger-menu');
-const mobileMenu = document.querySelector('.mobile-menu');
+const hamburgerMenu = document.querySelector('.hamburger__menu');
+const mobileMenu = document.querySelector('.mobile__menu');
 
 hamburgerMenu.addEventListener('click', () => {
-	if (mobileMenu.classList.contains('open')) {
-		mobileMenu.classList.remove('open');
+	if (mobileMenu.classList.contains('mobile__menu__open')) {
+		mobileMenu.classList.remove('mobile__menu__open');
 		setTimeout(() => mobileMenu.classList.add('hidden'), 500);
 	} else {
 		mobileMenu.classList.remove('hidden');
-		setTimeout(() => mobileMenu.classList.add('open'), 10);
+		setTimeout(() => mobileMenu.classList.add('mobile__menu__open'), 10);
 	}
 });
 
@@ -166,23 +175,23 @@ hamburgerMenu.addEventListener('click', () => {
 
 const createProductCard = (product) => {
 	const card = document.createElement('div');
-	card.classList.add('product-card');
+	card.classList.add('product__card');
 
 	card.innerHTML = `
-        <img src="${product.imagem_url}" alt="${product.name}" class="product-card-image" draggable='false'/>
-        <h3 class="product-card-title">${product.name}</h3>
-        <p class="product-card-description">${product.short_description}</p>
-        <p class="product-card-price">$${product.price.toFixed(2)}</p>
-        <button class="btn-skin product-card-button"><p>Order Now</p></button>
+        <img src="${product.imagem_url}" alt="${product.name}" class="product__card__image" draggable='false'/>
+        <h3 class="product__card__title">${product.name}</h3>
+        <p class="product__card__description">${product.short_description}</p>
+        <p class="product__card__price">$${product.price.toFixed(2)}</p>
+        <button class="btn__skin product__card__button"><p>Order Now</p></button>
     `;
 
 	return card;
 };
 
 const renderProducts = (products) => {
-	const container = document.querySelector('.shop-products-box-container');
+	const container = document.querySelector('.shop__products__box__container');
 	if (!container) {
-		console.error('Container with class "shop-products-box-container" not found.');
+		console.error('Container with class "shop__products__box__container" not found.');
 		return;
 	}
 
@@ -213,16 +222,90 @@ readJSON("./data/all-items.json")
 	});
 
 
+
+const renderTable = (items) => {
+	const tableContainer = document.querySelector('.table__container');
+	const tableBox = document.querySelector('.table__box');
+	if (!tableContainer || !tableBox) {
+		console.error('Container with class "table__container" or "table__box" not found.');
+		return;
+	}
+
+	tableBox.innerHTML = '';
+
+	let initialBar = document.querySelector('.table__initial__bar');
+	if (!initialBar) {
+		initialBar = document.createElement('div');
+		initialBar.classList.add('table__initial__bar');
+		initialBar.innerHTML = `
+            <p>Item</p>
+            <p class="remove__in__short__window">Type</p>
+            <p>Price</p>
+        `;
+		tableContainer.insertBefore(initialBar, tableBox);
+	}
+
+	items.forEach((item) => {
+		const row = document.createElement('div');
+		row.classList.add('table__row');
+
+		row.innerHTML = `
+            <p>${item.name}</p>
+            <p class="remove__in__short__window">${item.type}</p>
+            <p>$${item.price.toFixed(2)}</p>
+        `;
+
+		tableBox.appendChild(row);
+	});
+};
+
+const filterItemsByType = (items, type) => {
+	if (type === 'all') return items;
+	if (type === 'warm') return items.filter((item) => item.type === 'Hot Beverage');
+	if (type === 'cold') return items.filter((item) => item.type === 'Cold Beverage');
+	if (type === 'snacks') return items.filter((item) => item.type === 'Savory Snack');
+	if (type === 'dessert') return items.filter((item) => item.type === 'Bakery');
+	return [];
+};
+
+const setupTableButtons = (items) => {
+	const buttons = document.querySelectorAll('.table__select__button, .table__no__selected__button');
+	buttons.forEach((button) => {
+		button.addEventListener('click', () => {
+			const selectedType = button.id.replace('table__select__button__', '');
+
+			buttons.forEach((btn) => btn.classList.replace('table__select__button', 'table__no__selected__button'));
+			button.classList.replace('table__no__selected__button', 'table__select__button');
+
+			const filteredItems = filterItemsByType(items, selectedType);
+			renderTable(filteredItems);
+		});
+	});
+};
+
+readJSON("./data/all-items.json")
+	.then((response) => {
+		if (response.status === 'success' && Array.isArray(response.data)) {
+			renderTable(response.data);
+			setupTableButtons(response.data);
+		} else {
+			console.error('Invalid JSON structure:', response);
+		}
+	})
+	.catch((error) => {
+		console.error('Error:', error);
+	});
+
 </script>
 <style>:root {
-	--btn-order-bg-color: #f9c06a;
-	--btn-order-bg-color-hover: #ffe4bb;
-	--btn-order-text-color: #1e1e1e;
-	--btn-order-shadow: 0px 6px 12px 0px #f9c06a38;
-	--btn-order-font: 'Playfair Display', serif;
-	--text-color-pattern: #FFFFFF;
-	--text-color-primary: #603809;
-	--text-color-secondary: #707070;
+	--btn__order__bg__color: #f9c06a;
+	--btn__order__bg__color__hover: #ffe4bb;
+	--btn__order__text__color: #1e1e1e;
+	--btn__order__shadow: 0px 6px 12px 0px #f9c06a38;
+	--btn__order__font: 'Playfair Display', serif;
+	--text__color__pattern: #ffffff;
+	--text__color__primary: #603809;
+	--text__color__secondary: #707070;
 }
 
 * {
@@ -260,12 +343,12 @@ body {
 	}
 }
 
-.btn-skin {
+.btn__skin {
 	z-index: 3;
-	background: var(--btn-order-bg-color);
-	box-shadow: var(--btn-order-shadow);
-	color: var(--btn-order-text-color);
-	font-family: var(--btn-order-font);
+	background: var(--btn__order__bg__color);
+	box-shadow: var(--btn__order__shadow);
+	color: var(--btn__order__text__color);
+	font-family: var(--btn__order__font);
 
 	border-radius: 24px;
 	border: none;
@@ -279,7 +362,7 @@ body {
 		box-shadow 0.3s ease;
 
 	&:hover {
-		background: var(--btn-order-bg-color-hover);
+		background: var(--btn__order__bg__color__hover);
 	}
 
 	p {
@@ -294,17 +377,18 @@ body {
 	display: none;
 }
 
-.remove-in-short-window {
+.remove__in__short__window {
 	@media (max-width: 1300px) {
 		display: none !important;
 	}
 }
 
-.remove-in-long-window {
+.remove__in__long__window {
 	@media (min-width: 1301px) {
 		display: none !important;
 	}
-}</style>
+}
+</style>
 <style>.home {
 	z-index: 1;
 	user-select: none;
@@ -325,7 +409,7 @@ body {
 	}
 }
 
-.home-overlay {
+.home__overlay {
 	z-index: 2;
 	background-image: url(./assets/overlay.svg);
 	width: 100%;
@@ -336,7 +420,7 @@ body {
 	background-repeat: no-repeat;
 }
 
-.home-nav {
+.home__nav {
 	padding: 20px 0px;
 	display: flex;
 	flex-direction: row;
@@ -368,13 +452,33 @@ body {
 				line-height: 100%;
 				letter-spacing: 0%;
 				text-decoration: none;
-				color: var(--text-color-pattern);
+				color: var(--text__color__pattern);
+				position: relative;
+				transition: color 0.3s;
+				user-select: none;
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					width: 100%;
+					height: 2px;
+					background: var(--text__color__pattern);
+					transform: scaleX(0);
+					transform-origin: center;
+					transition: transform 0.3s ease-in-out;
+				}
+
+				&:hover::after {
+					transform: scaleX(1);
+				}
 			}
 		}
 	}
 }
 
-.home-title {
+.home__title {
 	z-index: 3;
 	width: auto;
 	height: auto;
@@ -383,10 +487,10 @@ body {
 	font-size: 35px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-pattern);
+	color: var(--text__color__pattern);
 }
 
-.home-text-box {
+.home__text__box {
 	max-width: 527px;
 	position: absolute;
 	top: 25%;
@@ -405,13 +509,13 @@ body {
 	}
 }
 
-.home-text-1 {
+.home__text__1 {
 	font-family: Playfair Display;
 	font-weight: 500;
 	font-size: 22px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-pattern);
+	color: var(--text__color__pattern);
 	text-align: start;
 
 	@media (max-width: 1300px) {
@@ -419,26 +523,26 @@ body {
 	}
 }
 
-.home-text-2 {
+.home__text__2 {
 	font-family: Clicker Script;
 	font-weight: 400;
 	font-size: 220px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-pattern);
+	color: var(--text__color__pattern);
 
 	@media (max-width: 1300px) {
 		font-size: 120px;
 	}
 }
 
-.home-text-3 {
+.home__text__3 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
-	color: var(--text-color-pattern);
+	color: var(--text__color__pattern);
 
 	@media (max-width: 1300px) {
 		text-align: center;
@@ -446,12 +550,12 @@ body {
 	}
 }
 
-.home-text-button {
+.home__text__button {
 	width: 134px;
 	height: 48px;
 }
 
-.hamburger-menu {
+.hamburger__menu {
 	display: flex;
 	flex-direction: column;
 	gap: 5px;
@@ -459,13 +563,13 @@ body {
 	z-index: 4;
 }
 
-.hamburger-menu span {
+.hamburger__menu span {
 	width: 25px;
 	height: 3px;
-	background-color: var(--text-color-pattern);
+	background-color: var(--text__color__pattern);
 }
 
-.mobile-menu {
+.mobile__menu {
 	z-index: 3;
 	position: absolute;
 	top: 0;
@@ -477,44 +581,44 @@ body {
 	height: 0;
 	overflow: hidden;
 	transition: height 0.5s ease-in-out;
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transform: translateY(-20px);
+		transition:
+			opacity 0.5s ease-in-out,
+			transform 0.5s ease-in-out;
+
+		li {
+			width: 100%;
+			text-align: center;
+			padding: 20px 0;
+			background-color: rgba(0, 0, 0, 0.8);
+			border-bottom: 1px solid var(--text__color__pattern);
+
+			a {
+				text-decoration: none;
+				color: var(--text__color__pattern);
+				font-family: Playfair Display;
+				font-size: 24px;
+				font-weight: bold;
+				display: block;
+				width: 100%;
+			}
+		}
+	}
 }
 
-.mobile-menu ul {
-	list-style: none;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transform: translateY(-20px);
-	transition:
-		opacity 0.5s ease-in-out,
-		transform 0.5s ease-in-out;
-}
-
-.mobile-menu ul li {
-	width: 100%;
-	text-align: center;
-	padding: 20px 0;
-	background-color: rgba(0, 0, 0, 0.8);
-	border-bottom: 1px solid var(--text-color-pattern);
-}
-
-.mobile-menu ul li a {
-	text-decoration: none;
-	color: var(--text-color-pattern);
-	font-family: Playfair Display;
-	font-size: 24px;
-	font-weight: bold;
-	display: block;
-	width: 100%;
-}
-
-.mobile-menu.open {
+.mobile__menu__open {
 	height: 300px;
 }
 
-.mobile-menu.open ul {
+.mobile__menu__open ul {
 	opacity: 1;
 	transform: translateY(0);
 }
@@ -523,8 +627,7 @@ body {
 	z-index: 1;
 	user-select: none;
 
-	width: 100%;
-	min-height: 100vh;
+	width: 90%;
 	height: auto;
 	margin-top: 100px;
 
@@ -533,16 +636,18 @@ body {
 
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	justify-content: center;
 	align-items: center;
 	font-family: 'Playfair Display';
 
 	@media (max-width: 1300px) {
 		margin-top: 30px;
+		width: 100%;
 	}
 }
 
-.shop-text-div {
+.shop__text__div {
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -550,7 +655,7 @@ body {
 	gap: 30px;
 }
 
-.shop-text-box {
+.shop__text__box {
 	display: flex;
 	flex-direction: column;
 
@@ -565,7 +670,7 @@ body {
 	}
 }
 
-.shop-text-1 {
+.shop__text__1 {
 	width: 100%;
 	text-align: center;
 	font-family: Playfair Display;
@@ -573,41 +678,40 @@ body {
 	font-size: 54px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 
 	@media (max-width: 1300px) {
 		font-size: 28px;
 	}
 }
 
-.shop-text-2 {
+.shop__text__2 {
 	font-family: Playfair Display;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
-	color: var(--text-color-secondary);
+	color: var(--text__color__secondary);
 	text-align: start;
 
 	@media (max-width: 1300px) {
 		padding: 20px;
 		font-size: 15px;
-		font-size: 15px;
 		line-height: 25.5px;
 	}
 }
 
-.shop-img {
-	width: 680px;
-	height: 476px;
+.shop__img {
+	max-width: 680px;
+	max-height: 476px;
 }
 
-.shop-text-button {
+.shop__text__button {
 	width: 134px;
 	height: 48px;
 }
 
-.shop-img-decoration {
+.shop__img__decoration {
 	position: absolute;
 	left: 0;
 
@@ -621,7 +725,8 @@ body {
 	}
 }
 
-.shop-products-container {
+.shop__products__container {
+	width: 100%;
 	margin-top: 100px;
 	display: flex;
 	flex-direction: column;
@@ -629,18 +734,17 @@ body {
 	align-items: center;
 	gap: 20px;
 	padding: 20px;
-	width: 100%;
 	height: auto;
 }
 
-.shop-products-container-title {
+.shop__products__container__title {
 	width: 100%;
 	height: auto;
 	font-weight: 700;
 	font-size: 54px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 	text-align: center;
 
 	@media (max-width: 1300px) {
@@ -648,14 +752,14 @@ body {
 	}
 }
 
-.shop-products-container-text {
+.shop__products__container__text {
 	width: 100%;
 	height: auto;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
-	color: var(--text-color-secondary);
+	color: var(--text__color__secondary);
 	text-align: center;
 
 	@media (max-width: 1300px) {
@@ -664,60 +768,62 @@ body {
 	}
 }
 
-.shop-products-box-container {
+.shop__products__box__container {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 
 	width: 100%;
+	max-width: 1300px;
+
 	height: auto;
 	padding: 30px 0;
-	gap: 10px;
+	gap: 30px;
 }
 
-.product-card {
+.product__card {
 	width: 300px;
 	height: 500px;
 	display: flex;
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
-	border: 1px solid #f9c06a6b;
+	border: 2px solid #f9c06a6b;
 	background-color: #fff9f1;
 	gap: 5px;
 	position: relative;
 }
 
-.product-card-image {
+.product__card__image {
 	width: 100%;
 	height: auto;
 	object-fit: cover;
-	border-bottom: 1px solid #f9c06a6b;
+	border-bottom: 2px solid #f9c06a6b;
+	overflow: hidden;
 }
 
-.product-card-title {
+.product__card__title {
 	width: 100%;
 	height: 50px;
 	text-align: center;
-	height: 29;
 	font-weight: 700;
 	font-size: 22px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 	padding: 2px 5px;
 }
 
-.product-card-description {
+.product__card__description {
 	width: 100%;
 	height: 70px;
 	text-align: center;
-	color: var(--text-color-secondary);
+	color: var(--text__color__secondary);
 	padding: 2px 5px;
 }
 
-.product-card-price {
+.product__card__price {
 	width: 100%;
 	height: auto;
 	text-align: center;
@@ -726,10 +832,10 @@ body {
 	font-size: 20px;
 	line-height: 100%;
 	letter-spacing: 0%;
-	color: var(--text-color-primary);
+	color: var(--text__color__primary);
 }
 
-.product-card-button {
+.product__card__button {
 	position: absolute;
 	bottom: -24px;
 	left: 50%;
@@ -739,12 +845,68 @@ body {
 	text-align: center;
 }
 </style>
-<style>.table-select-button {
+<style>.table {
+	z-index: 1;
+	user-select: none;
+
+	width: 90%;
+	height: auto;
+	margin-top: 40px;
+
+	background-color: #fffefc;
+	background-size: cover;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Playfair Display';
+
+	@media (max-width: 1300px) {
+		margin-top: 0px;
+		width: 100%;
+	}
+}
+
+.table__select__buttons__box {
+	width: 100%;
+	max-width: 1300px;
+	height: auto;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+
+	gap: 20px;
+	padding: 10px;
+
+	@media (max-width: 1300px) {
+		gap: 10px;
+	}
+
+	@media (max-width: 768px) {
+		flex-wrap: wrap;
+		justify-content: center;
+
+		& > :nth-child(1) {
+			width: calc(100% - 10px);
+		}
+
+		& > :nth-child(n + 2) {
+			width: calc(50% - 10px);
+		}
+	}
+}
+
+.table__select__button {
 	width: 121px;
 	height: 40px;
+	border: 2px solid var(--btn__order__bg__color);
+	font-family: var(--btn__order__font);
 
 	p {
-		color: var(--text-color-primary);
+		color: var(--text__color__primary);
 		width: 61;
 		height: 20;
 		font-weight: 700;
@@ -754,20 +916,213 @@ body {
 	}
 }
 
-.table-no-selected-button {
+.table__no__selected__button {
 	width: 121px;
 	height: 40px;
-	background-color: var(--text-color-pattern);
+	background-color: var(--text__color__pattern);
+	border: 2px solid var(--btn__order__bg__color);
+	box-shadow: none;
 
 	p {
-		color: var(--text-color-primary);
+		color: var(--text__color__primary);
 		width: 61;
 		height: 20;
 		font-weight: 700;
 		font-size: 15px;
 		line-height: 100%;
-		letter-spacing: 0%;
 	}
+}
+
+.table__container {
+	width: 100%;
+	max-width: 1300px;
+	height: auto;
+	border-radius: 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--text__color__pattern);
+	border: 2px solid #f9c06a6b;
+	overflow: hidden;
+
+	@media (max-width: 1300px) {
+		width: calc(100% - 30px);
+	}
+}
+
+.table__box {
+	width: 100%;
+	height: 500px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		width: 0px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #1c1c1c;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #3c3c3c;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: #3c3c3c;
+	}
+
+	@media (max-width: 1300px) {
+		margin: 3px;
+		height: 400px;
+	}
+}
+
+.table__initial__bar {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 10px;
+	background: #ffeed8;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+	p {
+		flex: 1;
+		text-align: start;
+		margin: 0;
+		width: 47;
+		height: 31.071428298950195;
+		font-weight: 700;
+		font-size: 22px;
+		line-height: 100%;
+		font-family: var(--btn__order__font);
+		color: var(--text__color__primary);
+
+		@media (max-width: 1300px) {
+			&:last-child {
+				text-align: center;
+			}
+		}
+	}
+}
+
+.table__row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	padding: 10px;
+
+	&:nth-child(2n) {
+		background-color: #ffeed8;
+	}
+
+	p {
+		width: 91;
+		height: 26;
+		color: #968162;
+		flex: 1;
+		text-align: start;
+		font-family: Roboto;
+		font-weight: 400;
+		font-size: 22px;
+		line-height: 100%;
+		letter-spacing: 0%;
+
+		@media (max-width: 1300px) {
+			&:last-child {
+				text-align: center;
+			}
+		}
+	}
+}
+</style>
+<style>.adverti {
+    width: 100%;
+    height: 574px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    background-color: #603809;
+    background: linear-gradient(270.07deg, #603809 38%, #251503 99.95%);
+
+    font-family: 'Playfair Display', serif;
+
+    @media (max-width: 1300px) {
+        padding-top: 80px;
+        justify-content: start;
+        flex-direction: column;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+.adverti__text__box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 30px;
+
+    @media (max-width: 1300px) {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.adverti__text__title {
+    width: 80%;
+    max-width: 575px;
+    height: auto;
+    font-size: 54px;
+    font-weight: 700;
+    color: var(--text__color__pattern);
+
+    @media (max-width: 1300px) {
+        max-width: 100%;
+        font-size: 40px;
+    }
+}
+
+.adverti__text {
+    width: 80%;
+    max-width: 409px;
+    height: auto;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text__color__pattern);
+
+    @media (max-width: 1300px) {
+
+        font-size: 15px;
+    }
+}
+
+.adverti__button {
+    width: 134px;
+    height: 48px;
+}
+
+.adverti__img {
+    max-width: 300px;
+    height: 467px;
+
+    @media (max-width: 1300px) {
+        position: absolute;
+        transform: translateY(350px);
+    }
 }</style>
 </body>
 </html>
