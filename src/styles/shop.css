@@ -84,6 +84,7 @@
 .shop__text__button {
 	width: 134px;
 	height: 48px;
+	box-shadow: var(--btn__order__shadow);
 }
 
 .shop__img__decoration {
@@ -168,6 +169,7 @@
 	background-color: #fff9f1;
 	gap: 5px;
 	position: relative;
+	box-shadow: var(--btn__order__shadow);
 }
 
 .product__card__image {
@@ -212,10 +214,9 @@
 
 .product__card__button {
 	position: absolute;
-	bottom: -24px;
-	left: 50%;
-	transform: translateX(-50%);
+	bottom: calc(0% - 24px);
+	left: calc(50% - 134px / 2);
 	width: 134px;
 	height: 48px;
-	text-align: center;
+	box-shadow: var(--btn__order__shadow);
 }
