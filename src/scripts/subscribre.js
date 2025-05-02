@@ -7,46 +7,57 @@ const message = document.createElement('p');
 message.classList.add('subscribre__message');
 inputBox.appendChild(message);
 
+const updateUI = (isSubscribed, textMessage, color) => {
+	message.textContent = textMessage;
+	message.style.color = color;
+
+	if (isSubscribed) {
+		buttonText.textContent = 'Unsubscribe';
+		input.classList.add('hidden');
+		button.classList.add('unsubscribre__button');
+		message.classList.add('unsubscribre__message');
+	} else {
+		buttonText.textContent = 'Subscribe';
+		input.classList.remove('hidden');
+		button.classList.remove('unsubscribre__button');
+		message.classList.remove('unsubscribre__message');
+	}
+};
+
 const savedEmail = localStorage.getItem('email');
 if (savedEmail) {
-	message.textContent = 'You are already subscribed!';
-	message.style.color = '#FFAD3B';
-	buttonText.textContent = 'Unsubscribe';
-	input.classList.add('hidden');
-	button.classList.add('unsubscribre__button');
-	message.classList.add('unsubscribre__message');
+	updateUI(true, 'You are already subscribed!', '#FFAD3B');
 }
 
-button.addEventListener('click', (e) => {
-	e.preventDefault();
-
+const handleSubscription = () => {
 	const inputValue = input.value.trim();
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 	if (buttonText.textContent === 'Unsubscribe') {
 		localStorage.removeItem('email');
-		message.textContent = 'You have unsubscribed successfully.';
-		message.style.color = '#FFAD3B';
-		buttonText.textContent = 'Subscribe';
+		updateUI(false, 'You have unsubscribed successfully.', '#FFAD3B');
 		input.value = '';
-		input.classList.remove('hidden');
-		button.classList.remove('unsubscribre__button');
-		message.classList.remove('unsubscribre__message');
 	} else if (emailRegex.test(inputValue)) {
 		if (savedEmail === inputValue) {
-			message.textContent = 'You are already subscribed!';
-			message.style.color = '#FFAD3B';
+			updateUI(true, 'You are already subscribed!', '#FFAD3B');
 		} else {
 			localStorage.setItem('email', inputValue);
-			message.textContent = 'Email saved successfully!';
-			message.style.color = '#FFAD3B';
-			buttonText.textContent = 'Unsubscribe';
+			updateUI(true, 'Email saved successfully!', '#FFAD3B');
 			input.value = '';
-			input.classList.add('hidden');
-			button.classList.add('unsubscribre__button');
 		}
 	} else {
-		message.textContent = 'Oops! The email address you entered is invalid.';
-		message.style.color = 'red';
+		updateUI(false, 'Oops! The email address you entered is invalid.', 'red');
+	}
+};
+
+button.addEventListener('click', (e) => {
+	e.preventDefault();
+	handleSubscription();
+});
+
+input.addEventListener('keypress', (e) => {
+	if (e.key === 'Enter' && buttonText.textContent === 'Subscribe') {
+		e.preventDefault();
+		handleSubscription();
 	}
 });

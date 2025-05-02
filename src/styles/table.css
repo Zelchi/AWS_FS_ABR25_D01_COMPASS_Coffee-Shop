@@ -69,10 +69,6 @@
 		letter-spacing: 0%;
 	}
 
-	&:focus {
-		outline: none;
-	}
-
 	@media (max-width: 1300px) {
 		&:hover {
 			transform: scale(0.9);

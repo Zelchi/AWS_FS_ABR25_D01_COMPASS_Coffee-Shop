@@ -1,6 +1,10 @@
 import { readJSON } from './global.js';
 
 const createProductCard = (product) => {
+	if (!product.imagem_url || !product.name || !product.short_description || product.price == null) {
+		return null;
+	}
+
 	const card = document.createElement('div');
 	card.classList.add('product__card');
 
@@ -26,12 +30,19 @@ const renderProducts = (products) => {
 
 	products.forEach((product) => {
 		const card = createProductCard(product);
-		container.appendChild(card);
+		if (card) {
+			container.appendChild(card);
+		}
 	});
 };
 
+const isValidProduct = (product) => {
+	return product.imagem_url && product.name && product.short_description && product.price != null;
+};
+
 const getRandomProducts = (data, count) => {
-	const shuffled = data.sort(() => 0.5 - Math.random());
+	const validProducts = data.filter(isValidProduct);
+	const shuffled = validProducts.sort(() => 0.5 - Math.random());
 	return shuffled.slice(0, count);
 };
 

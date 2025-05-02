@@ -1,16 +1,13 @@
 import { readJSON } from './global.js';
 
-const renderTable = (items) => {
-	const tableContainer = document.querySelector('.table__container');
-	const tableBox = document.querySelector('.table__box');
-	if (!tableContainer || !tableBox) {
-		console.error('Container with class "table__container" or "table__box" not found.');
-		return;
-	}
+const getElement = (selector) => document.querySelector(selector);
 
-	tableBox.innerHTML = '';
+const isValidProduct = (product) => {
+	return product.imagem_url && product.name && product.short_description && product.price != null;
+};
 
-	let initialBar = document.querySelector('.table__initial__bar');
+const createInitialBar = (tableContainer, tableBox) => {
+	let initialBar = getElement('.table__initial__bar');
 	if (!initialBar) {
 		initialBar = document.createElement('div');
 		initialBar.classList.add('table__initial__bar');
@@ -21,28 +18,45 @@ const renderTable = (items) => {
         `;
 		tableContainer.insertBefore(initialBar, tableBox);
 	}
+};
 
-	items.forEach((item) => {
-		const row = document.createElement('div');
-		row.classList.add('table__row');
+const createTableRow = (item) => {
+	const row = document.createElement('div');
+	row.classList.add('table__row');
+	row.innerHTML = `
+        <p>${item.name}</p>
+        <p class="remove__in__short__window">${item.type}</p>
+        <p>$${item.price.toFixed(2)}</p>
+    `;
+	return row;
+};
 
-		row.innerHTML = `
-            <p>${item.name}</p>
-            <p class="remove__in__short__window">${item.type}</p>
-            <p>$${item.price.toFixed(2)}</p>
-        `;
+const renderTable = (items) => {
+	const tableContainer = getElement('.table__container');
+	const tableBox = getElement('.table__box');
+	if (!tableContainer || !tableBox) {
+		console.error('Container with class "table__container" or "table__box" not found.');
+		return;
+	}
 
+	tableBox.innerHTML = '';
+	createInitialBar(tableContainer, tableBox);
+
+	items.filter(isValidProduct).forEach((item) => {
+		const row = createTableRow(item);
 		tableBox.appendChild(row);
 	});
 };
 
 const filterItemsByType = (items, type) => {
-	if (type === 'all') return items;
-	if (type === 'warm') return items.filter((item) => item.type === 'Hot Beverage');
-	if (type === 'cold') return items.filter((item) => item.type === 'Cold Beverage');
-	if (type === 'snacks') return items.filter((item) => item.type === 'Savory Snack');
-	if (type === 'dessert') return items.filter((item) => item.type === 'Bakery');
-	return [];
+	const typeMap = {
+		all: () => items,
+		warm: () => items.filter((item) => item.type === 'Hot Beverage'),
+		cold: () => items.filter((item) => item.type === 'Cold Beverage'),
+		snacks: () => items.filter((item) => item.type === 'Savory Snack'),
+		dessert: () => items.filter((item) => item.type === 'Bakery'),
+	};
+	return (typeMap[type] || (() => []))();
 };
 
 const setupTableButtons = (items) => {

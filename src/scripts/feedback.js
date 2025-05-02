@@ -27,9 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				feedbackContainer.innerHTML = '';
 
 				response.data.forEach((feedback) => {
-					const slide = document.createElement('div');
-					slide.classList.add('feedback__slide');
-					slide.innerHTML = `
+					if (feedback.message && feedback.full_name && feedback.profession && feedback.image_url) {
+						const slide = document.createElement('div');
+						slide.classList.add('feedback__slide');
+						slide.innerHTML = `
                     <p class="feedback__slide__text">${feedback.message}</p>
                     <div class="feedback__slide__author__box">
                     <h1 class="feedback__slide__author">${feedback.full_name}</h1>
@@ -37,10 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <img src="${feedback.image_url}" alt="${feedback.full_name}" class="feedback__slide__image" draggable='false'/>
                 `;
-					feedbackContainer.appendChild(slide);
+						feedbackContainer.appendChild(slide);
+					}
 				});
 
-				feedbackContainer.firstChild.classList.add('feedback__slide__active');
+				if (feedbackContainer.firstChild) {
+					feedbackContainer.firstChild.classList.add('feedback__slide__active');
+				}
 
 				const prevButton = document.createElement('button');
 				prevButton.classList.add('feedback__button', 'feedback__button__prev');
