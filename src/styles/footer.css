@@ -61,6 +61,8 @@
 	@media (max-width: 1300px) {
 		width: 90%;
 		padding-top: 30px;
+		max-width: 500px;
+		text-align: justify;
 
 		p {
 			width: 100%;
@@ -76,7 +78,7 @@
 .footer__box__secondary__container {
 	display: flex;
 	flex-direction: row;
-	gap: 60px;
+	gap: 70px;
 }
 
 .footer__box__secondary {
@@ -87,23 +89,32 @@
 	align-items: start;
 	justify-content: start;
 
-	h1 {
+	h2 {
 		width: 100%;
 		height: auto;
 		font-weight: 700;
 		font-size: 26px;
 		line-height: 100%;
 		letter-spacing: 0%;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 	}
 
-	p {
-		width: 100%;
+	ul {
+		list-style: none;
+		margin-top: 20px;
+	}
+
+	li {
+		text-decoration: none;
 		max-width: 332px;
-		height: auto;
+	}
+
+	a {
+		color: var(--text__color__pattern);
 		font-weight: 400;
 		font-size: 18px;
 		line-height: 42px;
 		letter-spacing: 0%;
+		text-decoration: none;
 	}
 }

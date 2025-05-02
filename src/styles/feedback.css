@@ -8,6 +8,7 @@
 	padding-bottom: 100px;
 	margin-top: 0px;
 	user-select: none;
+	position: relative;
 
 	@media (max-width: 1300px) {
 		margin-top: 300px;
@@ -189,6 +190,7 @@
 		font-size: 20px;
 		width: 53px;
 		height: 53px;
+
 		&:active {
 			transform: translateY(-50%) scale(0.9);
 			background-color: var(--btn__order__bg__color__hover);
@@ -201,6 +203,7 @@
 			background-color: var(--btn__order__bg__color__hover);
 			color: var(--text__color__secondary);
 		}
+
 		&:active {
 			transform: translateY(-50%) scale(0.9);
 			background-color: var(--btn__order__bg__color__hover);
@@ -224,4 +227,28 @@
 	@media (max-width: 1300px) {
 		left: calc(100% - 20px);
 	}
+}
+
+.feedback__img__decoration {
+	position: absolute;
+
+	&:first-of-type {
+		left: 0;
+		top: 500px;
+		transform: scaleX(-1);
+		rotate: 180deg;
+	}
+
+	&:last-of-type {
+		transform: scaleX(-1);
+		right: 0;
+		top: -100px;
+	}
+}
+
+.feedback__img__decoration__text {
+	z-index: 10;
+	position: absolute;
+	top: 20%;
+	left: 30%;
 }
