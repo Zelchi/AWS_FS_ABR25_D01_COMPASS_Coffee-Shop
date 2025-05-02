@@ -1,180 +1,222 @@
 <!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			as="style"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			as="style"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href="./assets/Coffee.svg" />
+		
+		
+		
+		
+		
+		
+		
+		
+		<title>Bean Scene</title>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="preload"
-		href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		as="style" />
-	<link rel="preload"
-		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		as="style" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		rel="stylesheet" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		rel="stylesheet" />
-	<link rel="icon" href="./assets/Coffee.svg" />
-	
-	
-	
-	
-	
-	
-	
-	<title>Bean Scene</title>
-</head>
-
-<body>
-	<section class="home">
-		<div class="home__overlay">
-			<nav class="home__nav">
-				<h1 class="home__title">Bean Scene</h1>
-				<ul class="home__nav__links remove__in__short__window">
-					<li><a href="#home">Home</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#about">About Us</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-				<div class="hamburger__menu remove__in__long__window">
-					<span></span>
-					<span></span>
-					<span></span>
+	<body>
+		<section class="home">
+			<div class="home__overlay">
+				<nav class="home__nav">
+					<h1 class="home__title">Bean Scene</h1>
+					<ul class="home__nav__links remove__in__short__window">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<div class="hamburger__menu remove__in__long__window">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<button class="btn__skin remove__in__short__window">
+						<p>Order Now</p>
+					</button>
+				</nav>
+				<div class="mobile__menu hidden">
+					<ul>
+						<li><a href="#shop">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
 				</div>
-				<button class="btn__skin remove__in__short__window">
-					<p>Order Now</p>
-				</button>
-			</nav>
-			<div class="mobile__menu hidden">
-				<ul>
-					<li><a href="#shop">Home</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#about">About Us</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</div>
-			<div class="home__text__box">
-				<p class="home__text__1">We’ve got your morning covered with</p>
-				<p class="home__text__2">Coffee</p>
-				<p class="home__text__3">
-					It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever
-					have. We
-					provide the best for our customers.
-				</p>
-				<button class="btn__skin home__text__button">
-					<p>Order Now</p>
-				</button>
-			</div>
-		</div>
-	</section>
-
-	<section class="shop">
-		<div class="shop__text__div">
-			<div class="shop__text__box">
-				<p class="shop__text__1">Discover the best coffee</p>
-				<p class="shop__text__2">
-					Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity
-					and
-					helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater.
-					There is
-					no doubt that you will enjoy this coffee more than others you have ever tasted.
-				</p>
-				<button class="btn__skin shop__text__button">
-					<p>Learn More</p>
-				</button>
-			</div>
-			<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
-				class="shop__img remove__in__short__window" alt="coffee image" draggable="false" />
-			<img src="./assets/coffee_blast.svg" class="shop__img__decoration" alt="coffee image"
-				draggable="false" />
-		</div>
-		<div class="shop__products__container">
-			<h1 class="shop__products__container__title">Enjoy a new blend of coffee style</h1>
-			<p class="shop__products__container__text">
-				Explore all flavours on our menu with us. There is always a new worth experiencing
-			</p>
-			<div class="shop__products__box__container remove__in__short__window"></div>
-		</div>
-	</section>
-
-	<section class="table">
-		<div class="table__select__buttons__box">
-			<button class="table__select__button btn__skin" id="table__select__button__all">
-				<p>All items</p>
-			</button>
-			<button class="table__no__selected__button btn__skin" id="table__select__button__warm">
-				<p>Warm drinks</p>
-			</button>
-			<button class="table__no__selected__button btn__skin" id="table__select__button__cold">
-				<p>Cold drinks</p>
-			</button>
-			<button class="table__no__selected__button btn__skin" id="table__select__button__snacks">
-				<p>Snacks</p>
-			</button>
-			<button class="table__no__selected__button btn__skin" id="table__select__button__dessert">
-				<p>Dessert</p>
-			</button>
-		</div>
-		<div class="table__container">
-			<div class="table__box"></div>
-		</div>
-	</section>
-
-	<section class="adverti">
-		<div class="adverti__text__box">
-			<h1 class="adverti__text__title">Get a chance to have an Amazing morning</h1>
-			<p class="adverti__text">We are giving you are one time opportunity to experience a better life with coffee.
-			</p>
-			<button class="adverti__button btn__skin">
-				<p>Order Now</p>
-			</button>
-		</div>
-		<img src="./assets/coffee-cup.svg" class="adverti__img" alt="coffee image" draggable="false" />
-	</section>
-
-	<section class="feedback">
-		<div class="feedback__text__box">
-			<h1>Our coffee perfection feedback</h1>
-			<p>Our customers has amazing things to say about us</p>
-		</div>
-		<div class="feedback__slide__container"></div>
-	</section>
-
-	<section class="subscribre">
-		<div class="subscribre__overlay">
-			<div class="subscribre__container">
-				<div class="subscribre__text__box">
-					<h1>Subscribe to get offers!</h1>
-					<p>Don’t miss out on our latest news, updates, tips and special offers</p>
-				</div>
-				<div class="subscribre__input__box">
-					<input type="email" placeholder="Enter your mail" id="subscribre__input"/>
-					<button id="subscribre__button">
-						<p>Subscribe</p>
+				<div class="home__text__box">
+					<p class="home__text__1">We’ve got your morning covered with</p>
+					<p class="home__text__2">Coffee</p>
+					<p class="home__text__3">
+						It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We
+						provide the best for our customers.
+					</p>
+					<button class="btn__skin home__text__button">
+						<p>Order Now</p>
 					</button>
 				</div>
 			</div>
+		</section>
 
-			<div class="subscribre__img__container remove__in__short__window">
-				<img src="./assets/coffee-cup2.svg" class="subscribre__img" alt="coffee image" draggable="false" />
+		<section class="shop">
+			<div class="shop__text__div">
+				<div class="shop__text__box">
+					<p class="shop__text__1">Discover the best coffee</p>
+					<p class="shop__text__2">
+						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and
+						helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is
+						no doubt that you will enjoy this coffee more than others you have ever tasted.
+					</p>
+					<button class="btn__skin shop__text__button">
+						<p>Learn More</p>
+					</button>
+				</div>
+				<img src="./assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
+					class="shop__img remove__in__short__window"
+					alt="coffee image"
+					draggable="false"
+				/>
+				<img src="./assets/coffee_blast.svg" class="shop__img__decoration" alt="coffee image" draggable="false" />
 			</div>
-		</div>
-	</section>
+			<div class="shop__products__container">
+				<h1 class="shop__products__container__title">Enjoy a new blend of coffee style</h1>
+				<p class="shop__products__container__text">
+					Explore all flavours on our menu with us. There is always a new worth experiencing
+				</p>
+				<div class="shop__products__box__container remove__in__short__window"></div>
+			</div>
+		</section>
 
-	<section class="footer">
-		Hello World!!!
-	</section>
+		<section class="table">
+			<div class="table__select__buttons__box">
+				<button class="table__select__button btn__skin" id="table__select__button__all">
+					<p>All items</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__warm">
+					<p>Warm drinks</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__cold">
+					<p>Cold drinks</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__snacks">
+					<p>Snacks</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__dessert">
+					<p>Dessert</p>
+				</button>
+			</div>
+			<div class="table__container">
+				<div class="table__box"></div>
+			</div>
+		</section>
 
-	
-	
-	
-	
-	
-	
+		<section class="adverti">
+			<div class="adverti__text__box">
+				<h1 class="adverti__text__title">Get a chance to have an Amazing morning</h1>
+				<p class="adverti__text">We are giving you are one time opportunity to experience a better life with coffee.</p>
+				<button class="adverti__button btn__skin">
+					<p>Order Now</p>
+				</button>
+			</div>
+			<img src="./assets/coffee-cup.svg" class="adverti__img" alt="coffee image" draggable="false" />
+		</section>
 
+		<section class="feedback">
+			<div class="feedback__text__box">
+				<h1>Our coffee perfection feedback</h1>
+				<p>Our customers has amazing things to say about us</p>
+			</div>
+			<div class="feedback__slide__container"></div>
+		</section>
+
+		<section class="subscribre">
+			<div class="subscribre__overlay">
+				<div class="subscribre__container">
+					<div class="subscribre__text__box">
+						<h1>Subscribe to get offers!</h1>
+						<p>Don’t miss out on our latest news, updates, tips and special offers</p>
+					</div>
+					<div class="subscribre__input__box">
+						<input type="email" placeholder="Enter your mail" id="subscribre__input" />
+						<button id="subscribre__button">
+							<p>Subscribe</p>
+						</button>
+					</div>
+				</div>
+
+				<div class="subscribre__img__container remove__in__short__window">
+					<img src="./assets/coffee-cup2.svg" class="subscribre__img" alt="coffee image" draggable="false" />
+				</div>
+			</div>
+		</section>
+
+		<section class="footer">
+			<div class="footer__box__primary">
+				<h1>Bean Scene</h1>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+					standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+					make a type specimen book.
+				</p>
+				<div>
+					<img src="./assets/icons/facebook.svg" />
+					<img src="./assets/icons/instagram.svg" />
+					<img src="./assets/icons/youtube.svg" />
+					<img src="./assets/icons/twitter.svg" />
+				</div>
+			</div>
+
+			<div class="footer__box__secondary remove__in__short__window">
+				<h1>About</h1>
+				<p>Home</p>
+				<p>Features</p>
+				<p>News & Blogs</p>
+				<p>Help & Supports</p>
+			</div>
+
+			<div class="footer__box__secondary remove__in__short__window">
+				<h1>About Us</h1>
+				<p>How we work</p>
+				<p>Terms of service</p>
+				<p>Pricing</p>
+				<p>FAQ</p>
+			</div>
+
+			<div class="footer__box__secondary">
+				<h1>Contact Us</h1>
+				<p>Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016</p>
+				<p>+1 202-918-2132</p>
+				<p>beanscene@mail.com</p>
+				<p>www.beanscene.com</p>
+			</div>
+		</section>
+
+		
+		
+		
+		
+		
+		
+	
 <script>
 
 
@@ -319,50 +361,51 @@ readJSON("./data/all-items.json")
 		console.error('Error:', error);
 	});
 
-const inputBox = document.querySelector(".subscribre__input__box");
-const input = inputBox.querySelector("#subscribre__input");
-const button = inputBox.querySelector("#subscribre__button");
-const buttonText = button.querySelector("p");
+const inputBox = document.querySelector('.subscribre__input__box');
+const input = inputBox.querySelector('#subscribre__input');
+const button = inputBox.querySelector('#subscribre__button');
+const buttonText = button.querySelector('p');
 
-const message = document.createElement("p");
-message.classList.add("subscribre__message");
-inputBox.insertAdjacentElement("afterend", message);
+const message = document.createElement('p');
+message.classList.add('subscribre__message');
+inputBox.insertAdjacentElement('afterend', message);
 
-const savedEmail = localStorage.getItem("email");
+const savedEmail = localStorage.getItem('email');
 if (savedEmail) {
-    message.textContent = "You are already subscribed!";
-    message.style.color = "orange";
-    buttonText.textContent = "Unsubscribe";
+	message.textContent = 'You are already subscribed!';
+	message.style.color = 'orange';
+	buttonText.textContent = 'Unsubscribe';
 }
 
-button.addEventListener("click", (e) => {
-    e.preventDefault();
+button.addEventListener('click', (e) => {
+	e.preventDefault();
 
-    const inputValue = input.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	const inputValue = input.value.trim();
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (buttonText.textContent === "Unsubscribe") {
-        localStorage.removeItem("email");
-        message.textContent = "You have unsubscribed successfully.";
-        message.style.color = "red";
-        buttonText.textContent = "Subscribe";
-        input.value = "";
-    } else if (emailRegex.test(inputValue)) {
-        if (savedEmail === inputValue) {
-            message.textContent = "You are already subscribed!";
-            message.style.color = "orange";
-        } else {
-            localStorage.setItem("email", inputValue);
-            message.textContent = "Email saved successfully!";
-            message.style.color = "green";
-            buttonText.textContent = "Unsubscribe";
-            input.value = "";
-        }
-    } else {
-        message.textContent = "Oops! The email address you entered is invalid.";
-        message.style.color = "red";
-    }
+	if (buttonText.textContent === 'Unsubscribe') {
+		localStorage.removeItem('email');
+		message.textContent = 'You have unsubscribed successfully.';
+		message.style.color = 'red';
+		buttonText.textContent = 'Subscribe';
+		input.value = '';
+	} else if (emailRegex.test(inputValue)) {
+		if (savedEmail === inputValue) {
+			message.textContent = 'You are already subscribed!';
+			message.style.color = 'orange';
+		} else {
+			localStorage.setItem('email', inputValue);
+			message.textContent = 'Email saved successfully!';
+			message.style.color = 'green';
+			buttonText.textContent = 'Unsubscribe';
+			input.value = '';
+		}
+	} else {
+		message.textContent = 'Oops! The email address you entered is invalid.';
+		message.style.color = 'red';
+	}
 });
+
 
 
 const renderTable = (items) => {
@@ -444,7 +487,9 @@ readJSON("./data/all-items.json")
 	--btn__order__bg__color__hover: #ffe4bb;
 	--btn__order__text__color: #1e1e1e;
 	--btn__order__shadow: 0px 6px 12px 0px #f9c06a38;
-	--btn__order__font: 'Playfair Display', serif;
+	--text__font__PlayfairDisplay: 'Playfair Display', sans-serif;
+	--text__font__ClickerScript: 'Clicker Script', sans-serif;
+	--text__font__Roboto: 'Roboto', sans-serif;
 	--text__color__pattern: #ffffff;
 	--text__color__primary: #603809;
 	--text__color__secondary: #707070;
@@ -492,9 +537,10 @@ body {
 	background: var(--btn__order__bg__color);
 	box-shadow: var(--btn__order__shadow);
 	color: var(--btn__order__text__color);
-	font-family: var(--btn__order__font);
+	font-family: var(--text__font__PlayfairDisplay);
 
 	border-radius: 24px;
+	
 	border: none;
 	cursor: pointer;
 
@@ -625,7 +671,7 @@ body {
 	z-index: 3;
 	width: auto;
 	height: auto;
-	font-family: Clicker Script;
+	font-family: var(--text__font__ClickerScript);
 	font-weight: 400;
 	font-size: 35px;
 	line-height: 100%;
@@ -667,7 +713,7 @@ body {
 }
 
 .home__text__2 {
-	font-family: Clicker Script;
+	font-family: var(--text__font__ClickerScript);
 	font-weight: 400;
 	font-size: 220px;
 	line-height: 100%;
@@ -1046,7 +1092,7 @@ body {
 	width: 121px;
 	height: 40px;
 	border: 2px solid var(--btn__order__bg__color);
-	font-family: var(--btn__order__font);
+	font-family: var(--text__font__PlayfairDisplay);
 
 	p {
 		color: var(--text__color__primary);
@@ -1141,7 +1187,7 @@ body {
 		font-weight: 700;
 		font-size: 22px;
 		line-height: 100%;
-		font-family: var(--btn__order__font);
+		font-family: var(--text__font__PlayfairDisplay);
 		color: var(--text__color__primary);
 
 		@media (max-width: 1300px) {
@@ -1171,7 +1217,7 @@ body {
 		color: #968162;
 		flex: 1;
 		text-align: start;
-		font-family: Roboto;
+		font-family: var(--text__font__Roboto);
 		font-weight: 400;
 		font-size: 22px;
 		line-height: 100%;
@@ -1201,7 +1247,7 @@ body {
 	background-color: #603809;
 	background: linear-gradient(270.07deg, #603809 38%, #251503 99.95%);
 
-	font-family: 'Playfair Display', serif;
+	font-family: var(--text__font__PlayfairDisplay);
 
 	@media (max-width: 1300px) {
 		padding-top: 80px;
@@ -1290,7 +1336,7 @@ body {
 	text-align: center;
 	width: 90%;
 	max-width: 980px;
-	font-family: var(--btn__order__font);
+	font-family: var(--text__font__PlayfairDisplay);
 
 	h1 {
 		width: 100%;
@@ -1371,7 +1417,7 @@ body {
 	width: 90%;
 	max-width: 780px;
 	height: 100%;
-	font-family: var(--btn__order__font);
+	font-family: var(--text__font__PlayfairDisplay);
 	color: var(--text__color__secondary);
 	font-weight: 600;
 	font-size: 18px;
@@ -1411,7 +1457,7 @@ body {
 	}
 
 	p {
-		font-family: var(--btn__order__font);
+		font-family: var(--text__font__PlayfairDisplay);
 		color: var(--text__color__secondary);
 		width: 100%;
 		height: auto;
@@ -1526,7 +1572,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: start;
-	font-family: var(--btn__order__font);
+	font-family: var(--text__font__PlayfairDisplay);
 	color: var(--text__color__pattern);
 
 	@media (max-width: 1300px) {
@@ -1580,7 +1626,7 @@ body {
 		border-top-left-radius: 4px;
 		border-bottom-left-radius: 4px;
 		border-width: 1px;
-		border: 1px solid #F9C06A6B;
+		border: 1px solid #f9c06a6b;
 
 		width: 75%;
 		height: 100%;
@@ -1590,7 +1636,7 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-family: var(--btn__order__font);
+		font-family: var(--text__font__PlayfairDisplay);
 
 		outline: none;
 
@@ -1623,13 +1669,13 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		font-family: var(--btn__order__font);
+		font-family: var(--text__font__PlayfairDisplay);
 
 		p {
 			font-weight: 700;
 			font-size: 22px;
 			color: var(--text__color__primary);
-			box-shadow: 0px 6px 12px 0px #F9C06A38;
+			box-shadow: 0px 6px 12px 0px #f9c06a38;
 
 			@media (max-width: 1300px) {
 				font-size: 14px;
@@ -1667,19 +1713,118 @@ body {
 	margin-top: 5px;
 	width: 100%;
 	height: 34px;
-	font-family: 'Roboto', sans-serif;
+	font-family: var(--text__font__Roboto);
 	font-weight: 700;
 	font-size: 20px;
 	line-height: 34px;
 	letter-spacing: 0%;
 	text-align: start;
-	color: #FFAD3B;
+	color: #ffad3b;
 
 	@media (max-width: 1300px) {
 		text-align: center;
 		font-size: 14px;
 	}
-}</style>
-</body>
+}
+</style>
+<style>.footer {
+	width: 100%;
+	height: 500px;
+	background-image: url(./assets/footer-background.svg);
+	background-size: cover;
+	background-position: bottom;
 
+	user-select: none;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 5vw;
+
+	font-family: var(--text__font__PlayfairDisplay);
+	color: var(--text__color__pattern);
+
+	@media (max-width: 1300px) {
+		flex-direction: column;
+		gap: 10vh;
+		padding-bottom: 10vh;
+		height: auto;
+	}
+}
+
+.footer__box__primary {
+	width: fit-content;
+	height: 258px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	h1 {
+		font-family: var(--text__font__ClickerScript);
+		width: 207px;
+		height: 71px;
+		font-family: Clicker Script;
+		font-weight: 400;
+		font-size: 54px;
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
+
+	p {
+		width: 380px;
+		height: 123px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 22px;
+		letter-spacing: 0%;
+	}
+
+	div {
+		display: flex;
+		flex-direction: row;
+		gap: 10px;
+	}
+
+	@media (max-width: 1300px) {
+		width: 90%;
+		padding-top: 30px;
+
+		p {
+			width: 100%;
+			height: auto;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 22px;
+			letter-spacing: 0%;
+		}
+	}
+}
+
+.footer__box__secondary {
+	width: fit-content;
+	height: auto;
+
+	h1 {
+		width: 100%;
+		height: auto;
+		font-weight: 700;
+		font-size: 26px;
+		line-height: 100%;
+		letter-spacing: 0%;
+	}
+
+	p {
+		width: 100%;
+		max-width: 332px;
+		height: auto;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 42px;
+		letter-spacing: 0%;
+	}
+}
+</style>
+</body>
 </html>
