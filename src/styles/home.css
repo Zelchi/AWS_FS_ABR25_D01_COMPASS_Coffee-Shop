@@ -60,6 +60,7 @@
 				line-height: 100%;
 				letter-spacing: 0%;
 				text-decoration: none;
+				font-family: var(--text__font__PlayfairDisplay);
 				color: var(--text__color__pattern);
 				position: relative;
 				transition: color 0.3s;
