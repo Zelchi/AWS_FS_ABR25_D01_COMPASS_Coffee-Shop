@@ -141,15 +141,26 @@
 		</section>
 
 		<section class="feedback">
-			<img src="./assets/coffee_blast.svg" class="feedback__img__decoration" alt="coffee image" draggable="false" />
+			<img src="./assets/coffee_blast.svg"
+				class="feedback__img__decoration remove__in__short__window"
+				alt="coffee image"
+				draggable="false"
+			/>
 			<div class="feedback__text__box">
 				<h1>Our coffee perfection feedback</h1>
 				<p>Our customers has amazing things to say about us</p>
 			</div>
-			<img src="./assets/coffee_blast.svg" class="feedback__img__decoration" alt="coffee image" draggable="false" />
-			<div class="feedback__slide__container">
-				<img src="./assets/quote.svg" class="feedback__img__decoration__text" alt="coffee image" draggable="false" />
-			</div>
+			<img src="./assets/quote.svg"
+				class="feedback__img__decoration__text remove__in__short__window"
+				alt="coffee image"
+				draggable="false"
+			/>
+			<img src="./assets/coffee_blast.svg"
+				class="feedback__img__decoration remove__in__short__window"
+				alt="coffee image"
+				draggable="false"
+			/>
+			<div class="feedback__slide__container"></div>
 		</section>
 
 		<section class="subscribre">
@@ -193,27 +204,33 @@
 
 			<div class="footer__box__secondary__container">
 				<div class="footer__box__secondary remove__in__short__window">
-					<h1>About</h1>
-					<p>Home</p>
-					<p>Features</p>
-					<p>News & Blogs</p>
-					<p>Help & Supports</p>
+					<h2>About</h2>
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#features">Features</a></li>
+						<li><a href="#news">News & Blogs</a></li>
+						<li><a href="#support">Help & Supports</a></li>
+					</ul>
 				</div>
 
 				<div class="footer__box__secondary remove__in__short__window">
-					<h1>Company</h1>
-					<p>How we work</p>
-					<p>Terms of service</p>
-					<p>Pricing</p>
-					<p>FAQ</p>
+					<h2>Company</h2>
+					<ul>
+						<li><a href="#how-we-work">How we work</a></li>
+						<li><a href="#terms">Terms of service</a></li>
+						<li><a href="#pricing">Pricing</a></li>
+						<li><a href="#faq">FAQ</a></li>
+					</ul>
 				</div>
 
 				<div class="footer__box__secondary">
-					<h1>Contact Us</h1>
-					<p>Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016</p>
-					<p>+1 202-918-2132</p>
-					<p>beanscene@mail.com</p>
-					<p>www.beanscene.com</p>
+					<h2>Contact Us</h2>
+					<ul>
+						<li><a href="address:maps">Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016</a>
+						<li><a href="tel:+12029182132">+1 202-918-2132</a>
+						<li><a href="mailto:beanscene@mail.com">beanscene@mail.com</a>
+						<li><a href="https://www.beanscene.com" target="_blank" rel="noopener noreferrer">www.beanscene.com</a>
+					</ul>
 				</div>
 			</div>
 		</section>
@@ -1588,9 +1605,10 @@ body {
 }
 
 .feedback__img__decoration__text {
+	z-index: 10;
 	position: absolute;
-	top: 10px;
-	left: 10px;
+	top: 20%;
+	left: 30%;
 }
 </style>
 <style>.subscribre {
@@ -1863,6 +1881,8 @@ body {
 	@media (max-width: 1300px) {
 		width: 90%;
 		padding-top: 30px;
+		max-width: 500px;
+		text-align: justify;
 
 		p {
 			width: 100%;
@@ -1878,7 +1898,7 @@ body {
 .footer__box__secondary__container {
 	display: flex;
 	flex-direction: row;
-	gap: 60px;
+	gap: 70px;
 }
 
 .footer__box__secondary {
@@ -1889,26 +1909,34 @@ body {
 	align-items: start;
 	justify-content: start;
 
-	h1 {
+	h2 {
 		width: 100%;
 		height: auto;
 		font-weight: 700;
 		font-size: 26px;
 		line-height: 100%;
 		letter-spacing: 0%;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 	}
 
-	p {
-		width: 100%;
+	ul {
+		list-style: none;
+		margin-top: 20px;
+	}
+
+	li {
+		text-decoration: none;
 		max-width: 332px;
-		height: auto;
+	}
+
+	a {
+		color: var(--text__color__pattern);
 		font-weight: 400;
 		font-size: 18px;
 		line-height: 42px;
 		letter-spacing: 0%;
+		text-decoration: none;
 	}
-}
-</style>
+}</style>
 </body>
 </html>
