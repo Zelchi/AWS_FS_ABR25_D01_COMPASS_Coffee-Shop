@@ -8,7 +8,7 @@
 			"price": 2.5,
 			"short_description": "Strong, rich coffee shot made with 100% Arabica beans",
 			"is_new": false,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/o-close-up-do-cafe-fresco-classico-classico-serviu-na-superficie-escura_1220-5376.jpg",
 			"ingredients_ratio": [
 				{
 					"ingredient": "Arabica",
@@ -27,7 +27,7 @@
 			"price": 3.2,
 			"short_description": "Espresso topped with steamed milk and frothy foam",
 			"is_new": false,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/chavena-de-cafe-com-um-coracao-desenhado-na-espuma_1286-70.jpg",
 			"ingredients_ratio": [
 				{
 					"ingredient": "Arabica",
@@ -44,7 +44,7 @@
 			"name": "Blueberry Muffin",
 			"type": "Bakery",
 			"price": 2.8,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/vista-de-um-delicioso-muffin_23-2150777669.jpg",
 			"short_description": "Soft muffin filled with fresh blueberries and a sugar crust",
 			"is_new": false
 		},
@@ -55,7 +55,7 @@
 			"price": 3.9,
 			"short_description": "Cold brewed coffee infused with coconut water",
 			"is_new": true,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/delicioso-coquetel-na-mesa_23-2150251387.jpg",
 			"ingredients_ratio": [
 				{
 					"ingredient": "Cold Brew",
@@ -72,7 +72,7 @@
 			"name": "Ham & Cheese Croissant",
 			"type": "Savory Snack",
 			"price": 4.2,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/bacon-croissant-com-mostarda_1150-11058.jpg",
 			"short_description": "Buttery croissant with ham and melted cheese inside",
 			"is_new": false
 		},
@@ -83,7 +83,7 @@
 			"price": 3.75,
 			"short_description": "Creamy green tea latte made with ceremonial matcha",
 			"is_new": true,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/matcha-latte-em-uma-xicara_417767-46.jpg",
 			"ingredients_ratio": [
 				{
 					"ingredient": "Milk",
@@ -102,7 +102,7 @@
 			"price": 4.5,
 			"short_description": "Chilled espresso with milk and caramel drizzle",
 			"is_new": false,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/cafe-gelado-com-chantilly_1150-18518.jpg",
 			"ingredients_ratio": [
 				{
 					"ingredient": "Espresso",
@@ -119,7 +119,7 @@
 			"name": "Vegan Chocolate Brownie",
 			"type": "Bakery",
 			"price": 3.0,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/delicioso-arranjo-de-brownies-no-prato_23-2149349273.jpg",
 			"short_description": "Fudgy plant-based brownie with dark chocolate chips",
 			"is_new": false
 		},
@@ -128,7 +128,7 @@
 			"name": "Turkey & Avocado Sandwich",
 			"type": "Savory Snack",
 			"price": 5.2,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/torrada-de-abacate-em-angulo-alto-no-prato_23-2148891760.jpg",
 			"short_description": "Whole grain sandwich with turkey, avocado and greens",
 			"is_new": false
 		},
@@ -139,7 +139,7 @@
 			"price": 3.6,
 			"short_description": "Spiced tea with milk, infused with cinnamon and cardamom",
 			"is_new": false,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/xicara-de-cafe-em-angulo-alto-com-paus-de-canela-e-anis-estrelado_23-2148808622.jpg",
 			"ingredients_ratio": [
 				{
 					"ingredient": "Milk",
@@ -158,7 +158,7 @@
 			"price": 4.1,
 			"short_description": "Cold brew with hazelnut syrup and silky cold foam",
 			"is_new": true,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-premium/cafe-moacino-de-avela-em-uma-caneca-de-vidro-sobre-uma-mesa-de-madeira_171081-2028.jpg",
 			"ingredients_ratio": [
 				{
 					"ingredient": "Cold Brew",
@@ -175,7 +175,7 @@
 			"name": "Classic Donut",
 			"type": "Bakery",
 			"price": 1.8,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-premium/close-up-de-sobremesa-em-prato-na-mesa_1048944-21880061.jpg",
 			"short_description": "Glazed yeast donut, soft and sweet",
 			"is_new": false
 		},
@@ -184,7 +184,7 @@
 			"name": "Fruit Parfait",
 			"type": "Snack",
 			"price": 3.9,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-gratis/xicara-de-sobremesa-brasileira-com-kiwi_23-2149871601.jpg",
 			"short_description": "Layers of granola, yogurt, and fresh fruits",
 			"is_new": false
 		},
@@ -193,7 +193,7 @@
 			"name": "Iced Hibiscus Tea",
 			"type": "Cold Beverage",
 			"price": 3.3,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-premium/close-up-de-bebida-em-copo-na-mesa_1048944-13703220.jpg",
 			"short_description": "Refreshing herbal tea with a tart berry flavor",
 			"is_new": false,
 			"ingredients_ratio": [
@@ -214,7 +214,7 @@
 			"price": 4.6,
 			"short_description": "Espresso with steamed milk and pumpkin spice syrup",
 			"is_new": true,
-			"imagem_url": "https://img.freepik.com/vetores-gratis/xicara-realista-de-cafe-preto-na-ilustracao-vetorial-de-pires_1284-66002.jpg",
+			"imagem_url": "https://img.freepik.com/fotos-premium/um-pumpkin-spice-latte-capturado-em-um-anuncio-comercial-com-um-tema-de-outono_1329608-8548.jpg",
 			"ingredients_ratio": [
 				{
 					"ingredient": "Milk",
