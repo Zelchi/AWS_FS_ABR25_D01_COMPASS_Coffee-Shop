@@ -90,7 +90,7 @@
 	z-index: 3;
 	width: auto;
 	height: auto;
-	font-family: Clicker Script;
+	font-family: var(--text__font__ClickerScript);
 	font-weight: 400;
 	font-size: 35px;
 	line-height: 100%;
@@ -132,7 +132,7 @@
 }
 
 .home__text__2 {
-	font-family: Clicker Script;
+	font-family: var(--text__font__ClickerScript);
 	font-weight: 400;
 	font-size: 220px;
 	line-height: 100%;

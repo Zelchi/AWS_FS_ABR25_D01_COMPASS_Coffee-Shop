@@ -21,7 +21,7 @@
 	text-align: center;
 	width: 90%;
 	max-width: 980px;
-	font-family: var(--btn__order__font);
+	font-family: var(--text__font__PlayfairDisplay);
 
 	h1 {
 		width: 100%;
@@ -102,7 +102,7 @@
 	width: 90%;
 	max-width: 780px;
 	height: 100%;
-	font-family: var(--btn__order__font);
+	font-family: var(--text__font__PlayfairDisplay);
 	color: var(--text__color__secondary);
 	font-weight: 600;
 	font-size: 18px;
@@ -142,7 +142,7 @@
 	}
 
 	p {
-		font-family: var(--btn__order__font);
+		font-family: var(--text__font__PlayfairDisplay);
 		color: var(--text__color__secondary);
 		width: 100%;
 		height: auto;

@@ -1,179 +1,181 @@
 <!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			as="style"
+		/>
+		<link
+			rel="preload"
+			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			as="style"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href="/src/assets/Coffee.svg" />
+		<link rel="stylesheet" href="/src/styles/global.css" />
+		<link rel="stylesheet" href="/src/styles/home.css" />
+		<link rel="stylesheet" href="/src/styles/shop.css" />
+		<link rel="stylesheet" href="/src/styles/table.css" />
+		<link rel="stylesheet" href="/src/styles/adverti.css" />
+		<link rel="stylesheet" href="/src/styles/feedback.css" />
+		<link rel="stylesheet" href="/src/styles/subscribre.css" />
+		<title>Bean Scene</title>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="preload"
-		href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		as="style" />
-	<link rel="preload"
-		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		as="style" />
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		rel="stylesheet" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-		rel="stylesheet" />
-	<link rel="icon" href="/src/assets/Coffee.svg" />
-	<link rel="stylesheet" href="/src/styles/global.css" />
-	<link rel="stylesheet" href="/src/styles/home.css" />
-	<link rel="stylesheet" href="/src/styles/shop.css" />
-	<link rel="stylesheet" href="/src/styles/table.css" />
-	<link rel="stylesheet" href="/src/styles/adverti.css" />
-	<link rel="stylesheet" href="/src/styles/feedback.css" />
-	<link rel="stylesheet" href="/src/styles/subscribre.css" />
-	<title>Bean Scene</title>
-</head>
-
-<body>
-	<section class="home">
-		<div class="home__overlay">
-			<nav class="home__nav">
-				<h1 class="home__title">Bean Scene</h1>
-				<ul class="home__nav__links remove__in__short__window">
-					<li><a href="#home">Home</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#about">About Us</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-				<div class="hamburger__menu remove__in__long__window">
-					<span></span>
-					<span></span>
-					<span></span>
+	<body>
+		<section class="home">
+			<div class="home__overlay">
+				<nav class="home__nav">
+					<h1 class="home__title">Bean Scene</h1>
+					<ul class="home__nav__links remove__in__short__window">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+					<div class="hamburger__menu remove__in__long__window">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<button class="btn__skin remove__in__short__window">
+						<p>Order Now</p>
+					</button>
+				</nav>
+				<div class="mobile__menu hidden">
+					<ul>
+						<li><a href="#shop">Home</a></li>
+						<li><a href="#menu">Menu</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
 				</div>
-				<button class="btn__skin remove__in__short__window">
-					<p>Order Now</p>
-				</button>
-			</nav>
-			<div class="mobile__menu hidden">
-				<ul>
-					<li><a href="#shop">Home</a></li>
-					<li><a href="#menu">Menu</a></li>
-					<li><a href="#about">About Us</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-			</div>
-			<div class="home__text__box">
-				<p class="home__text__1">We’ve got your morning covered with</p>
-				<p class="home__text__2">Coffee</p>
-				<p class="home__text__3">
-					It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever
-					have. We
-					provide the best for our customers.
-				</p>
-				<button class="btn__skin home__text__button">
-					<p>Order Now</p>
-				</button>
-			</div>
-		</div>
-	</section>
-
-	<section class="shop">
-		<div class="shop__text__div">
-			<div class="shop__text__box">
-				<p class="shop__text__1">Discover the best coffee</p>
-				<p class="shop__text__2">
-					Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity
-					and
-					helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater.
-					There is
-					no doubt that you will enjoy this coffee more than others you have ever tasted.
-				</p>
-				<button class="btn__skin shop__text__button">
-					<p>Learn More</p>
-				</button>
-			</div>
-			<img src="/src/assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
-				class="shop__img remove__in__short__window" alt="coffee image" draggable="false" />
-			<img src="/src/assets/coffee_blast.svg" class="shop__img__decoration" alt="coffee image"
-				draggable="false" />
-		</div>
-		<div class="shop__products__container">
-			<h1 class="shop__products__container__title">Enjoy a new blend of coffee style</h1>
-			<p class="shop__products__container__text">
-				Explore all flavours on our menu with us. There is always a new worth experiencing
-			</p>
-			<div class="shop__products__box__container remove__in__short__window"></div>
-		</div>
-	</section>
-
-	<section class="table">
-		<div class="table__select__buttons__box">
-			<button class="table__select__button btn__skin" id="table__select__button__all">
-				<p>All items</p>
-			</button>
-			<button class="table__no__selected__button btn__skin" id="table__select__button__warm">
-				<p>Warm drinks</p>
-			</button>
-			<button class="table__no__selected__button btn__skin" id="table__select__button__cold">
-				<p>Cold drinks</p>
-			</button>
-			<button class="table__no__selected__button btn__skin" id="table__select__button__snacks">
-				<p>Snacks</p>
-			</button>
-			<button class="table__no__selected__button btn__skin" id="table__select__button__dessert">
-				<p>Dessert</p>
-			</button>
-		</div>
-		<div class="table__container">
-			<div class="table__box"></div>
-		</div>
-	</section>
-
-	<section class="adverti">
-		<div class="adverti__text__box">
-			<h1 class="adverti__text__title">Get a chance to have an Amazing morning</h1>
-			<p class="adverti__text">We are giving you are one time opportunity to experience a better life with coffee.
-			</p>
-			<button class="adverti__button btn__skin">
-				<p>Order Now</p>
-			</button>
-		</div>
-		<img src="/src/assets/coffee-cup.svg" class="adverti__img" alt="coffee image" draggable="false" />
-	</section>
-
-	<section class="feedback">
-		<div class="feedback__text__box">
-			<h1>Our coffee perfection feedback</h1>
-			<p>Our customers has amazing things to say about us</p>
-		</div>
-		<div class="feedback__slide__container"></div>
-	</section>
-
-	<section class="subscribre">
-		<div class="subscribre__overlay">
-			<div class="subscribre__container">
-				<div class="subscribre__text__box">
-					<h1>Subscribe to get offers!</h1>
-					<p>Don’t miss out on our latest news, updates, tips and special offers</p>
-				</div>
-				<div class="subscribre__input__box">
-					<input type="email" placeholder="Enter your mail" id="subscribre__input"/>
-					<button id="subscribre__button">
-						<p>Subscribe</p>
+				<div class="home__text__box">
+					<p class="home__text__1">We’ve got your morning covered with</p>
+					<p class="home__text__2">Coffee</p>
+					<p class="home__text__3">
+						It is best to start your day with a cup of coffee. Discover the best flavours coffee you will ever have. We
+						provide the best for our customers.
+					</p>
+					<button class="btn__skin home__text__button">
+						<p>Order Now</p>
 					</button>
 				</div>
 			</div>
+		</section>
 
-			<div class="subscribre__img__container remove__in__short__window">
-				<img src="/src/assets/coffee-cup2.svg" class="subscribre__img" alt="coffee image" draggable="false" />
+		<section class="shop">
+			<div class="shop__text__div">
+				<div class="shop__text__box">
+					<p class="shop__text__1">Discover the best coffee</p>
+					<p class="shop__text__2">
+						Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and
+						helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is
+						no doubt that you will enjoy this coffee more than others you have ever tasted.
+					</p>
+					<button class="btn__skin shop__text__button">
+						<p>Learn More</p>
+					</button>
+				</div>
+				<img
+					src="/src/assets/stylized-cup-coffee-out-coffee-beans-flat-lay 1.svg"
+					class="shop__img remove__in__short__window"
+					alt="coffee image"
+					draggable="false"
+				/>
+				<img src="/src/assets/coffee_blast.svg" class="shop__img__decoration" alt="coffee image" draggable="false" />
 			</div>
-		</div>
-	</section>
+			<div class="shop__products__container">
+				<h1 class="shop__products__container__title">Enjoy a new blend of coffee style</h1>
+				<p class="shop__products__container__text">
+					Explore all flavours on our menu with us. There is always a new worth experiencing
+				</p>
+				<div class="shop__products__box__container remove__in__short__window"></div>
+			</div>
+		</section>
 
-	<section class="footer">
-		Hello World!!!
-	</section>
+		<section class="table">
+			<div class="table__select__buttons__box">
+				<button class="table__select__button btn__skin" id="table__select__button__all">
+					<p>All items</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__warm">
+					<p>Warm drinks</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__cold">
+					<p>Cold drinks</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__snacks">
+					<p>Snacks</p>
+				</button>
+				<button class="table__no__selected__button btn__skin" id="table__select__button__dessert">
+					<p>Dessert</p>
+				</button>
+			</div>
+			<div class="table__container">
+				<div class="table__box"></div>
+			</div>
+		</section>
 
-	<script type="module" src="src/scripts/global.js"></script>
-	<script type="module" src="src/scripts/shop.js"></script>
-	<script type="module" src="src/scripts/home.js"></script>
-	<script type="module" src="src/scripts/table.js"></script>
-	<script type="module" src="src/scripts/feedback.js"></script>
-	<script type="module" src="src/scripts/subscribre.js"></script>
-</body>
+		<section class="adverti">
+			<div class="adverti__text__box">
+				<h1 class="adverti__text__title">Get a chance to have an Amazing morning</h1>
+				<p class="adverti__text">We are giving you are one time opportunity to experience a better life with coffee.</p>
+				<button class="adverti__button btn__skin">
+					<p>Order Now</p>
+				</button>
+			</div>
+			<img src="/src/assets/coffee-cup.svg" class="adverti__img" alt="coffee image" draggable="false" />
+		</section>
 
+		<section class="feedback">
+			<div class="feedback__text__box">
+				<h1>Our coffee perfection feedback</h1>
+				<p>Our customers has amazing things to say about us</p>
+			</div>
+			<div class="feedback__slide__container"></div>
+		</section>
+
+		<section class="subscribre">
+			<div class="subscribre__overlay">
+				<div class="subscribre__container">
+					<div class="subscribre__text__box">
+						<h1>Subscribe to get offers!</h1>
+						<p>Don’t miss out on our latest news, updates, tips and special offers</p>
+					</div>
+					<div class="subscribre__input__box">
+						<input type="email" placeholder="Enter your mail" id="subscribre__input" />
+						<button id="subscribre__button">
+							<p>Subscribe</p>
+						</button>
+					</div>
+				</div>
+
+				<div class="subscribre__img__container remove__in__short__window">
+					<img src="/src/assets/coffee-cup2.svg" class="subscribre__img" alt="coffee image" draggable="false" />
+				</div>
+			</div>
+		</section>
+
+		<section class="footer">Hello World!!!</section>
+
+		<script type="module" src="src/scripts/global.js"></script>
+		<script type="module" src="src/scripts/shop.js"></script>
+		<script type="module" src="src/scripts/home.js"></script>
+		<script type="module" src="src/scripts/table.js"></script>
+		<script type="module" src="src/scripts/feedback.js"></script>
+		<script type="module" src="src/scripts/subscribre.js"></script>
+	</body>
 </html>

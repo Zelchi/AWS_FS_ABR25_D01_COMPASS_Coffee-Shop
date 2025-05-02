@@ -14,7 +14,7 @@
 	background-color: #603809;
 	background: linear-gradient(270.07deg, #603809 38%, #251503 99.95%);
 
-	font-family: 'Playfair Display', serif;
+	font-family: var(--text__font__PlayfairDisplay);
 
 	@media (max-width: 1300px) {
 		padding-top: 80px;
