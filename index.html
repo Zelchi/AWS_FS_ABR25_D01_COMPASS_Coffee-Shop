@@ -141,11 +141,15 @@
 		</section>
 
 		<section class="feedback">
+			<img src="./assets/coffee_blast.svg" class="feedback__img__decoration" alt="coffee image" draggable="false" />
 			<div class="feedback__text__box">
 				<h1>Our coffee perfection feedback</h1>
 				<p>Our customers has amazing things to say about us</p>
 			</div>
-			<div class="feedback__slide__container"></div>
+			<img src="./assets/coffee_blast.svg" class="feedback__img__decoration" alt="coffee image" draggable="false" />
+			<div class="feedback__slide__container">
+				<img src="./assets/quote.svg" class="feedback__img__decoration__text" alt="coffee image" draggable="false" />
+			</div>
 		</section>
 
 		<section class="subscribre">
@@ -187,28 +191,30 @@
 				</div>
 			</div>
 
-			<div class="footer__box__secondary remove__in__short__window">
-				<h1>About</h1>
-				<p>Home</p>
-				<p>Features</p>
-				<p>News & Blogs</p>
-				<p>Help & Supports</p>
-			</div>
+			<div class="footer__box__secondary__container">
+				<div class="footer__box__secondary remove__in__short__window">
+					<h1>About</h1>
+					<p>Home</p>
+					<p>Features</p>
+					<p>News & Blogs</p>
+					<p>Help & Supports</p>
+				</div>
 
-			<div class="footer__box__secondary remove__in__short__window">
-				<h1>About Us</h1>
-				<p>How we work</p>
-				<p>Terms of service</p>
-				<p>Pricing</p>
-				<p>FAQ</p>
-			</div>
+				<div class="footer__box__secondary remove__in__short__window">
+					<h1>Company</h1>
+					<p>How we work</p>
+					<p>Terms of service</p>
+					<p>Pricing</p>
+					<p>FAQ</p>
+				</div>
 
-			<div class="footer__box__secondary">
-				<h1>Contact Us</h1>
-				<p>Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016</p>
-				<p>+1 202-918-2132</p>
-				<p>beanscene@mail.com</p>
-				<p>www.beanscene.com</p>
+				<div class="footer__box__secondary">
+					<h1>Contact Us</h1>
+					<p>Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016</p>
+					<p>+1 202-918-2132</p>
+					<p>beanscene@mail.com</p>
+					<p>www.beanscene.com</p>
+				</div>
 			</div>
 		</section>
 
@@ -374,46 +380,46 @@ inputBox.appendChild(message);
 
 const savedEmail = localStorage.getItem('email');
 if (savedEmail) {
-    message.textContent = 'You are already subscribed!';
-    message.style.color = 'orange';
-    buttonText.textContent = 'Unsubscribe';
-    input.classList.add('hidden'); 
-    button.classList.add('unsubscribre__button'); 
-    message.classList.add('unsubscribre__message');
+	message.textContent = 'You are already subscribed!';
+	message.style.color = '#FFAD3B';
+	buttonText.textContent = 'Unsubscribe';
+	input.classList.add('hidden');
+	button.classList.add('unsubscribre__button');
+	message.classList.add('unsubscribre__message');
 }
 
 button.addEventListener('click', (e) => {
-    e.preventDefault();
+	e.preventDefault();
 
-    const inputValue = input.value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	const inputValue = input.value.trim();
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (buttonText.textContent === 'Unsubscribe') {
-        localStorage.removeItem('email');
-        message.textContent = 'You have unsubscribed successfully.';
-        message.style.color = 'orange';
-        buttonText.textContent = 'Subscribe';
-        input.value = '';
-        input.classList.remove('hidden'); 
-        button.classList.remove('unsubscribre__button');
-        message.classList.remove('unsubscribre__message');
-    } else if (emailRegex.test(inputValue)) {
-        if (savedEmail === inputValue) {
-            message.textContent = 'You are already subscribed!';
-            message.style.color = 'orange';
-        } else {
-            localStorage.setItem('email', inputValue);
-            message.textContent = 'Email saved successfully!';
-            message.style.color = 'orange';
-            buttonText.textContent = 'Unsubscribe';
-            input.value = '';
-            input.classList.add('hidden'); 
-            button.classList.add('unsubscribre__button');
-        }
-    } else {
-        message.textContent = 'Oops! The email address you entered is invalid.';
-        message.style.color = 'red';
-    }
+	if (buttonText.textContent === 'Unsubscribe') {
+		localStorage.removeItem('email');
+		message.textContent = 'You have unsubscribed successfully.';
+		message.style.color = '#FFAD3B';
+		buttonText.textContent = 'Subscribe';
+		input.value = '';
+		input.classList.remove('hidden');
+		button.classList.remove('unsubscribre__button');
+		message.classList.remove('unsubscribre__message');
+	} else if (emailRegex.test(inputValue)) {
+		if (savedEmail === inputValue) {
+			message.textContent = 'You are already subscribed!';
+			message.style.color = '#FFAD3B';
+		} else {
+			localStorage.setItem('email', inputValue);
+			message.textContent = 'Email saved successfully!';
+			message.style.color = '#FFAD3B';
+			buttonText.textContent = 'Unsubscribe';
+			input.value = '';
+			input.classList.add('hidden');
+			button.classList.add('unsubscribre__button');
+		}
+	} else {
+		message.textContent = 'Oops! The email address you entered is invalid.';
+		message.style.color = 'red';
+	}
 });
 
 
@@ -1343,6 +1349,7 @@ body {
 	padding-bottom: 100px;
 	margin-top: 0px;
 	user-select: none;
+	position: relative;
 
 	@media (max-width: 1300px) {
 		margin-top: 300px;
@@ -1524,6 +1531,7 @@ body {
 		font-size: 20px;
 		width: 53px;
 		height: 53px;
+
 		&:active {
 			transform: translateY(-50%) scale(0.9);
 			background-color: var(--btn__order__bg__color__hover);
@@ -1536,6 +1544,7 @@ body {
 			background-color: var(--btn__order__bg__color__hover);
 			color: var(--text__color__secondary);
 		}
+
 		&:active {
 			transform: translateY(-50%) scale(0.9);
 			background-color: var(--btn__order__bg__color__hover);
@@ -1559,6 +1568,29 @@ body {
 	@media (max-width: 1300px) {
 		left: calc(100% - 20px);
 	}
+}
+
+.feedback__img__decoration {
+	position: absolute;
+
+	&:first-of-type {
+		left: 0;
+		top: 500px;
+		transform: scaleX(-1);
+		rotate: 180deg;
+	}
+
+	&:last-of-type {
+		transform: scaleX(-1);
+		right: 0;
+		top: -100px;
+	}
+}
+
+.feedback__img__decoration__text {
+	position: absolute;
+	top: 10px;
+	left: 10px;
 }
 </style>
 <style>.subscribre {
@@ -1843,9 +1875,19 @@ body {
 	}
 }
 
+.footer__box__secondary__container {
+	display: flex;
+	flex-direction: row;
+	gap: 60px;
+}
+
 .footer__box__secondary {
 	width: fit-content;
 	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	justify-content: start;
 
 	h1 {
 		width: 100%;
@@ -1854,6 +1896,7 @@ body {
 		font-size: 26px;
 		line-height: 100%;
 		letter-spacing: 0%;
+		margin-bottom: 40px;
 	}
 
 	p {
