@@ -24,6 +24,7 @@
 	width: 90%;
 	max-width: 980px;
 	font-family: var(--text__font__PlayfairDisplay);
+	position: relative;
 
 	h1 {
 		width: 100%;
@@ -118,7 +119,6 @@
 
 	@media (max-width: 1300px) {
 		width: 80%;
-		max-width: 281px;
 		height: 243;
 		font-size: 13.5px;
 		line-height: 27px;
@@ -249,6 +249,6 @@
 .feedback__img__decoration__text {
 	z-index: 10;
 	position: absolute;
-	top: 20%;
-	left: 30%;
+	top: 150px;
+	left: 10px;
 }
