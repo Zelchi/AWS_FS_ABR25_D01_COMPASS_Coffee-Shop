@@ -329,6 +329,9 @@ const readJSON = async (relativePath) => {
 	}
 };
 
+const isValidProduct = (product) => {
+	return product.imagem_url && product.name && product.short_description && product.price != null;
+};
 const hamburgerMenu = document.querySelector('.navbar__hamburger__menu');
 const mobileMenu = document.querySelector('.navbar__mobile__menu');
 
@@ -341,6 +344,7 @@ hamburgerMenu.addEventListener('click', () => {
 		setTimeout(() => mobileMenu.classList.add('mobile__menu__open'), 10);
 	}
 });
+
 
 
 
@@ -378,10 +382,6 @@ const renderProducts = (products) => {
 			container.appendChild(card);
 		}
 	});
-};
-
-const isValidProduct = (product) => {
-	return product.imagem_url && product.name && product.short_description && product.price != null;
 };
 
 const getRandomProducts = (data, count) => {
@@ -469,11 +469,8 @@ input.addEventListener('keypress', (e) => {
 
 
 
-const getElement = (selector) => document.querySelector(selector);
 
-const isValidProduct = (product) => {
-	return product.imagem_url && product.name && product.short_description && product.price != null;
-};
+const getElement = (selector) => document.querySelector(selector);
 
 const createInitialBar = (tableContainer, tableBox) => {
 	let initialBar = getElement('.table__initial__bar');
@@ -665,7 +662,7 @@ body {
 	z-index: 1;
 	user-select: none;
 
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 
 	background-image: url(./assets/coffee_image.svg);
@@ -684,8 +681,8 @@ body {
 .home__overlay {
 	z-index: 2;
 	background-image: url(./assets/overlay.svg);
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	background-size: cover;
 	background-attachment: local;
 	background-position: center;
@@ -1878,12 +1875,12 @@ body {
 	backdrop-filter: blur(5px);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	background-color: rgba(0, 0, 0, 0.5);
-	overflow: hidden;
 
 	@media (max-width: 1300px) {
 		justify-content: space-between;
 		padding: 10px 20px;
 		height: 50px;
+		backdrop-filter: none;
 	}
 
 	ul {
@@ -2017,7 +2014,6 @@ body {
 .mobile__menu__open ul {
 	opacity: 1;
 	transform: translateY(0);
-}
-</style>
+}</style>
 </body>
 </html>
