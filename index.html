@@ -32,37 +32,39 @@
 		
 		
 		
+		
 		<title>Bean Scene</title>
 	</head>
 
 	<body>
+		<nav class="navbar">
+			<h1 class="navbar__title">Bean Scene</h1>
+			<ul class="navbar__nav__links remove__in__short__window">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#menu">Menu</a></li>
+				<li><a href="#about">About Us</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<button class="btn__skin remove__in__short__window">
+				<p>Order Now</p>
+			</button>
+		</nav>
+		<div class="navbar__hamburger__menu remove__in__long__window">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="navbar__mobile__menu hidden">
+			<ul>
+				<li><a href="#shop">Home</a></li>
+				<li><a href="#menu">Menu</a></li>
+				<li><a href="#about">About Us</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+
 		<section class="home">
 			<div class="home__overlay">
-				<nav class="home__nav">
-					<h1 class="home__title">Bean Scene</h1>
-					<ul class="home__nav__links remove__in__short__window">
-						<li><a href="#home">Home</a></li>
-						<li><a href="#menu">Menu</a></li>
-						<li><a href="#about">About Us</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-					<div class="hamburger__menu remove__in__long__window">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-					<button class="btn__skin remove__in__short__window">
-						<p>Order Now</p>
-					</button>
-				</nav>
-				<div class="mobile__menu hidden">
-					<ul>
-						<li><a href="#shop">Home</a></li>
-						<li><a href="#menu">Menu</a></li>
-						<li><a href="#about">About Us</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div>
 				<div class="home__text__box">
 					<p class="home__text__1">We’ve got your morning covered with</p>
 					<p class="home__text__2">Coffee</p>
@@ -149,12 +151,12 @@
 			<div class="feedback__text__box">
 				<h1>Our coffee perfection feedback</h1>
 				<p>Our customers has amazing things to say about us</p>
+				<img src="./assets/quote.svg"
+					class="feedback__img__decoration__text remove__in__short__window"
+					alt="coffee image"
+					draggable="false"
+				/>
 			</div>
-			<img src="./assets/quote.svg"
-				class="feedback__img__decoration__text remove__in__short__window"
-				alt="coffee image"
-				draggable="false"
-			/>
 			<img src="./assets/coffee_blast.svg"
 				class="feedback__img__decoration remove__in__short__window"
 				alt="coffee image"
@@ -226,10 +228,10 @@
 				<div class="footer__box__secondary">
 					<h2>Contact Us</h2>
 					<ul>
-						<li><a href="address:maps">Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016</a>
-						<li><a href="tel:+12029182132">+1 202-918-2132</a>
-						<li><a href="mailto:beanscene@mail.com">beanscene@mail.com</a>
-						<li><a href="https://www.beanscene.com" target="_blank" rel="noopener noreferrer">www.beanscene.com</a>
+						<li><a href="address:maps">Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016</a></li>
+						<li><a href="tel:+12029182132">+1 202-918-2132</a></li>
+						<li><a href="mailto:beanscene@mail.com">beanscene@mail.com</a></li>
+						<li><a href="https://www.beanscene.com" target="_blank" rel="noopener noreferrer">www.beanscene.com</a></li>
 					</ul>
 				</div>
 			</div>
@@ -273,9 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				feedbackContainer.innerHTML = '';
 
 				response.data.forEach((feedback) => {
-					const slide = document.createElement('div');
-					slide.classList.add('feedback__slide');
-					slide.innerHTML = `
+					if (feedback.message && feedback.full_name && feedback.profession && feedback.image_url) {
+						const slide = document.createElement('div');
+						slide.classList.add('feedback__slide');
+						slide.innerHTML = `
                     <p class="feedback__slide__text">${feedback.message}</p>
                     <div class="feedback__slide__author__box">
                     <h1 class="feedback__slide__author">${feedback.full_name}</h1>
@@ -283,10 +286,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <img src="${feedback.image_url}" alt="${feedback.full_name}" class="feedback__slide__image" draggable='false'/>
                 `;
-					feedbackContainer.appendChild(slide);
+						feedbackContainer.appendChild(slide);
+					}
 				});
 
-				feedbackContainer.firstChild.classList.add('feedback__slide__active');
+				if (feedbackContainer.firstChild) {
+					feedbackContainer.firstChild.classList.add('feedback__slide__active');
+				}
 
 				const prevButton = document.createElement('button');
 				prevButton.classList.add('feedback__button', 'feedback__button__prev');
@@ -323,8 +329,8 @@ const readJSON = async (relativePath) => {
 	}
 };
 
-const hamburgerMenu = document.querySelector('.hamburger__menu');
-const mobileMenu = document.querySelector('.mobile__menu');
+const hamburgerMenu = document.querySelector('.navbar__hamburger__menu');
+const mobileMenu = document.querySelector('.navbar__mobile__menu');
 
 hamburgerMenu.addEventListener('click', () => {
 	if (mobileMenu.classList.contains('mobile__menu__open')) {
@@ -339,6 +345,10 @@ hamburgerMenu.addEventListener('click', () => {
 
 
 const createProductCard = (product) => {
+	if (!product.imagem_url || !product.name || !product.short_description || product.price == null) {
+		return null;
+	}
+
 	const card = document.createElement('div');
 	card.classList.add('product__card');
 
@@ -364,12 +374,19 @@ const renderProducts = (products) => {
 
 	products.forEach((product) => {
 		const card = createProductCard(product);
-		container.appendChild(card);
+		if (card) {
+			container.appendChild(card);
+		}
 	});
 };
 
+const isValidProduct = (product) => {
+	return product.imagem_url && product.name && product.short_description && product.price != null;
+};
+
 const getRandomProducts = (data, count) => {
-	const shuffled = data.sort(() => 0.5 - Math.random());
+	const validProducts = data.filter(isValidProduct);
+	const shuffled = validProducts.sort(() => 0.5 - Math.random());
 	return shuffled.slice(0, count);
 };
 
@@ -395,63 +412,71 @@ const message = document.createElement('p');
 message.classList.add('subscribre__message');
 inputBox.appendChild(message);
 
+const updateUI = (isSubscribed, textMessage, color) => {
+	message.textContent = textMessage;
+	message.style.color = color;
+
+	if (isSubscribed) {
+		buttonText.textContent = 'Unsubscribe';
+		input.classList.add('hidden');
+		button.classList.add('unsubscribre__button');
+		message.classList.add('unsubscribre__message');
+	} else {
+		buttonText.textContent = 'Subscribe';
+		input.classList.remove('hidden');
+		button.classList.remove('unsubscribre__button');
+		message.classList.remove('unsubscribre__message');
+	}
+};
+
 const savedEmail = localStorage.getItem('email');
 if (savedEmail) {
-	message.textContent = 'You are already subscribed!';
-	message.style.color = '#FFAD3B';
-	buttonText.textContent = 'Unsubscribe';
-	input.classList.add('hidden');
-	button.classList.add('unsubscribre__button');
-	message.classList.add('unsubscribre__message');
+	updateUI(true, 'You are already subscribed!', '#FFAD3B');
 }
 
-button.addEventListener('click', (e) => {
-	e.preventDefault();
-
+const handleSubscription = () => {
 	const inputValue = input.value.trim();
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 	if (buttonText.textContent === 'Unsubscribe') {
 		localStorage.removeItem('email');
-		message.textContent = 'You have unsubscribed successfully.';
-		message.style.color = '#FFAD3B';
-		buttonText.textContent = 'Subscribe';
+		updateUI(false, 'You have unsubscribed successfully.', '#FFAD3B');
 		input.value = '';
-		input.classList.remove('hidden');
-		button.classList.remove('unsubscribre__button');
-		message.classList.remove('unsubscribre__message');
 	} else if (emailRegex.test(inputValue)) {
 		if (savedEmail === inputValue) {
-			message.textContent = 'You are already subscribed!';
-			message.style.color = '#FFAD3B';
+			updateUI(true, 'You are already subscribed!', '#FFAD3B');
 		} else {
 			localStorage.setItem('email', inputValue);
-			message.textContent = 'Email saved successfully!';
-			message.style.color = '#FFAD3B';
-			buttonText.textContent = 'Unsubscribe';
+			updateUI(true, 'Email saved successfully!', '#FFAD3B');
 			input.value = '';
-			input.classList.add('hidden');
-			button.classList.add('unsubscribre__button');
 		}
 	} else {
-		message.textContent = 'Oops! The email address you entered is invalid.';
-		message.style.color = 'red';
+		updateUI(false, 'Oops! The email address you entered is invalid.', 'red');
+	}
+};
+
+button.addEventListener('click', (e) => {
+	e.preventDefault();
+	handleSubscription();
+});
+
+input.addEventListener('keypress', (e) => {
+	if (e.key === 'Enter' && buttonText.textContent === 'Subscribe') {
+		e.preventDefault();
+		handleSubscription();
 	}
 });
 
 
 
-const renderTable = (items) => {
-	const tableContainer = document.querySelector('.table__container');
-	const tableBox = document.querySelector('.table__box');
-	if (!tableContainer || !tableBox) {
-		console.error('Container with class "table__container" or "table__box" not found.');
-		return;
-	}
+const getElement = (selector) => document.querySelector(selector);
 
-	tableBox.innerHTML = '';
+const isValidProduct = (product) => {
+	return product.imagem_url && product.name && product.short_description && product.price != null;
+};
 
-	let initialBar = document.querySelector('.table__initial__bar');
+const createInitialBar = (tableContainer, tableBox) => {
+	let initialBar = getElement('.table__initial__bar');
 	if (!initialBar) {
 		initialBar = document.createElement('div');
 		initialBar.classList.add('table__initial__bar');
@@ -462,28 +487,45 @@ const renderTable = (items) => {
         `;
 		tableContainer.insertBefore(initialBar, tableBox);
 	}
+};
 
-	items.forEach((item) => {
-		const row = document.createElement('div');
-		row.classList.add('table__row');
+const createTableRow = (item) => {
+	const row = document.createElement('div');
+	row.classList.add('table__row');
+	row.innerHTML = `
+        <p>${item.name}</p>
+        <p class="remove__in__short__window">${item.type}</p>
+        <p>$${item.price.toFixed(2)}</p>
+    `;
+	return row;
+};
 
-		row.innerHTML = `
-            <p>${item.name}</p>
-            <p class="remove__in__short__window">${item.type}</p>
-            <p>$${item.price.toFixed(2)}</p>
-        `;
+const renderTable = (items) => {
+	const tableContainer = getElement('.table__container');
+	const tableBox = getElement('.table__box');
+	if (!tableContainer || !tableBox) {
+		console.error('Container with class "table__container" or "table__box" not found.');
+		return;
+	}
 
+	tableBox.innerHTML = '';
+	createInitialBar(tableContainer, tableBox);
+
+	items.filter(isValidProduct).forEach((item) => {
+		const row = createTableRow(item);
 		tableBox.appendChild(row);
 	});
 };
 
 const filterItemsByType = (items, type) => {
-	if (type === 'all') return items;
-	if (type === 'warm') return items.filter((item) => item.type === 'Hot Beverage');
-	if (type === 'cold') return items.filter((item) => item.type === 'Cold Beverage');
-	if (type === 'snacks') return items.filter((item) => item.type === 'Savory Snack');
-	if (type === 'dessert') return items.filter((item) => item.type === 'Bakery');
-	return [];
+	const typeMap = {
+		all: () => items,
+		warm: () => items.filter((item) => item.type === 'Hot Beverage'),
+		cold: () => items.filter((item) => item.type === 'Cold Beverage'),
+		snacks: () => items.filter((item) => item.type === 'Savory Snack'),
+		dessert: () => items.filter((item) => item.type === 'Bakery'),
+	};
+	return (typeMap[type] || (() => []))();
 };
 
 const setupTableButtons = (items) => {
@@ -528,12 +570,18 @@ readJSON("./data/all-items.json")
 	--text__color__secondary: #707070;
 }
 
-* {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
+
+	&:focus {
+		outline: none;
+	}
 }
 
 body {
@@ -644,84 +692,6 @@ body {
 	background-repeat: no-repeat;
 }
 
-.home__nav {
-	padding: 20px 0px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	width: 100%;
-
-	@media (max-width: 1300px) {
-		justify-content: space-between;
-		padding: 10px 20px;
-	}
-
-	ul {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		list-style-type: none;
-		width: 50%;
-		gap: 10%;
-
-		li {
-			a {
-				width: 38px;
-				height: 19px;
-				font-weight: 500;
-				font-size: 18px;
-				line-height: 100%;
-				letter-spacing: 0%;
-				text-decoration: none;
-				font-family: var(--text__font__PlayfairDisplay);
-				color: var(--text__color__pattern);
-				position: relative;
-				transition: color 0.3s;
-				user-select: none;
-
-				&::after {
-					content: '';
-					display: block;
-					position: absolute;
-					left: 0;
-					width: 100%;
-					height: 2px;
-					background: var(--text__color__pattern);
-					transform: scaleX(0);
-					transform-origin: center;
-					transition: transform 0.3s ease-in-out;
-				}
-
-				&:hover::after {
-					transform: scaleX(1);
-				}
-			}
-		}
-	}
-}
-
-.home__title {
-	z-index: 3;
-	width: auto;
-	height: auto;
-	font-family: var(--text__font__ClickerScript);
-	font-weight: 400;
-	font-size: 35px;
-	line-height: 100%;
-	letter-spacing: 0%;
-	color: var(--text__color__pattern);
-	transition:
-		transform 0.3s ease,
-		color 0.3s ease;
-
-	&:hover {
-		transform: scale(1.1) rotate(-5deg);
-		cursor: pointer;
-	}
-}
-
 .home__text__box {
 	max-width: 527px;
 	position: absolute;
@@ -785,74 +755,6 @@ body {
 .home__text__button {
 	width: 134px;
 	height: 48px;
-}
-
-.hamburger__menu {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-	cursor: pointer;
-	z-index: 4;
-}
-
-.hamburger__menu span {
-	width: 25px;
-	height: 3px;
-	background-color: var(--text__color__pattern);
-}
-
-.mobile__menu {
-	z-index: 3;
-	position: absolute;
-	top: 0;
-	width: 100vw;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 0;
-	overflow: hidden;
-	transition: height 0.5s ease-in-out;
-
-	ul {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		height: 100%;
-		opacity: 0;
-		transform: translateY(-20px);
-		transition:
-			opacity 0.5s ease-in-out,
-			transform 0.5s ease-in-out;
-
-		li {
-			width: 100%;
-			text-align: center;
-			padding: 20px 0;
-			background-color: rgba(0, 0, 0, 0.8);
-			border-bottom: 1px solid var(--text__color__pattern);
-
-			a {
-				text-decoration: none;
-				color: var(--text__color__pattern);
-				font-family: Playfair Display;
-				font-size: 24px;
-				font-weight: bold;
-				display: block;
-				width: 100%;
-			}
-		}
-	}
-}
-
-.mobile__menu__open {
-	height: 300px;
-}
-
-.mobile__menu__open ul {
-	opacity: 1;
-	transform: translateY(0);
 }
 </style>
 <style>.shop {
@@ -1149,10 +1051,6 @@ body {
 		letter-spacing: 0%;
 	}
 
-	&:focus {
-		outline: none;
-	}
-
 	@media (max-width: 1300px) {
 		&:hover {
 			transform: scale(0.9);
@@ -1399,6 +1297,7 @@ body {
 	width: 90%;
 	max-width: 980px;
 	font-family: var(--text__font__PlayfairDisplay);
+	position: relative;
 
 	h1 {
 		width: 100%;
@@ -1493,7 +1392,6 @@ body {
 
 	@media (max-width: 1300px) {
 		width: 80%;
-		max-width: 281px;
 		height: 243;
 		font-size: 13.5px;
 		line-height: 27px;
@@ -1624,8 +1522,8 @@ body {
 .feedback__img__decoration__text {
 	z-index: 10;
 	position: absolute;
-	top: 20%;
-	left: 30%;
+	top: 150px;
+	left: 10px;
 }
 </style>
 <style>.subscribre {
@@ -1965,6 +1863,161 @@ body {
 		letter-spacing: 0%;
 		text-decoration: none;
 	}
-}</style>
+}
+</style>
+<style>.navbar {
+	padding: 10px 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	width: 100vw;
+	height: 60px;
+	z-index: 10;
+	backdrop-filter: blur(5px);
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+
+	@media (max-width: 1300px) {
+		justify-content: space-between;
+		padding: 10px 20px;
+		height: 50px;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		list-style-type: none;
+		width: 50%;
+		gap: 10%;
+
+		li {
+			a {
+				width: 38px;
+				height: 19px;
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 100%;
+				letter-spacing: 0%;
+				text-decoration: none;
+				font-family: var(--text__font__PlayfairDisplay);
+				color: var(--text__color__pattern);
+				position: relative;
+				transition: color 0.3s;
+				user-select: none;
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					width: 100%;
+					height: 2px;
+					background: var(--text__color__pattern);
+					transform: scaleX(0);
+					transform-origin: center;
+					transition: transform 0.3s ease-in-out;
+				}
+
+				&:hover::after {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+}
+
+.navbar__title {
+	z-index: 3;
+	width: auto;
+	height: auto;
+	font-family: var(--text__font__ClickerScript);
+	font-weight: 400;
+	font-size: 35px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: var(--text__color__pattern);
+	transition:
+		transform 0.3s ease,
+		color 0.3s ease;
+
+	&:hover {
+		transform: scale(1.1) rotate(-5deg);
+		cursor: pointer;
+	}
+}
+
+.navbar__hamburger__menu {
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	cursor: pointer;
+	z-index: 20;
+}
+
+.navbar__hamburger__menu span {
+	width: 25px;
+	height: 3px;
+	background-color: var(--text__color__pattern);
+}
+
+.navbar__mobile__menu {
+	position: fixed;
+	z-index: 15;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	transition: height 0.5s ease-in-out;
+
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transform: translateY(-20px);
+		transition:
+			opacity 0.5s ease-in-out,
+			transform 0.5s ease-in-out;
+
+		li {
+			width: 100%;
+			text-align: center;
+			padding: 20px 0;
+			background-color: rgba(0, 0, 0, 0.8);
+			border-bottom: 1px solid var(--text__color__pattern);
+
+			a {
+				text-decoration: none;
+				color: var(--text__color__pattern);
+				font-family: Playfair Display;
+				font-size: 24px;
+				font-weight: bold;
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.mobile__menu__open {
+	height: 300px;
+}
+
+.mobile__menu__open ul {
+	opacity: 1;
+	transform: translateY(0);
+}
+</style>
 </body>
 </html>
