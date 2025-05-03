@@ -11,9 +11,7 @@
 	--text__color__secondary: #707070;
 }
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;

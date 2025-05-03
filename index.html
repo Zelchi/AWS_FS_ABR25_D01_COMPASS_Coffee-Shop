@@ -32,37 +32,39 @@
 		<link rel="stylesheet" href="/src/styles/feedback.css" />
 		<link rel="stylesheet" href="/src/styles/subscribre.css" />
 		<link rel="stylesheet" href="/src/styles/footer.css" />
+		<link rel="stylesheet" href="/src/styles/navbar.css" />
 		<title>Bean Scene</title>
 	</head>
 
 	<body>
+		<nav class="navbar">
+			<h1 class="navbar__title">Bean Scene</h1>
+			<ul class="navbar__nav__links remove__in__short__window">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#menu">Menu</a></li>
+				<li><a href="#about">About Us</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<button class="btn__skin remove__in__short__window">
+				<p>Order Now</p>
+			</button>
+		</nav>
+		<div class="navbar__hamburger__menu remove__in__long__window">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="navbar__mobile__menu hidden">
+			<ul>
+				<li><a href="#shop">Home</a></li>
+				<li><a href="#menu">Menu</a></li>
+				<li><a href="#about">About Us</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</div>
+
 		<section class="home">
 			<div class="home__overlay">
-				<nav class="home__nav">
-					<h1 class="home__title">Bean Scene</h1>
-					<ul class="home__nav__links remove__in__short__window">
-						<li><a href="#home">Home</a></li>
-						<li><a href="#menu">Menu</a></li>
-						<li><a href="#about">About Us</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-					<div class="hamburger__menu remove__in__long__window">
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-					<button class="btn__skin remove__in__short__window">
-						<p>Order Now</p>
-					</button>
-				</nav>
-				<div class="mobile__menu hidden">
-					<ul>
-						<li><a href="#shop">Home</a></li>
-						<li><a href="#menu">Menu</a></li>
-						<li><a href="#about">About Us</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
-				</div>
 				<div class="home__text__box">
 					<p class="home__text__1">We’ve got your morning covered with</p>
 					<p class="home__text__2">Coffee</p>
@@ -241,7 +243,7 @@
 
 		<script type="module" src="src/scripts/global.js"></script>
 		<script type="module" src="src/scripts/shop.js"></script>
-		<script type="module" src="src/scripts/home.js"></script>
+		<script type="module" src="src/scripts/navbar.js"></script>
 		<script type="module" src="src/scripts/table.js"></script>
 		<script type="module" src="src/scripts/feedback.js"></script>
 		<script type="module" src="src/scripts/subscribre.js"></script>
