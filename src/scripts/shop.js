@@ -1,5 +1,4 @@
-import { readJSON } from './global.js';
-import { isValidProduct } from './shop.js';
+import { readJSON, isValidProduct } from './global.js';
 
 const createProductCard = (product) => {
 	if (!product.imagem_url || !product.name || !product.short_description || product.price == null) {

@@ -1,5 +1,4 @@
-import { readJSON } from './global.js';
-import { isValidProduct } from './shop.js';
+import { readJSON, isValidProduct } from './global.js';
 
 const getElement = (selector) => document.querySelector(selector);
 
