@@ -252,79 +252,88 @@ document.addEventListener('DOMContentLoaded', () => {
 	const feedbackContainer = document.querySelector('.feedback__slide__container');
 	let currentSlide = 0;
 
-	function showSlide(index) {
+	const createSlide = (feedback) => {
+		const slide = document.createElement('div');
+		slide.classList.add('feedback__slide');
+		slide.innerHTML = `
+            <p class="feedback__slide__text">${feedback.message}</p>
+            <div class="feedback__slide__author__box">
+                <h1 class="feedback__slide__author">${feedback.full_name}</h1>
+                <p class="feedback__slide__author__job">${feedback.profession}</p>
+            </div>
+            <img src="${feedback.image_url}" alt="${feedback.full_name}" class="feedback__slide__image" draggable="false"/>
+        `;
+		return slide;
+	};
+
+	const renderSlides = (feedbacks) => {
+		feedbackContainer.innerHTML = '';
+		feedbacks.forEach((feedback) => {
+			if (feedback.message && feedback.full_name && feedback.profession && feedback.image_url) {
+				const slide = createSlide(feedback);
+				feedbackContainer.appendChild(slide);
+			}
+		});
+
+		if (feedbackContainer.firstChild) {
+			feedbackContainer.firstChild.classList.add('feedback__slide__active');
+		}
+	};
+
+	const createNavigationButtons = () => {
+		const prevButton = document.createElement('button');
+		prevButton.classList.add('feedback__button', 'feedback__button__prev');
+		prevButton.textContent = '⬅';
+		prevButton.addEventListener('click', () => showSlide(currentSlide - 1));
+
+		const nextButton = document.createElement('button');
+		nextButton.classList.add('feedback__button', 'feedback__button__next');
+		nextButton.textContent = '⮕';
+		nextButton.addEventListener('click', () => showSlide(currentSlide + 1));
+
+		feedbackContainer.appendChild(prevButton);
+		feedbackContainer.appendChild(nextButton);
+	};
+
+	const showSlide = (index) => {
 		const slides = document.querySelectorAll('.feedback__slide');
 		if (slides.length === 0) return;
 
 		slides[currentSlide].classList.remove('feedback__slide__active');
 		currentSlide = (index + slides.length) % slides.length;
 		slides[currentSlide].classList.add('feedback__slide__active');
-	}
+	};
 
-	function showNextSlide() {
-		showSlide(currentSlide + 1);
-	}
-
-	function showPreviousSlide() {
-		showSlide(currentSlide - 1);
-	}
-
-	readJSON("./data/feedbacks.json")
-		.then((response) => {
-			if (response.status === 'success' && Array.isArray(response.data)) {
-				feedbackContainer.innerHTML = '';
-
-				response.data.forEach((feedback) => {
-					if (feedback.message && feedback.full_name && feedback.profession && feedback.image_url) {
-						const slide = document.createElement('div');
-						slide.classList.add('feedback__slide');
-						slide.innerHTML = `
-                    <p class="feedback__slide__text">${feedback.message}</p>
-                    <div class="feedback__slide__author__box">
-                    <h1 class="feedback__slide__author">${feedback.full_name}</h1>
-                    <p class="feedback__slide__author__job">${feedback.profession}</p>
-                    </div>
-                    <img src="${feedback.image_url}" alt="${feedback.full_name}" class="feedback__slide__image" draggable='false'/>
-                `;
-						feedbackContainer.appendChild(slide);
-					}
-				});
-
-				if (feedbackContainer.firstChild) {
-					feedbackContainer.firstChild.classList.add('feedback__slide__active');
-				}
-
-				const prevButton = document.createElement('button');
-				prevButton.classList.add('feedback__button', 'feedback__button__prev');
-				prevButton.textContent = '⬅';
-				prevButton.addEventListener('click', showPreviousSlide);
-
-				const nextButton = document.createElement('button');
-				nextButton.classList.add('feedback__button', 'feedback__button__next');
-				nextButton.textContent = '⮕';
-				nextButton.addEventListener('click', showNextSlide);
-
-				feedbackContainer.appendChild(prevButton);
-				feedbackContainer.appendChild(nextButton);
+	(async () => {
+		try {
+			const feedbacks = await fetchJSON("./data/feedbacks.json");
+			if (Array.isArray(feedbacks)) {
+				renderSlides(feedbacks);
+				createNavigationButtons();
 			} else {
-				console.error('Invalid JSON structure:', response);
+				console.error('Invalid JSON structure:', feedbacks);
 			}
-		})
-		.catch((error) => {
-			console.error('Error:', error);
-		});
+		} catch (error) {
+			console.error('Error fetching feedbacks:', error);
+		}
+	})();
 });
 
-const readJSON = async (relativePath) => {
+const fetchJSON = async (path) => {
 	try {
-		const response = await fetch(relativePath);
+		const response = await fetch(path);
 		if (!response.ok) {
-			throw new Error(`Error fetching JSON: ${response.statusText}`);
+			throw new Error(`Error fetching JSON from ${path}: ${response.statusText}`);
 		}
-		const jsonData = await response.json();
-		return jsonData;
+		const data = await response.json();
+		if (data.status === 'success') {
+			return data.data;
+		} else {
+			console.error(`Response was not successful for path: ${path}`);
+			return null;
+		}
 	} catch (error) {
-		console.error(error);
+		console.error(`fetchJSON error for path ${path}:`, error);
 		throw error;
 	}
 };
@@ -332,19 +341,24 @@ const readJSON = async (relativePath) => {
 const isValidProduct = (product) => {
 	return product.imagem_url && product.name && product.short_description && product.price != null;
 };
+
 const hamburgerMenu = document.querySelector('.navbar__hamburger__menu');
 const mobileMenu = document.querySelector('.navbar__mobile__menu');
+const navbar = document.querySelector('.navbar');
 
 hamburgerMenu.addEventListener('click', () => {
 	if (mobileMenu.classList.contains('mobile__menu__open')) {
 		mobileMenu.classList.remove('mobile__menu__open');
-		setTimeout(() => mobileMenu.classList.add('hidden'), 500);
+		setTimeout(() => {
+			mobileMenu.classList.add('hidden');
+			navbar.classList.remove('hidden');
+		}, 500);
 	} else {
 		mobileMenu.classList.remove('hidden');
+		navbar.classList.add('hidden');
 		setTimeout(() => mobileMenu.classList.add('mobile__menu__open'), 10);
 	}
 });
-
 
 
 
@@ -390,18 +404,19 @@ const getRandomProducts = (data, count) => {
 	return shuffled.slice(0, count);
 };
 
-readJSON("./data/all-items.json")
-	.then((response) => {
-		if (response.status === 'success' && Array.isArray(response.data)) {
-			const randomProducts = getRandomProducts(response.data, 4);
+(async () => {
+	try {
+		const items = await fetchJSON("./data/all-items.json");
+		if (Array.isArray(items)) {
+			const randomProducts = getRandomProducts(items, 4);
 			renderProducts(randomProducts);
 		} else {
-			console.error('Invalid JSON structure:', response);
+			console.error('Invalid JSON structure:', items);
 		}
-	})
-	.catch((error) => {
+	} catch (error) {
 		console.error('Error:', error);
-	});
+	}
+})();
 
 const inputBox = document.querySelector('.subscribre__input__box');
 const input = inputBox.querySelector('.subscribre__input');
@@ -466,7 +481,6 @@ input.addEventListener('keypress', (e) => {
 		handleSubscription();
 	}
 });
-
 
 
 
@@ -540,18 +554,19 @@ const setupTableButtons = (items) => {
 	});
 };
 
-readJSON("./data/all-items.json")
-	.then((response) => {
-		if (response.status === 'success' && Array.isArray(response.data)) {
-			renderTable(response.data);
-			setupTableButtons(response.data);
+(async () => {
+	try {
+		const items = await fetchJSON("./data/all-items.json");
+		if (Array.isArray(items)) {
+			renderTable(items);
+			setupTableButtons(items);
 		} else {
-			console.error('Invalid JSON structure:', response);
+			console.error('Invalid JSON structure:', items);
 		}
-	})
-	.catch((error) => {
+	} catch (error) {
 		console.error('Error:', error);
-	});
+	}
+})();
 
 </script>
 <style>:root {
@@ -1943,7 +1958,6 @@ body {
 		color 0.3s ease;
 
 	&:hover {
-		transform: scale(1.1) rotate(-5deg);
 		cursor: pointer;
 	}
 }
@@ -2014,6 +2028,7 @@ body {
 .mobile__menu__open ul {
 	opacity: 1;
 	transform: translateY(0);
-}</style>
+}
+</style>
 </body>
 </html>
