@@ -109,20 +109,20 @@
 		</section>
 
 		<section class="table">
-			<div class="table__select__buttons__box">
-				<button class="table__select__button btn__skin" id="table__select__button__all">
+			<div class="table__buttons__container">
+				<button class="table__button__select btn__skin" id="table__button__select__all">
 					<p>All items</p>
 				</button>
-				<button class="table__no__selected__button btn__skin" id="table__select__button__warm">
+				<button class="table__button__unselected btn__skin" id="table__button__select__warm">
 					<p>Warm drinks</p>
 				</button>
-				<button class="table__no__selected__button btn__skin" id="table__select__button__cold">
+				<button class="table__button__unselected btn__skin" id="table__button__select__cold">
 					<p>Cold drinks</p>
 				</button>
-				<button class="table__no__selected__button btn__skin" id="table__select__button__snacks">
+				<button class="table__button__unselected btn__skin" id="table__button__select__snacks">
 					<p>Snacks</p>
 				</button>
-				<button class="table__no__selected__button btn__skin" id="table__select__button__dessert">
+				<button class="table__button__unselected btn__skin" id="table__button__select__dessert">
 					<p>Dessert</p>
 				</button>
 			</div>
@@ -166,25 +166,23 @@
 		</section>
 
 		<section class="subscribre">
-			<div class="subscribre__overlay">
-				<div class="subscribre__container">
-					<div class="subscribre__text__box">
-						<h1>Subscribe to get offers!</h1>
-						<p>Don’t miss out on our latest news, updates, tips and special offers</p>
-					</div>
-					<div class="subscribre__input__box">
-						<div class="subscribre__bar">
-							<input type="email" placeholder="Enter your mail" class="subscribre__input" />
-							<button class="subscribre__button">
-								<p>Subscribe</p>
-							</button>
-						</div>
+			<div class="subscribre__container">
+				<div class="subscribre__text__box">
+					<h1>Subscribe to get offers!</h1>
+					<p>Don’t miss out on our latest news, updates, tips and special offers</p>
+				</div>
+				<div class="subscribre__input__box">
+					<div class="subscribre__bar">
+						<input type="email" placeholder="Enter your mail" class="subscribre__input" />
+						<button class="subscribre__button">
+							<p>Subscribe</p>
+						</button>
 					</div>
 				</div>
+			</div>
 
-				<div class="subscribre__img__container remove__in__short__window">
-					<img src="./assets/coffee-cup2.svg" class="subscribre__img" alt="coffee image" draggable="false" />
-				</div>
+			<div class="subscribre__img__container remove__in__short__window">
+				<img src="./assets/coffee-cup2.svg" class="subscribre__img" alt="coffee image" draggable="false" />
 			</div>
 		</section>
 
@@ -347,8 +345,8 @@ const mobileMenu = document.querySelector('.navbar__mobile__menu');
 const navbar = document.querySelector('.navbar');
 
 hamburgerMenu.addEventListener('click', () => {
-	if (mobileMenu.classList.contains('mobile__menu__open')) {
-		mobileMenu.classList.remove('mobile__menu__open');
+	if (mobileMenu.classList.contains('navbar__mobile__menu__open')) {
+		mobileMenu.classList.remove('navbar__mobile__menu__open');
 		setTimeout(() => {
 			mobileMenu.classList.add('hidden');
 			navbar.classList.remove('hidden');
@@ -356,7 +354,7 @@ hamburgerMenu.addEventListener('click', () => {
 	} else {
 		mobileMenu.classList.remove('hidden');
 		navbar.classList.add('hidden');
-		setTimeout(() => mobileMenu.classList.add('mobile__menu__open'), 10);
+		setTimeout(() => mobileMenu.classList.add('navbar__mobile__menu__open'), 10);
 	}
 });
 
@@ -540,13 +538,13 @@ const filterItemsByType = (items, type) => {
 };
 
 const setupTableButtons = (items) => {
-	const buttons = document.querySelectorAll('.table__select__button, .table__no__selected__button');
+	const buttons = document.querySelectorAll('.table__button__select, .table__button__unselected');
 	buttons.forEach((button) => {
 		button.addEventListener('click', () => {
-			const selectedType = button.id.replace('table__select__button__', '');
+			const selectedType = button.id.replace('table__button__select__', '');
 
-			buttons.forEach((btn) => btn.classList.replace('table__select__button', 'table__no__selected__button'));
-			button.classList.replace('table__no__selected__button', 'table__select__button');
+			buttons.forEach((btn) => btn.classList.replace('table__button__select', 'table__button__unselected'));
+			button.classList.replace('table__button__unselected', 'table__button__select');
 
 			const filteredItems = filterItemsByType(items, selectedType);
 			renderTable(filteredItems);
@@ -695,9 +693,9 @@ body {
 
 .home__overlay {
 	z-index: 2;
-	background-image: url(./assets/overlay.svg);
 	width: 100vw;
 	height: 100vh;
+	background-image: url(./assets/overlay.svg);
 	background-size: cover;
 	background-attachment: local;
 	background-position: center;
@@ -1015,7 +1013,7 @@ body {
 	}
 }
 
-.table__select__buttons__box {
+.table__buttons__container {
 	width: 100%;
 	max-width: 1300px;
 	height: auto;
@@ -1046,7 +1044,7 @@ body {
 	}
 }
 
-.table__select__button {
+.table__button__select {
 	width: 121px;
 	height: 40px;
 	border: 2px solid var(--btn__order__bg__color);
@@ -1070,7 +1068,7 @@ body {
 	}
 }
 
-.table__no__selected__button {
+.table__button__unselected {
 	width: 121px;
 	height: 40px;
 	background-color: var(--text__color__pattern);
@@ -1097,7 +1095,6 @@ body {
 	width: 100%;
 	max-width: 1300px;
 	height: auto;
-	/* border-radius: 10px; */
 	border-width: 1px;
 	border-style: solid;
 	border-color: var(--text__color__pattern);
@@ -1540,31 +1537,24 @@ body {
 </style>
 <style>.subscribre {
 	width: 100%;
-	height: 374px;
+	height: 100%;
+	max-height: 374px;
 	z-index: 1;
-	background-image: url(./assets/coffee-background.svg);
+	background-image: linear-gradient(rgba(96, 56, 9, 0.8)), url(./assets/coffee-background.svg);
 	background-size: cover;
 	user-select: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 
 	@media (max-width: 1300px) {
 		background-position: center;
 	}
 }
 
-.subscribre__overlay {
-	width: 100%;
-	height: 100%;
-	z-index: 2;
-	background: rgba(96, 56, 9, 0.8);
-
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-}
-
 .subscribre__container {
-	z-index: 3;
+	z-index: 2;
 	width: 90%;
 	height: 90%;
 	max-width: 655px;
@@ -1949,6 +1939,7 @@ body {
 	height: auto;
 	font-family: var(--text__font__ClickerScript);
 	font-weight: 400;
+	user-select: none;
 	font-size: 35px;
 	line-height: 100%;
 	letter-spacing: 0%;
@@ -1958,6 +1949,7 @@ body {
 		color 0.3s ease;
 
 	&:hover {
+		transform: scale(1.1) rotate(-5deg);
 		cursor: pointer;
 	}
 }
@@ -1971,12 +1963,12 @@ body {
 	gap: 5px;
 	cursor: pointer;
 	z-index: 20;
-}
 
-.navbar__hamburger__menu span {
-	width: 25px;
-	height: 3px;
-	background-color: var(--text__color__pattern);
+	span {
+		width: 25px;
+		height: 3px;
+		background-color: var(--text__color__pattern);
+	}
 }
 
 .navbar__mobile__menu {
@@ -2021,13 +2013,13 @@ body {
 	}
 }
 
-.mobile__menu__open {
+.navbar__mobile__menu__open {
 	height: 300px;
-}
 
-.mobile__menu__open ul {
-	opacity: 1;
-	transform: translateY(0);
+	ul {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 </style>
 </body>
