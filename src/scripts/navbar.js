@@ -6,7 +6,7 @@ hamburgerMenu.addEventListener('click', () => {
 	if (mobileMenu.classList.contains('mobile__menu__open')) {
 		mobileMenu.classList.remove('mobile__menu__open');
 		setTimeout(() => {
-			mobileMenu.classList.add('hidden')
+			mobileMenu.classList.add('hidden');
 			navbar.classList.remove('hidden');
 		}, 500);
 	} else {

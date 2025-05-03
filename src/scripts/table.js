@@ -1,4 +1,4 @@
-import { readJSON, isValidProduct } from './global.js';
+import { fetchJSON, isValidProduct } from './global.js';
 
 const getElement = (selector) => document.querySelector(selector);
 
@@ -70,15 +70,16 @@ const setupTableButtons = (items) => {
 	});
 };
 
-readJSON('src/data/all-items.json')
-	.then((response) => {
-		if (response.status === 'success' && Array.isArray(response.data)) {
-			renderTable(response.data);
-			setupTableButtons(response.data);
+(async () => {
+	try {
+		const items = await fetchJSON('src/data/all-items.json');
+		if (Array.isArray(items)) {
+			renderTable(items);
+			setupTableButtons(items);
 		} else {
-			console.error('Invalid JSON structure:', response);
+			console.error('Invalid JSON structure:', items);
 		}
-	})
-	.catch((error) => {
+	} catch (error) {
 		console.error('Error:', error);
-	});
+	}
+})();

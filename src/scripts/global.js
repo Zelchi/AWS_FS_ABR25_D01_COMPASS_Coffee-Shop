@@ -1,13 +1,18 @@
-export const readJSON = async (relativePath) => {
+export const fetchJSON = async (path) => {
 	try {
-		const response = await fetch(relativePath);
+		const response = await fetch(path);
 		if (!response.ok) {
-			throw new Error(`Error fetching JSON: ${response.statusText}`);
+			throw new Error(`Error fetching JSON from ${path}: ${response.statusText}`);
 		}
-		const jsonData = await response.json();
-		return jsonData;
+		const data = await response.json();
+		if (data.status === 'success') {
+			return data.data;
+		} else {
+			console.error(`Response was not successful for path: ${path}`);
+			return null;
+		}
 	} catch (error) {
-		console.error(error);
+		console.error(`fetchJSON error for path ${path}:`, error);
 		throw error;
 	}
 };

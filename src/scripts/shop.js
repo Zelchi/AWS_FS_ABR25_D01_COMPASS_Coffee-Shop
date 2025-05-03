@@ -1,4 +1,4 @@
-import { readJSON, isValidProduct } from './global.js';
+import { fetchJSON, isValidProduct } from './global.js';
 
 const createProductCard = (product) => {
 	if (!product.imagem_url || !product.name || !product.short_description || product.price == null) {
@@ -42,15 +42,16 @@ const getRandomProducts = (data, count) => {
 	return shuffled.slice(0, count);
 };
 
-readJSON('src/data/all-items.json')
-	.then((response) => {
-		if (response.status === 'success' && Array.isArray(response.data)) {
-			const randomProducts = getRandomProducts(response.data, 4);
+(async () => {
+	try {
+		const items = await fetchJSON('src/data/all-items.json');
+		if (Array.isArray(items)) {
+			const randomProducts = getRandomProducts(items, 4);
 			renderProducts(randomProducts);
 		} else {
-			console.error('Invalid JSON structure:', response);
+			console.error('Invalid JSON structure:', items);
 		}
-	})
-	.catch((error) => {
+	} catch (error) {
 		console.error('Error:', error);
-	});
+	}
+})();
