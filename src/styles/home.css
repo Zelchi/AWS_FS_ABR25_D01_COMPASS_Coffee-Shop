@@ -20,9 +20,9 @@
 
 .home__overlay {
 	z-index: 2;
-	background-image: url('../assets/overlay.svg');
 	width: 100vw;
 	height: 100vh;
+	background-image: url('../assets/overlay.svg');
 	background-size: cover;
 	background-attachment: local;
 	background-position: center;

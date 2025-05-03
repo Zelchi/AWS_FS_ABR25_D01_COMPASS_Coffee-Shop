@@ -70,6 +70,7 @@
 	height: auto;
 	font-family: var(--text__font__ClickerScript);
 	font-weight: 400;
+	user-select: none;
 	font-size: 35px;
 	line-height: 100%;
 	letter-spacing: 0%;
@@ -79,6 +80,7 @@
 		color 0.3s ease;
 
 	&:hover {
+		transform: scale(1.1) rotate(-5deg);
 		cursor: pointer;
 	}
 }
@@ -92,12 +94,12 @@
 	gap: 5px;
 	cursor: pointer;
 	z-index: 20;
-}
 
-.navbar__hamburger__menu span {
-	width: 25px;
-	height: 3px;
-	background-color: var(--text__color__pattern);
+	span {
+		width: 25px;
+		height: 3px;
+		background-color: var(--text__color__pattern);
+	}
 }
 
 .navbar__mobile__menu {
@@ -142,11 +144,11 @@
 	}
 }
 
-.mobile__menu__open {
+.navbar__mobile__menu__open {
 	height: 300px;
-}
 
-.mobile__menu__open ul {
-	opacity: 1;
-	transform: translateY(0);
+	ul {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

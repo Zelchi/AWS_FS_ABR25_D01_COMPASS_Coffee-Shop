@@ -56,13 +56,13 @@ const filterItemsByType = (items, type) => {
 };
 
 const setupTableButtons = (items) => {
-	const buttons = document.querySelectorAll('.table__select__button, .table__no__selected__button');
+	const buttons = document.querySelectorAll('.table__button__select, .table__button__unselected');
 	buttons.forEach((button) => {
 		button.addEventListener('click', () => {
-			const selectedType = button.id.replace('table__select__button__', '');
+			const selectedType = button.id.replace('table__button__select__', '');
 
-			buttons.forEach((btn) => btn.classList.replace('table__select__button', 'table__no__selected__button'));
-			button.classList.replace('table__no__selected__button', 'table__select__button');
+			buttons.forEach((btn) => btn.classList.replace('table__button__select', 'table__button__unselected'));
+			button.classList.replace('table__button__unselected', 'table__button__select');
 
 			const filteredItems = filterItemsByType(items, selectedType);
 			renderTable(filteredItems);

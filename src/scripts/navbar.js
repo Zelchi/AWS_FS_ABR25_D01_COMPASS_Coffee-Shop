@@ -3,8 +3,8 @@ const mobileMenu = document.querySelector('.navbar__mobile__menu');
 const navbar = document.querySelector('.navbar');
 
 hamburgerMenu.addEventListener('click', () => {
-	if (mobileMenu.classList.contains('mobile__menu__open')) {
-		mobileMenu.classList.remove('mobile__menu__open');
+	if (mobileMenu.classList.contains('navbar__mobile__menu__open')) {
+		mobileMenu.classList.remove('navbar__mobile__menu__open');
 		setTimeout(() => {
 			mobileMenu.classList.add('hidden');
 			navbar.classList.remove('hidden');
@@ -12,6 +12,6 @@ hamburgerMenu.addEventListener('click', () => {
 	} else {
 		mobileMenu.classList.remove('hidden');
 		navbar.classList.add('hidden');
-		setTimeout(() => mobileMenu.classList.add('mobile__menu__open'), 10);
+		setTimeout(() => mobileMenu.classList.add('navbar__mobile__menu__open'), 10);
 	}
 });
