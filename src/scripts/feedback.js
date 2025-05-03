@@ -1,4 +1,4 @@
-import { fetchJSON } from './global.js';
+import { fetchJSON, isValidFeedback } from './global.js';
 
 const feedbackContainer = document.querySelector('.feedback__slide__container');
 let currentSlide = 0;
@@ -20,7 +20,7 @@ const createSlide = (feedback) => {
 const renderSlides = (feedbacks) => {
 	feedbackContainer.innerHTML = '';
 	feedbacks.forEach((feedback) => {
-		if (feedback.message && feedback.full_name && feedback.profession && feedback.image_url) {
+		if (isValidFeedback(feedback)) {
 			const slide = createSlide(feedback);
 			feedbackContainer.appendChild(slide);
 		}
