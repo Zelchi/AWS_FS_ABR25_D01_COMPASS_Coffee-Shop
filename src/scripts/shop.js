@@ -1,4 +1,5 @@
 import { readJSON } from './global.js';
+import { isValidProduct } from './shop.js';
 
 const createProductCard = (product) => {
 	if (!product.imagem_url || !product.name || !product.short_description || product.price == null) {
@@ -34,10 +35,6 @@ const renderProducts = (products) => {
 			container.appendChild(card);
 		}
 	});
-};
-
-const isValidProduct = (product) => {
-	return product.imagem_url && product.name && product.short_description && product.price != null;
 };
 
 const getRandomProducts = (data, count) => {

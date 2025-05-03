@@ -11,3 +11,7 @@ export const readJSON = async (relativePath) => {
 		throw error;
 	}
 };
+
+export const isValidProduct = (product) => {
+	return product.imagem_url && product.name && product.short_description && product.price != null;
+};
