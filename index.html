@@ -316,6 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})();
 });
+
 const fetchJSON = async (path) => {
 	try {
 		const response = await fetch(path);
@@ -340,17 +341,17 @@ const isValidProduct = (product) => {
 };
 
 const isValidFeedback = (feedback) => {
-    return (
-        feedback &&
-        typeof feedback.message === 'string' &&
-        feedback.message.trim() !== '' &&
-        typeof feedback.full_name === 'string' &&
-        feedback.full_name.trim() !== '' &&
-        typeof feedback.profession === 'string' &&
-        feedback.profession.trim() !== '' &&
-        typeof feedback.image_url === 'string' &&
-        feedback.image_url.trim() !== ''
-    );
+	return (
+		feedback &&
+		typeof feedback.message === 'string' &&
+		feedback.message.trim() !== '' &&
+		typeof feedback.full_name === 'string' &&
+		feedback.full_name.trim() !== '' &&
+		typeof feedback.profession === 'string' &&
+		feedback.profession.trim() !== '' &&
+		typeof feedback.image_url === 'string' &&
+		feedback.image_url.trim() !== ''
+	);
 };
 
 const hamburgerMenu = document.querySelector('.navbar__hamburger__menu');
@@ -370,6 +371,7 @@ hamburgerMenu.addEventListener('click', () => {
 		setTimeout(() => mobileMenu.classList.add('navbar__mobile__menu__open'), 10);
 	}
 });
+
 
 
 const createProductCard = (product) => {
