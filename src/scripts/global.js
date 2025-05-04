@@ -22,15 +22,15 @@ export const isValidProduct = (product) => {
 };
 
 export const isValidFeedback = (feedback) => {
-    return (
-        feedback &&
-        typeof feedback.message === 'string' &&
-        feedback.message.trim() !== '' &&
-        typeof feedback.full_name === 'string' &&
-        feedback.full_name.trim() !== '' &&
-        typeof feedback.profession === 'string' &&
-        feedback.profession.trim() !== '' &&
-        typeof feedback.image_url === 'string' &&
-        feedback.image_url.trim() !== ''
-    );
+	return (
+		feedback &&
+		typeof feedback.message === 'string' &&
+		feedback.message.trim() !== '' &&
+		typeof feedback.full_name === 'string' &&
+		feedback.full_name.trim() !== '' &&
+		typeof feedback.profession === 'string' &&
+		feedback.profession.trim() !== '' &&
+		typeof feedback.image_url === 'string' &&
+		feedback.image_url.trim() !== ''
+	);
 };
