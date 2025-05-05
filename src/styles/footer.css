@@ -23,7 +23,6 @@
 		height: auto;
 	}
 }
-
 .footer__box__primary {
 	width: fit-content;
 	height: 258px;
@@ -85,13 +84,11 @@
 		}
 	}
 }
-
 .footer__box__secondary__container {
 	display: flex;
 	flex-direction: row;
 	gap: 70px;
 }
-
 .footer__box__secondary {
 	width: fit-content;
 	height: auto;

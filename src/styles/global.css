@@ -10,7 +10,6 @@
 	--text__color__primary: #603809;
 	--text__color__secondary: #707070;
 }
-
 *,
 *::before,
 *::after {
@@ -24,7 +23,6 @@
 		outline: none;
 	}
 }
-
 body {
 	display: flex;
 	flex-direction: column;
@@ -53,7 +51,6 @@ body {
 		background-color: #3c3c3c;
 	}
 }
-
 .btn__skin {
 	z-index: 3;
 	background: var(--btn__order__bg__color);
@@ -85,17 +82,14 @@ body {
 		letter-spacing: 0%;
 	}
 }
-
 .hidden {
 	display: none !important;
 }
-
 .remove__in__short__window {
 	@media (max-width: 1300px) {
 		display: none !important;
 	}
 }
-
 .remove__in__long__window {
 	@media (min-width: 1301px) {
 		display: none !important;

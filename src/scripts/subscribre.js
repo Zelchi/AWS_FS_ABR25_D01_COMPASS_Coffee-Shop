@@ -1,7 +1,9 @@
-const inputBox = document.querySelector('.subscribre__input__box');
-const input = inputBox.querySelector('.subscribre__input');
-const button = inputBox.querySelector('.subscribre__button');
-const buttonText = button.querySelector('p');
+import { getElement } from './global.js';
+
+const inputBox = getElement('.subscribre__input__box');
+const input = getElement('.subscribre__input');
+const button = getElement('.subscribre__button');
+const buttonText = getElement('.subscribre__button__text');
 
 const message = document.createElement('p');
 message.classList.add('subscribre__message');

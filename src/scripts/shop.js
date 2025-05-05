@@ -1,4 +1,4 @@
-import { fetchJSON, isValidProduct } from './global.js';
+import { fetchJSON, isValidProduct, getElement } from './global.js';
 
 const createProductCard = (product) => {
 	if (!product.imagem_url || !product.name || !product.short_description || product.price == null) {
@@ -20,7 +20,7 @@ const createProductCard = (product) => {
 };
 
 const renderProducts = (products) => {
-	const container = document.querySelector('.shop__products__box__container');
+	const container = getElement('.shop__products__box__container');
 	if (!container) {
 		console.error('Container with class "shop__products__box__container" not found.');
 		return;

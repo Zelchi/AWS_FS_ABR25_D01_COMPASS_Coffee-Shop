@@ -17,7 +17,6 @@
 		background-position: center;
 	}
 }
-
 .home__overlay {
 	z-index: 2;
 	width: 100vw;
@@ -28,7 +27,6 @@
 	background-position: center;
 	background-repeat: no-repeat;
 }
-
 .home__text__box {
 	max-width: 527px;
 	position: absolute;
@@ -47,7 +45,6 @@
 		top: 30%;
 	}
 }
-
 .home__text__1 {
 	font-family: Playfair Display;
 	font-weight: 500;
@@ -61,7 +58,6 @@
 		font-size: 18px;
 	}
 }
-
 .home__text__2 {
 	font-family: var(--text__font__ClickerScript);
 	font-weight: 400;
@@ -74,7 +70,6 @@
 		font-size: 120px;
 	}
 }
-
 .home__text__3 {
 	font-family: Playfair Display;
 	font-weight: 400;
@@ -88,7 +83,6 @@
 		font-size: 15px;
 	}
 }
-
 .home__text__button {
 	width: 134px;
 	height: 48px;

@@ -63,7 +63,6 @@
 		}
 	}
 }
-
 .navbar__title {
 	z-index: 3;
 	width: auto;
@@ -84,7 +83,6 @@
 		cursor: pointer;
 	}
 }
-
 .navbar__hamburger__menu {
 	position: fixed;
 	top: 15px;
@@ -101,7 +99,6 @@
 		background-color: var(--text__color__pattern);
 	}
 }
-
 .navbar__mobile__menu {
 	position: fixed;
 	z-index: 15;
@@ -143,7 +140,6 @@
 		}
 	}
 }
-
 .navbar__mobile__menu__open {
 	height: 300px;
 

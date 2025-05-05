@@ -25,7 +25,6 @@
 		margin-bottom: 50px;
 	}
 }
-
 .adverti__text__box {
 	display: flex;
 	flex-direction: column;
@@ -38,7 +37,6 @@
 		text-align: center;
 	}
 }
-
 .adverti__text__title {
 	width: 80%;
 	max-width: 730px;
@@ -52,7 +50,6 @@
 		font-size: 40px;
 	}
 }
-
 .adverti__text {
 	width: 80%;
 	max-width: 409px;
@@ -65,12 +62,10 @@
 		font-size: 15px;
 	}
 }
-
 .adverti__button {
 	width: 134px;
 	height: 48px;
 }
-
 .adverti__img {
 	max-width: 300px;
 	height: 467px;

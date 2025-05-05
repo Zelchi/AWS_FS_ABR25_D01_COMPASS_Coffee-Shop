@@ -1,7 +1,7 @@
-import { fetchJSON, isValidFeedback } from './global.js';
+import { fetchJSON, isValidFeedback, getElement } from './global.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-	const feedbackContainer = document.querySelector('.feedback__slide__container');
+	const feedbackContainer = getElement('.feedback__slide__container');
 	let currentSlide = 0;
 
 	const createSlide = (feedback) => {

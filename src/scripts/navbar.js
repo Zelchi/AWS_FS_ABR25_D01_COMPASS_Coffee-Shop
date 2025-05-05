@@ -1,6 +1,8 @@
-const hamburgerMenu = document.querySelector('.navbar__hamburger__menu');
-const mobileMenu = document.querySelector('.navbar__mobile__menu');
-const navbar = document.querySelector('.navbar');
+import { getElement } from './global.js';
+
+const hamburgerMenu = getElement('.navbar__hamburger__menu');
+const mobileMenu = getElement('.navbar__mobile__menu');
+const navbar = getElement('.navbar');
 
 hamburgerMenu.addEventListener('click', () => {
 	if (mobileMenu.classList.contains('navbar__mobile__menu__open')) {

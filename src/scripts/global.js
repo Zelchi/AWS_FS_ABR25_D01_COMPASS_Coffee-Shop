@@ -21,6 +21,14 @@ export const isValidProduct = (product) => {
 	return product.imagem_url && product.name && product.short_description && product.price != null;
 };
 
+export const getElement = (selector) => {
+	const element = document.querySelector(selector);
+	if (!element) {
+		console.error(`Element with selector "${selector}" not found.`);
+	}
+	return element;
+};
+
 export const isValidFeedback = (feedback) => {
 	return (
 		feedback &&
