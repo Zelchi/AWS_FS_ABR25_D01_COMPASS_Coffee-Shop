@@ -24,37 +24,35 @@
 	max-width: 980px;
 	font-family: var(--text__font__PlayfairDisplay);
 	position: relative;
+}
+.feedback__text__box h1 {
+	width: 100%;
+	max-width: 764px;
+	height: auto;
 
-	h1 {
-		width: 100%;
-		max-width: 764px;
-		height: auto;
+	font-weight: 700;
+	font-size: 54px;
+	line-height: 100%;
+	color: var(--text__color__primary);
 
-		font-weight: 700;
-		font-size: 54px;
-		line-height: 100%;
-		color: var(--text__color__primary);
-
-		@media (max-width: 1300px) {
-			font-size: 36px;
-		}
+	@media (max-width: 1300px) {
+		font-size: 36px;
 	}
+}
+.feedback__text__box p {
+	margin-top: 20px;
 
-	p {
-		margin-top: 20px;
+	width: 100%;
+	max-width: 980px;
+	height: auto;
 
-		width: 100%;
-		max-width: 980px;
-		height: auto;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 34px;
+	color: var(--text__color__secondary);
 
-		font-weight: 400;
+	@media (max-width: 1300px) {
 		font-size: 20px;
-		line-height: 34px;
-		color: var(--text__color__secondary);
-
-		@media (max-width: 1300px) {
-			font-size: 20px;
-		}
 	}
 }
 .feedback__slide__container {
@@ -126,28 +124,26 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-
-	h1 {
-		width: 100%;
-		height: auto;
-		text-align: center;
-		font-weight: 700;
-		font-size: 32px;
-		line-height: 100%;
-		color: var(--text__color__primary);
-	}
-
-	p {
-		font-family: var(--text__font__PlayfairDisplay);
-		color: var(--text__color__secondary);
-		width: 100%;
-		height: auto;
-		font-weight: 400;
-		font-size: 20px;
-		line-height: 34px;
-		letter-spacing: 0%;
-		text-align: center;
-	}
+}
+.feedback__slide__author__box h1 {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 100%;
+	color: var(--text__color__primary);
+}
+.feedback__slide__author__box p {
+	font-family: var(--text__font__PlayfairDisplay);
+	color: var(--text__color__secondary);
+	width: 100%;
+	height: auto;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 34px;
+	letter-spacing: 0%;
+	text-align: center;
 }
 .feedback__slide__image {
 	position: absolute;
