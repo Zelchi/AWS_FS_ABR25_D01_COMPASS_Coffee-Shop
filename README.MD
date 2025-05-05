@@ -1,6 +1,6 @@
-![Page](./README.png)
-
 # AWS FS ABR25 D01 COMPASS - Coffee Shop
+
+![Page](./README.png)
 
 ## Description
 
