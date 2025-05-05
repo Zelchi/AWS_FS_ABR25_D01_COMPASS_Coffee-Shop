@@ -175,7 +175,7 @@
 					<div class="subscribre__bar">
 						<input type="email" placeholder="Enter your mail" class="subscribre__input" />
 						<button class="subscribre__button">
-							<p>Subscribe</p>
+							<p class="subscribre__button__text">Subscribe</p>
 						</button>
 					</div>
 				</div>
@@ -247,7 +247,7 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-	const feedbackContainer = document.querySelector('.feedback__slide__container');
+	const feedbackContainer = getElement('.feedback__slide__container');
 	let currentSlide = 0;
 
 	const createSlide = (feedback) => {
@@ -340,6 +340,14 @@ const isValidProduct = (product) => {
 	return product.imagem_url && product.name && product.short_description && product.price != null;
 };
 
+const getElement = (selector) => {
+	const element = document.querySelector(selector);
+	if (!element) {
+		console.error(`Element with selector "${selector}" not found.`);
+	}
+	return element;
+};
+
 const isValidFeedback = (feedback) => {
 	return (
 		feedback &&
@@ -354,9 +362,11 @@ const isValidFeedback = (feedback) => {
 	);
 };
 
-const hamburgerMenu = document.querySelector('.navbar__hamburger__menu');
-const mobileMenu = document.querySelector('.navbar__mobile__menu');
-const navbar = document.querySelector('.navbar');
+
+
+const hamburgerMenu = getElement('.navbar__hamburger__menu');
+const mobileMenu = getElement('.navbar__mobile__menu');
+const navbar = getElement('.navbar');
 
 hamburgerMenu.addEventListener('click', () => {
 	if (mobileMenu.classList.contains('navbar__mobile__menu__open')) {
@@ -394,7 +404,7 @@ const createProductCard = (product) => {
 };
 
 const renderProducts = (products) => {
-	const container = document.querySelector('.shop__products__box__container');
+	const container = getElement('.shop__products__box__container');
 	if (!container) {
 		console.error('Container with class "shop__products__box__container" not found.');
 		return;
@@ -430,10 +440,12 @@ const getRandomProducts = (data, count) => {
 	}
 })();
 
-const inputBox = document.querySelector('.subscribre__input__box');
-const input = inputBox.querySelector('.subscribre__input');
-const button = inputBox.querySelector('.subscribre__button');
-const buttonText = button.querySelector('p');
+
+
+const inputBox = getElement('.subscribre__input__box');
+const input = getElement('.subscribre__input');
+const button = getElement('.subscribre__button');
+const buttonText = getElement('.subscribre__button__text');
 
 const message = document.createElement('p');
 message.classList.add('subscribre__message');
@@ -496,10 +508,9 @@ input.addEventListener('keypress', (e) => {
 
 
 
-const getElement = (selector) => document.querySelector(selector);
+let initialBar = null;
 
 const createInitialBar = (tableContainer, tableBox) => {
-	let initialBar = getElement('.table__initial__bar');
 	if (!initialBar) {
 		initialBar = document.createElement('div');
 		initialBar.classList.add('table__initial__bar');
@@ -593,7 +604,6 @@ const setupTableButtons = (items) => {
 	--text__color__primary: #603809;
 	--text__color__secondary: #707070;
 }
-
 *,
 *::before,
 *::after {
@@ -607,7 +617,6 @@ const setupTableButtons = (items) => {
 		outline: none;
 	}
 }
-
 body {
 	display: flex;
 	flex-direction: column;
@@ -636,7 +645,6 @@ body {
 		background-color: #3c3c3c;
 	}
 }
-
 .btn__skin {
 	z-index: 3;
 	background: var(--btn__order__bg__color);
@@ -668,23 +676,19 @@ body {
 		letter-spacing: 0%;
 	}
 }
-
 .hidden {
 	display: none !important;
 }
-
 .remove__in__short__window {
 	@media (max-width: 1300px) {
 		display: none !important;
 	}
 }
-
 .remove__in__long__window {
 	@media (min-width: 1301px) {
 		display: none !important;
 	}
-}
-</style>
+}</style>
 <style>.home {
 	z-index: 1;
 	user-select: none;
@@ -704,7 +708,6 @@ body {
 		background-position: center;
 	}
 }
-
 .home__overlay {
 	z-index: 2;
 	width: 100vw;
@@ -715,7 +718,6 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 }
-
 .home__text__box {
 	max-width: 527px;
 	position: absolute;
@@ -734,7 +736,6 @@ body {
 		top: 30%;
 	}
 }
-
 .home__text__1 {
 	font-family: Playfair Display;
 	font-weight: 500;
@@ -748,7 +749,6 @@ body {
 		font-size: 18px;
 	}
 }
-
 .home__text__2 {
 	font-family: var(--text__font__ClickerScript);
 	font-weight: 400;
@@ -761,7 +761,6 @@ body {
 		font-size: 120px;
 	}
 }
-
 .home__text__3 {
 	font-family: Playfair Display;
 	font-weight: 400;
@@ -775,12 +774,10 @@ body {
 		font-size: 15px;
 	}
 }
-
 .home__text__button {
 	width: 134px;
 	height: 48px;
-}
-</style>
+}</style>
 <style>.shop {
 	z-index: 1;
 	user-select: none;
@@ -803,7 +800,6 @@ body {
 		width: 100%;
 	}
 }
-
 .shop__text__div {
 	width: 100%;
 	display: flex;
@@ -812,7 +808,6 @@ body {
 	align-items: center;
 	gap: 30px;
 }
-
 .shop__text__box {
 	display: flex;
 	flex-direction: column;
@@ -828,7 +823,6 @@ body {
 		align-items: center;
 	}
 }
-
 .shop__text__1 {
 	width: 100%;
 	text-align: center;
@@ -842,7 +836,6 @@ body {
 		font-size: 28px;
 	}
 }
-
 .shop__text__2 {
 	font-weight: 400;
 	font-size: 20px;
@@ -857,18 +850,15 @@ body {
 		line-height: 25.5px;
 	}
 }
-
 .shop__img {
 	max-width: 680px;
 	max-height: 476px;
 }
-
 .shop__text__button {
 	width: 134px;
 	height: 48px;
 	box-shadow: var(--btn__order__shadow);
 }
-
 .shop__img__decoration {
 	position: absolute;
 	left: 0;
@@ -882,7 +872,6 @@ body {
 		height: auto;
 	}
 }
-
 .shop__products__container {
 	width: 100%;
 	margin-top: 100px;
@@ -894,7 +883,6 @@ body {
 	padding: 20px;
 	height: auto;
 }
-
 .shop__products__container__title {
 	width: 100%;
 	height: auto;
@@ -909,7 +897,6 @@ body {
 		font-size: 28px;
 	}
 }
-
 .shop__products__container__text {
 	width: 100%;
 	height: auto;
@@ -925,7 +912,6 @@ body {
 		line-height: 25.5px;
 	}
 }
-
 .shop__products__box__container {
 	display: flex;
 	flex-direction: row;
@@ -939,7 +925,6 @@ body {
 	padding: 30px 0;
 	gap: 30px;
 }
-
 .product__card {
 	width: 300px;
 	height: 500px;
@@ -953,7 +938,6 @@ body {
 	position: relative;
 	box-shadow: var(--btn__order__shadow);
 }
-
 .product__card__image {
 	width: 100%;
 	height: 75%;
@@ -961,7 +945,6 @@ body {
 	border-bottom: 2px solid #f9c06a6b;
 	overflow: hidden;
 }
-
 .product__card__title {
 	width: 100%;
 	height: 50px;
@@ -973,7 +956,6 @@ body {
 	color: var(--text__color__primary);
 	padding: 2px 5px;
 }
-
 .product__card__description {
 	width: 90%;
 	height: 70px;
@@ -981,7 +963,6 @@ body {
 	color: var(--text__color__secondary);
 	padding: 2px 5px;
 }
-
 .product__card__price {
 	width: 100%;
 	height: auto;
@@ -993,7 +974,6 @@ body {
 	letter-spacing: 0%;
 	color: var(--text__color__primary);
 }
-
 .product__card__button {
 	position: absolute;
 	bottom: calc(0% - 24px);
@@ -1025,7 +1005,6 @@ body {
 		width: 100%;
 	}
 }
-
 .table__buttons__container {
 	width: 100%;
 	max-width: 1300px;
@@ -1056,7 +1035,6 @@ body {
 		}
 	}
 }
-
 .table__button__select {
 	width: 121px;
 	height: 40px;
@@ -1080,7 +1058,6 @@ body {
 		}
 	}
 }
-
 .table__button__unselected {
 	width: 121px;
 	height: 40px;
@@ -1103,7 +1080,6 @@ body {
 		}
 	}
 }
-
 .table__container {
 	width: 100%;
 	max-width: 1300px;
@@ -1118,7 +1094,6 @@ body {
 		width: calc(100% - 30px);
 	}
 }
-
 .table__box {
 	width: 100%;
 	height: 500px;
@@ -1146,7 +1121,6 @@ body {
 		height: 400px;
 	}
 }
-
 .table__initial__bar {
 	position: relative;
 	display: flex;
@@ -1176,7 +1150,6 @@ body {
 		}
 	}
 }
-
 .table__row {
 	display: flex;
 	flex-direction: row;
@@ -1208,8 +1181,7 @@ body {
 			}
 		}
 	}
-}
-</style>
+}</style>
 <style>.adverti {
 	width: 100%;
 	height: 600px;
@@ -1237,7 +1209,6 @@ body {
 		margin-bottom: 50px;
 	}
 }
-
 .adverti__text__box {
 	display: flex;
 	flex-direction: column;
@@ -1250,7 +1221,6 @@ body {
 		text-align: center;
 	}
 }
-
 .adverti__text__title {
 	width: 80%;
 	max-width: 730px;
@@ -1264,7 +1234,6 @@ body {
 		font-size: 40px;
 	}
 }
-
 .adverti__text {
 	width: 80%;
 	max-width: 409px;
@@ -1277,12 +1246,10 @@ body {
 		font-size: 15px;
 	}
 }
-
 .adverti__button {
 	width: 134px;
 	height: 48px;
 }
-
 .adverti__img {
 	max-width: 300px;
 	height: 467px;
@@ -1291,8 +1258,7 @@ body {
 		position: absolute;
 		transform: translateY(375px);
 	}
-}
-</style>
+}</style>
 <style>.feedback {
 	width: 100%;
 
@@ -1309,7 +1275,6 @@ body {
 		margin-top: 300px;
 	}
 }
-
 .feedback__text__box {
 	display: flex;
 	flex-direction: column;
@@ -1353,7 +1318,6 @@ body {
 		}
 	}
 }
-
 .feedback__slide__container {
 	margin-top: 30px;
 	border: 1px solid #f9c06a6b;
@@ -1370,7 +1334,6 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
 .feedback__slide {
 	width: 100%;
 	height: 100%;
@@ -1390,12 +1353,10 @@ body {
 		padding-bottom: 60px;
 	}
 }
-
 .feedback__slide__active {
 	position: none;
 	opacity: 1;
 }
-
 .feedback__slide__text {
 	width: 90%;
 	max-width: 780px;
@@ -1419,7 +1380,6 @@ body {
 		line-height: 27px;
 	}
 }
-
 .feedback__slide__author__box {
 	width: 90%;
 	height: auto;
@@ -1450,7 +1410,6 @@ body {
 		text-align: center;
 	}
 }
-
 .feedback__slide__image {
 	position: absolute;
 	bottom: 0;
@@ -1463,7 +1422,6 @@ body {
 		transform: translateY(60%);
 	}
 }
-
 .feedback__button {
 	position: absolute;
 	top: 50%;
@@ -1505,7 +1463,6 @@ body {
 		}
 	}
 }
-
 .feedback__button__prev {
 	right: calc(100% - 41px);
 	box-shadow: var(--btn__order__shadow);
@@ -1514,7 +1471,6 @@ body {
 		right: calc(100% - 20px);
 	}
 }
-
 .feedback__button__next {
 	left: calc(100% - 41px);
 	box-shadow: var(--btn__order__shadow);
@@ -1523,7 +1479,6 @@ body {
 		left: calc(100% - 20px);
 	}
 }
-
 .feedback__img__decoration {
 	position: absolute;
 
@@ -1540,14 +1495,12 @@ body {
 		top: -100px;
 	}
 }
-
 .feedback__img__decoration__text {
 	z-index: 10;
 	position: absolute;
 	top: 150px;
 	left: 10px;
-}
-</style>
+}</style>
 <style>.subscribre {
 	width: 100%;
 	height: 100%;
@@ -1563,10 +1516,10 @@ body {
 
 	@media (max-width: 1300px) {
 		padding-top: 30px;
+		padding-bottom: 30px;
 		background-position: center;
 	}
 }
-
 .subscribre__container {
 	z-index: 2;
 	width: 90%;
@@ -1583,7 +1536,6 @@ body {
 		align-items: center;
 	}
 }
-
 .subscribre__text__box {
 	width: 100%;
 	height: auto;
@@ -1618,7 +1570,6 @@ body {
 		text-align: center;
 	}
 }
-
 .subscribre__input__box {
 	width: 90%;
 	max-width: 655px;
@@ -1628,7 +1579,6 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-
 .subscribre__bar {
 	width: 100%;
 	height: 66px;
@@ -1639,7 +1589,6 @@ body {
 		height: 39px;
 	}
 }
-
 .subscribre__input {
 	border-top-left-radius: 4px;
 	border-bottom-left-radius: 4px;
@@ -1674,7 +1623,6 @@ body {
 		width: 70%;
 	}
 }
-
 .subscribre__button {
 	border-top-right-radius: 4px;
 	border-bottom-right-radius: 4px;
@@ -1687,17 +1635,6 @@ body {
 	align-items: center;
 	justify-content: center;
 	font-family: var(--text__font__PlayfairDisplay);
-
-	p {
-		font-weight: 700;
-		font-size: 22px;
-		color: var(--text__color__primary);
-		box-shadow: 0px 6px 12px 0px #f9c06a38;
-
-		@media (max-width: 1300px) {
-			font-size: 14px;
-		}
-	}
 
 	&:hover {
 		background-color: var(--btn__order__bg__color__hover);
@@ -1713,12 +1650,20 @@ body {
 		height: 39px;
 	}
 }
+.subscribre__button__text {
+	font-weight: 700;
+	font-size: 22px;
+	color: var(--text__color__primary);
+	box-shadow: 0px 6px 12px 0px #f9c06a38;
 
+	@media (max-width: 1300px) {
+		font-size: 14px;
+	}
+}
 .unsubscribre__button {
 	border-radius: 4px;
 	width: 100%;
 }
-
 .subscribre__img__container {
 	width: 526px;
 	height: 432px;
@@ -1726,7 +1671,6 @@ body {
 	top: -40px;
 	left: 30px;
 }
-
 .subscribre__message {
 	margin-top: 5px;
 	width: 100%;
@@ -1744,11 +1688,9 @@ body {
 		font-size: 14px;
 	}
 }
-
 .unsubscribre__message {
 	text-align: center;
-}
-</style>
+}</style>
 <style>.footer {
 	width: 100%;
 	height: 500px;
@@ -1774,7 +1716,6 @@ body {
 		height: auto;
 	}
 }
-
 .footer__box__primary {
 	width: fit-content;
 	height: 258px;
@@ -1836,13 +1777,11 @@ body {
 		}
 	}
 }
-
 .footer__box__secondary__container {
 	display: flex;
 	flex-direction: row;
 	gap: 70px;
 }
-
 .footer__box__secondary {
 	width: fit-content;
 	height: auto;
@@ -1879,8 +1818,7 @@ body {
 		letter-spacing: 0%;
 		text-decoration: none;
 	}
-}
-</style>
+}</style>
 <style>.navbar {
 	padding: 10px 0px;
 	display: flex;
@@ -1946,7 +1884,6 @@ body {
 		}
 	}
 }
-
 .navbar__title {
 	z-index: 3;
 	width: auto;
@@ -1967,7 +1904,6 @@ body {
 		cursor: pointer;
 	}
 }
-
 .navbar__hamburger__menu {
 	position: fixed;
 	top: 15px;
@@ -1984,7 +1920,6 @@ body {
 		background-color: var(--text__color__pattern);
 	}
 }
-
 .navbar__mobile__menu {
 	position: fixed;
 	z-index: 15;
@@ -2026,7 +1961,6 @@ body {
 		}
 	}
 }
-
 .navbar__mobile__menu__open {
 	height: 300px;
 
@@ -2034,7 +1968,6 @@ body {
 		opacity: 1;
 		transform: translateY(0);
 	}
-}
-</style>
+}</style>
 </body>
 </html>
