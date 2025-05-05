@@ -1,7 +1,8 @@
 import { fetchJSON, isValidProduct, getElement } from './global.js';
 
+let initialBar = null;
+
 const createInitialBar = (tableContainer, tableBox) => {
-	let initialBar = getElement('.table__initial__bar');
 	if (!initialBar) {
 		initialBar = document.createElement('div');
 		initialBar.classList.add('table__initial__bar');
