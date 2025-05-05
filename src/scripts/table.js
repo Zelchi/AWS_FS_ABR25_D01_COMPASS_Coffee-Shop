@@ -1,14 +1,17 @@
 import { fetchJSON, isValidProduct, getElement } from './global.js';
 
 const createInitialBar = (tableContainer, tableBox) => {
-	let initialBar = document.createElement('div');
-	initialBar.classList.add('table__initial__bar');
-	initialBar.innerHTML = `
+	let initialBar = getElement('.table__initial__bar');
+	if (!initialBar) {
+		initialBar = document.createElement('div');
+		initialBar.classList.add('table__initial__bar');
+		initialBar.innerHTML = `
             <p>Item</p>
             <p class="remove__in__short__window">Type</p>
             <p>Price</p>
         `;
-	tableContainer.insertBefore(initialBar, tableBox);
+		tableContainer.insertBefore(initialBar, tableBox);
+	}
 };
 
 const createTableRow = (item) => {
