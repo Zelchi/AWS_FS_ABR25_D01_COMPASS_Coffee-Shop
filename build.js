@@ -70,11 +70,10 @@ function buildIndex() {
 	html = html.replace(/<img\s+src="\/src\/assets\/(.*?)"/g, '<img src="./assets/$1"');
 	const styles = html.match(/<style>[\s\S]*?<\/style>/g) || [];
 	html = html.replace(/<style>[\s\S]*?<\/style>/g, '');
+	const concatenatedStyles = `<style>${styles.map(style => style.replace(/<\/?style>/g, '')).join('')}</style>`;
 	const bodyCloseTagIndex = html.lastIndexOf('</body>');
-	html =
-		html.slice(0, bodyCloseTagIndex) +
-		`\n<script>\n${inlinedScripts}\n</script>\n${styles.join('\n')}\n` +
-		html.slice(bodyCloseTagIndex);
+	html = html.slice(0, bodyCloseTagIndex) + `<script>${inlinedScripts}</script>${concatenatedStyles}` + html.slice(bodyCloseTagIndex);
+	html = html.replace(/\s+/g, ' ').trim();
 	fs.writeFileSync(indexDist, html, 'utf-8');
 }
 
