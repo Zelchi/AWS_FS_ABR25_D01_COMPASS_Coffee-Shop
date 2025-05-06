@@ -9,7 +9,7 @@ const createProductCard = (product) => {
 	card.classList.add('product__card');
 
 	card.innerHTML = `
-        <img src="${product.imagem_url}" alt="${product.name}" class="product__card__image" draggable='false'/>
+        <img src="${product.imagem_url}" class="product__card__image" draggable='false'/>
         <h3 class="product__card__title">${product.name}</h3>
         <p class="product__card__description">${product.short_description}</p>
         <p class="product__card__price">$${product.price.toFixed(2)}</p>

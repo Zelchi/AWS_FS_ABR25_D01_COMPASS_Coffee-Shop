@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h1 class="feedback__slide__author">${feedback.full_name}</h1>
                 <p class="feedback__slide__author__job">${feedback.profession}</p>
             </div>
-            <img src="${feedback.image_url}" alt="${feedback.full_name}" class="feedback__slide__image" draggable="false"/>
+            <img src="${feedback.image_url}" class="feedback__slide__image" draggable="false"/>
         `;
 		return slide;
 	};
