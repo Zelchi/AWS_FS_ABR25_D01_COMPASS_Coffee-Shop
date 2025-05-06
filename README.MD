@@ -1,7 +1,7 @@
 # AWS FS ABR25 D01 COMPASS - Coffee Shop
 
 <p align="center">
-    <img src="./README.png">
+    <img src="./README.svg">
 </p>
 
 ## Description
