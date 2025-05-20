@@ -41,4 +41,4 @@ npm install
 npm run start
 ```
 
-2. Or access it via GitHub Pages: [Click here](https://zelchi.github.io/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop)
+2. Or access it GitHub Pages: [Click here](https://zelchi.github.io/AWS_FS_ABR25_D01_COMPASS_Coffee-Shop)
